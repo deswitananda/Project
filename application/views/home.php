@@ -11,7 +11,7 @@
         <!-- Teks -->
         <div class="col-md-6 d-flex align-items-center">
             <div class="text-left">
-                <h1 class="text-success font-weight-bold mb-3">Travel Umroh & Haji</h1>
+                <h1 class="title-home font-weight-bold mb-3">Travel Umroh & Haji</h1>
                 <p class="lead mb-4">Nikmati perjalanan spiritual yang nyaman dan aman bersama kami.</p>
             </div>
         </div>

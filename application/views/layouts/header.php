@@ -20,7 +20,11 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container d-flex justify-content-between">
         <!-- Logo -->
-        <a class="navbar-brand font-weight-bold text-primary" href="<?= base_url(); ?>">Travel Umroh & Haji</a>
+        <a class="navbar-brand d-flex align-items-center" href="<?= base_url(); ?>">
+            <img src="<?= base_url('public/assets/images/logo.png'); ?>" alt="Travel Umroh & Haji" class="logo-navbar">
+        </a>
+
+        <!-- <a class="navbar-brand font-weight-bold text-primary" href="<?= base_url(); ?>">Travel Umroh & Haji</a> -->
         
         <!-- Button Toggler -->
         <button class="navbar-toggler" type="button" id="navbar-toggler">
@@ -33,6 +37,7 @@
                 <li class="nav-item mx-3"><a class="nav-link" href="<?= base_url('about'); ?>">Tentang Kami</a></li>
                 <li class="nav-item mx-3"><a class="nav-link" href="<?= base_url('paket-umroh'); ?>">Paket Umroh</a></li>
                 <li class="nav-item mx-3"><a class="nav-link" href="<?= base_url('paket-haji'); ?>">Paket Haji</a></li>
+                <li class="nav-item mx-3"><a class="nav-link" href="<?= base_url('paket-wisata'); ?>">Paket Wisata</a></li>
                 <li class="nav-item mx-3"><a class="nav-link" href="<?= base_url('blog'); ?>">Blog</a></li>
                 <li class="nav-item mx-3"><a class="nav-link" href="<?= base_url('contact'); ?>">Contact</a></li>
             </ul>

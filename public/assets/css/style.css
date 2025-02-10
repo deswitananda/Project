@@ -10,15 +10,22 @@ body {
     z-index: 1000;
     background-color: rgba(255, 255, 255, 0.95);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 10px 0;
+    padding: 5px 0;
 }
-/* Logo Navbar */
-.navbar-brand {
-    font-size: 20px;
-    font-weight: 700;
-    color: #2D336B !important;
-    letter-spacing: 0.3px;
+/* Ukuran Logo Navbar */
+.logo-navbar {
+    height: 60px;  
+    width: auto;   
+    max-width: 150px; 
+    object-fit: contain; 
+    cursor: default;
 }
+/* Warna emas untuk judul H1 di Home */
+.title-home {
+    color: #A89C29;
+}
+
+
 /* Menu Navbar */
 .navbar-nav .nav-link {
     font-size: 14px;
@@ -27,7 +34,7 @@ body {
 }
 /* Efek membesar saat hover */
 .navbar-nav .nav-link:hover {
-    color: #2D336B;
+    color: #A89C29;
     transform: scale(1.1);
 }
 /* Tombol */
