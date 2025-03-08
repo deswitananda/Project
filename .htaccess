@@ -13,5 +13,14 @@
     </Files>
     
 
+<<<<<<< HEAD
 
 </IfModule>
+=======
+</IfModule>
+
+<IfModule mod_env.c>
+    #SetEnv CI_ENV production
+    SetEnv CI_ENV development
+</IfModule>
+>>>>>>> 980b01dcd5981a75addd839b3ae9252c768d96a2

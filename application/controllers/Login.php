@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class Login extends CI_Controller
@@ -64,3 +65,20 @@ class Login extends CI_Controller
 }
 
 /* End of file: Login.php */
+=======
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Login extends CI_Controller {
+    public function __construct(){
+        parent::__construct();
+    }
+
+    public function index(){
+        
+        $this->load->view('login');
+        
+    }
+
+}
+?>
+>>>>>>> 980b01dcd5981a75addd839b3ae9252c768d96a2
