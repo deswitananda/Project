@@ -34,12 +34,11 @@
         <!-- Menu Tengah -->
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item mx-3"><a class="nav-link" href="<?= base_url('about'); ?>">Tentang Kami</a></li>
-                <li class="nav-item mx-3"><a class="nav-link" href="<?= base_url('paket-umroh'); ?>">Paket Umroh</a></li>
-                <li class="nav-item mx-3"><a class="nav-link" href="<?= base_url('paket-haji'); ?>">Paket Haji</a></li>
-                <li class="nav-item mx-3"><a class="nav-link" href="<?= base_url('paket-wisata'); ?>">Paket Wisata</a></li>
+                <li class="nav-item mx-3"><a class="nav-link" href="<?= base_url('home'); ?>">Beranda</a></li>
+                <li class="nav-item mx-3"><a class="nav-link" href="<?= base_url('paket_haji_umroh'); ?>">Paket Haji dan Umroh</a></li>
+                <li class="nav-item mx-3"><a class="nav-link" href="<?= base_url('paket_wisata'); ?>">Paket Wisata</a></li>
                 <li class="nav-item mx-3"><a class="nav-link" href="<?= base_url('blog'); ?>">Blog</a></li>
-                <li class="nav-item mx-3"><a class="nav-link" href="<?= base_url('contact'); ?>">Contact</a></li>
+                <li class="nav-item mx-3"><a class="nav-link" href="<?= base_url('about'); ?>">Tentang Kami</a></li>
             </ul>
         </div>
 
