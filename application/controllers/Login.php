@@ -13,10 +13,12 @@ class Login extends CI_Controller {
 
     public function proses_login()
     {
-        $email = $this->input->post('email');
+        // Ambil input username dan password
+        $username = $this->input->post('username');
         $password = $this->input->post('password');
 
-        $this->form_validation->set_rules('email', 'Email', 'trim|required', array('required' => '%s harus diisi'));
+        // Validasi form: username dan password harus diisi
+        $this->form_validation->set_rules('username', 'Username', 'trim|required', array('required' => '%s harus diisi'));
         $this->form_validation->set_rules('password', 'Password', 'trim|required', array('required' => '%s harus diisi'));
 
         if ($this->form_validation->run() == FALSE) {
@@ -25,17 +27,18 @@ class Login extends CI_Controller {
                 $ret['error'][$key] = form_error($key);
             }
         } else {
-            $q = $this->User_model->login($email, $password);
-            if ($q->num_rows() > 0) {
+            // Panggil fungsi login di model dengan username dan password
+            $q = $this->User_model->login($username, $password);
+            if ($q && $q->num_rows() > 0) {
                 // Ambil data user dari query
                 $user = $q->row();
                 // Ambil nilai role dari kolom 'role'
                 $role = $user->role;
 
-                // Set session
+                // Set session dengan data user (username dan role)
                 $sess = array(
                     'is_login' => TRUE,
-                    'email'    => $user->email,
+                    'username' => $user->username,
                     'role'     => $role
                 );
                 $this->session->set_userdata($sess);
@@ -48,7 +51,7 @@ class Login extends CI_Controller {
             } else {
                 $ret = array(
                     'status'  => false,
-                    'message' => 'Email atau Password Salah'
+                    'message' => 'Username atau Password Salah'
                 );
             }
         }
