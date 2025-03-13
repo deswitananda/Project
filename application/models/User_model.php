@@ -11,21 +11,28 @@ class User_model extends CI_Model
     }
 
     // Fungsi login dengan verifikasi password menggunakan username
-    public function login($username, $password)
-    {
-        // Cari user berdasarkan username
-        $this->db->where('username', $username);
-        $query = $this->db->get($this->table);
+    // public function login($username, $password)
+    // {
+    //     // Cari user berdasarkan username
+    //     $this->db->where('username', $username);
+    //     $query = $this->db->get($this->table);
 
-        if ($query->num_rows() == 1) {
-            $user = $query->row();
-            // Verifikasi password yang di-hash
-            if (password_verify($password, $user->password)) {
-                return $query;
-            }
-        }
-        return false;
-    }
+    //     if ($query->num_rows() == 1) {
+    //         $user = $query->row();
+    //         // Verifikasi password yang di-hash
+    //         if (password_verify($password, $user->password)) {
+    //             return $query;
+    //         }
+    //     }
+    //     return false;
+    // }
+
+    public function login($username, $password)
+	{
+
+		$q = $this->db->where('username', $username)->where('password', $password)->get($this->table);
+		return $q;
+	}
 
     public function getUserAll(){
         $q = $this->db->get($this->table);

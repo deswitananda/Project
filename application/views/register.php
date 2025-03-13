@@ -24,7 +24,7 @@
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
   />
 
-  <link rel="stylesheet" href="public/assets/css/style.css">
+  <link rel="stylesheet" href="public/template/css/style.css">
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script

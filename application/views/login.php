@@ -24,7 +24,7 @@
   />
 
   <!-- Link external CSS dengan path di public/assets/css/style.css -->
-  <link rel="stylesheet" href="public/assets/css/style.css">
+  <link rel="stylesheet" href="public/template/css/style.css">
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script
@@ -192,5 +192,46 @@
       </div>
     </div>
   </div>
+
+  <script>
+    $(document).ready(function() {
+        $('#loginBtn').click(function() {
+            $('.error-block').html('');
+            $('input').removeClass('is-invalid');
+            
+            $.ajax({
+                url: '<?php echo base_url('login/proses_login'); ?>',
+                type: 'POST',
+                data: {
+                    username: $('#username').val(),
+                    password: $('#password').val()
+                },
+                dataType: 'json',
+                success: function(response) {
+                    if (response.status) {
+                        if (response.role === 'admin') {
+                            window.location.href = '<?php echo base_url('admin/dashboard'); ?>'; // Redirect ke dashboard admin
+                        } else if (response.role === 'user') {
+                            window.location.href = '<?php echo base_url('user/dashboard'); ?>'; // Redirect ke dashboard user
+                        }
+                    } else {
+                        if (response.error) {
+                            for (var prop in response.error) {
+                                if (response.error[prop] !== '') {
+                                    $("#form_login [name=" + prop + "]")
+                                        .addClass('is-invalid')
+                                        .next('.error-block')
+                                        .html(response.error[prop]);
+                                }
+                            }
+                        } else {
+                            // Tangani error lain jika perlu
+                        }
+                    }
+                }
+            });
+        });
+    });
+    </script>
 </body>
 </html>
