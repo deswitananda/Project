@@ -9,6 +9,7 @@ class Pembayaran extends CI_Controller {
     public function index(){
         
         $this->load->view('admin/pembayaran');
+        $this->load->view('template');
         
     }
 

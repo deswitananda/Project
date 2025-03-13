@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Halaman Login</title>
-    <link href="<?php echo base_url('public/assets/css/bootstrap.min.css');?>" rel="stylesheet">
+    <link href="<?php echo base_url('public/template/css/bootstrap.min.css');?>" rel="stylesheet">
   </head>
   <body>
     <div class="container mt-4">
@@ -35,7 +35,7 @@
       </div>
     </div>
 
-    <script src="<?php echo base_url('public/assets/js/bootstrap.bundle.min.js')?>"></script>
+    <script src="<?php echo base_url('public/template/js/bootstrap.bundle.min.js')?>"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
 
     <script>

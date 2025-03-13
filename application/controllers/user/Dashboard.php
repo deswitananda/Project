@@ -8,7 +8,11 @@ class Dashboard extends CI_Controller {
 
     public function index(){
         
-        $this->load->view('user/dashboard');
+        $data = array(
+			'content' => 'user/dashboard',
+			'title' => 'Dashboard'
+		);
+		$this->load->view('template', $data);
         
     }
 

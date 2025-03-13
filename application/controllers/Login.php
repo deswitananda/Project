@@ -54,5 +54,10 @@ class Login extends CI_Controller {
         }
         echo json_encode($ret);
     }
+
+    public function logout() {
+        $this->session->sess_destroy();
+        echo json_encode(['status' => true, 'message' => 'Logout berhasil.']);
+    }
 }
 ?>

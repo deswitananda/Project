@@ -8,7 +8,11 @@ class Pemesanan extends CI_Controller {
 
     public function index(){
         
-        $this->load->view('user/pemesanan');
+        $data = array(
+			'content' => 'user/pemesanan',
+			'title' => 'Pemesanan'
+		);
+		$this->load->view('template', $data);
         
     }
 

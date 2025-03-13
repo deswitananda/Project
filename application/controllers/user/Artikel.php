@@ -8,7 +8,11 @@ class Artikel extends CI_Controller {
 
     public function index(){
         
-        $this->load->view('user/artikel');
+        $data = array(
+			'content' => 'user/artikel',
+			'title' => 'Artikel'
+		);
+		$this->load->view('template', $data);
         
     }
 

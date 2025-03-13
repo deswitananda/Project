@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?= base_url('public/assets/css/bootstrap.min.css'); ?>">
-    <link rel="stylesheet" href="<?= base_url('public/assets/css/style.css'); ?>">
+    <link rel="stylesheet" href="<?= base_url('public/template/css/bootstrap.min.css'); ?>">
+    <link rel="stylesheet" href="<?= base_url('public/template/css/style.css'); ?>">
     <title>Document</title>
 </head>
 
@@ -22,7 +22,7 @@
         <div id="carouselExampleControlsNoTouching" class="carousel slide" data-touch="false" data-interval="false">
             <div class="carousel-inner">
                 <div class="carousel-item active text-center">
-                    <img src="<?= base_url('public/assets/images/kabah 2.jpg'); ?>" alt="kabah 2" class="img-fluid rounded" style="max-width: 50%; height: auto;">
+                    <img src="<?= base_url('public/template/images/kabah 2.jpg'); ?>" alt="kabah 2" class="img-fluid rounded" style="max-width: 50%; height: auto;">
                 </div>
                 <div class="carousel-item text-center">
                     <img src="..." class="d-block w-100" alt="...">

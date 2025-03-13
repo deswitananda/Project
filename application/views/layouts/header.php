@@ -9,8 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Bootstrap 4 CSS -->
-    <link rel="stylesheet" href="<?= base_url('public/assets/css/bootstrap.min.css'); ?>">
-    <link rel="stylesheet" href="<?= base_url('public/assets/css/style.css'); ?>">
+    <link rel="stylesheet" href="<?= base_url('public/template/css/bootstrap.min.css'); ?>">
+    <link rel="stylesheet" href="<?= base_url('public/template/css/style.css'); ?>">
 
 </head>
 
@@ -21,7 +21,7 @@
     <div class="container d-flex justify-content-between">
         <!-- Logo -->
         <a class="navbar-brand d-flex align-items-center" href="<?= base_url(); ?>">
-            <img src="<?= base_url('public/assets/images/logo.png'); ?>" alt="Travel Umroh & Haji" class="logo-navbar">
+            <img src="<?= base_url('public/template/images/logo.png'); ?>" alt="Travel Umroh & Haji" class="logo-navbar">
         </a>
 
         <!-- <a class="navbar-brand font-weight-bold text-primary" href="<?= base_url(); ?>">Travel Umroh & Haji</a> -->

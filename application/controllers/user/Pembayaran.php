@@ -8,7 +8,11 @@ class Pembayaran extends CI_Controller {
 
     public function index(){
         
-        $this->load->view('user/pembayaran');
+        $data = array(
+			'content' => 'user/pembayaran',
+			'title' => 'Pembayaran'
+		);
+		$this->load->view('template', $data);
         
     }
 

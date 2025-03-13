@@ -3,7 +3,7 @@
     <div class="row align-items-center">
         <!-- Gambar -->
         <div class="col-md-6 d-flex justify-content-center">
-            <img src="<?= base_url('public/assets/images/mekkah.jpg'); ?>" alt="Mekkah" class="img-fluid rounded" style="max-width: 90%; height: auto;">
+            <img src="<?= base_url('public/template/images/mekkah.jpg'); ?>" alt="Mekkah" class="img-fluid rounded" style="max-width: 90%; height: auto;">
         </div>
         <!-- Teks -->
         <div class="col-md-6">

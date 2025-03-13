@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?= base_url('public/assets/css/bootstrap.min.css'); ?>">
-    <link rel="stylesheet" href="<?= base_url('public/assets/css/style.css'); ?>">
+    <link rel="stylesheet" href="<?= base_url('public/template/css/bootstrap.min.css'); ?>">
+    <link rel="stylesheet" href="<?= base_url('public/template/css/style.css'); ?>">
     <!-- Untuk Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -34,7 +34,7 @@
         <div class="row mt-4">
             <div class="col-md-6 col-lg-3">
                 <div class="card card-umrah">
-                    <img src="<?= base_url('public/assets/images/mekkah.jpg'); ?>"
+                    <img src="<?= base_url('public/template/images/mekkah.jpg'); ?>"
                         class="card-img-top img-fluid rounded"
                         alt="Paket Umroh" />
 
@@ -76,7 +76,7 @@
 
             <div class="col-md-6 col-lg-3">
                 <div class="card">
-                    <img src="<?= base_url('public/assets/images/mekkah.jpg'); ?>" class="card-img-top img-fluid rounded" alt="Paket Umroh">
+                    <img src="<?= base_url('public/template/images/mekkah.jpg'); ?>" class="card-img-top img-fluid rounded" alt="Paket Umroh">
                     <div class="card-body">
                         <h5 class="name"><a href="#">Paket Umroh</a></h5>
                         <p><i class="ti ti-calendar-minus me-2"></i> 25 February 2025</p>
@@ -89,7 +89,7 @@
 
             <div class="col-md-6 col-lg-3">
                 <div class="card">
-                    <img src="<?= base_url('public/assets/images/mekkah.jpg'); ?>" class="card-img-top img-fluid rounded" alt="Paket Umroh">
+                    <img src="<?= base_url('public/template/images/mekkah.jpg'); ?>" class="card-img-top img-fluid rounded" alt="Paket Umroh">
                     <div class="card-body">
                         <h5 class="name"><a href="#">Paket Umroh</a></h5>
                         <p><i class="ti ti-calendar-minus me-2"></i> 19 February 2025</p>
@@ -102,7 +102,7 @@
 
             <div class="col-md-6 col-lg-3">
                 <div class="card">
-                    <img src="<?= base_url('public/assets/images/mekkah.jpg'); ?>" class="card-img-top img-fluid rounded" alt="Paket Umroh">
+                    <img src="<?= base_url('public/template/images/mekkah.jpg'); ?>" class="card-img-top img-fluid rounded" alt="Paket Umroh">
                     <div class="card-body">
                         <h5 class="name"><a href="#">Paket Umroh</a></h5>
                         <p><i class="ti ti-calendar-minus me-2"></i> 04 April 2025</p>

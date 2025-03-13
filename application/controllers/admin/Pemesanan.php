@@ -9,6 +9,7 @@ class Pemesanan extends CI_Controller {
     public function index(){
         
         $this->load->view('admin/pemesanan');
+        $this->load->view('template');
         
     }
 

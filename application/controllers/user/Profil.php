@@ -8,7 +8,12 @@ class Profil extends CI_Controller {
 
     public function index(){
         
-        $this->load->view('user/profil');
+        $data = array(
+			'content' => 'user/profil',
+			'title' => 'Profil'
+		);
+		$this->load->view('template', $data);
+        
         
     }
 

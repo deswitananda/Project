@@ -8,7 +8,11 @@ class Produk extends CI_Controller {
 
     public function index(){
         
-        $this->load->view('user/produk');
+        $data = array(
+			'content' => 'user/produk',
+			'title' => 'Produk'
+		);
+		$this->load->view('template', $data);
         
     }
 

@@ -8,7 +8,11 @@ class Testimoni extends CI_Controller {
 
     public function index(){
         
-        $this->load->view('user/testimoni');
+        $data = array(
+			'content' => 'user/testimoni',
+			'title' => 'Testimoni'
+		);
+		$this->load->view('template', $data);
         
     }
 
