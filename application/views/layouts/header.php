@@ -44,8 +44,8 @@
 
         <!-- Tombol Masuk & Daftar -->
         <div class="d-flex align-items-center">
-            <a href="<?= base_url('login'); ?>" class="btn btn-outline-primary btn-sm mx-2">Masuk</a>
-            <a href="<?= base_url('register'); ?>" class="btn btn-primary btn-sm">Daftar</a>
+            <!-- <a href="<?= base_url('login'); ?>" class="btn btn-outline-primary btn-sm mx-2">Masuk</a> -->
+            <a href="<?= base_url('register'); ?>" class="btn btn-primary btn-sm">Login</a>
         </div>
     </div>
 </nav>

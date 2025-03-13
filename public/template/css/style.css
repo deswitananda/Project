@@ -1,114 +1,210 @@
-body {
-	font-family: "Poppins", sans-serif;
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+/* Global Reset & Base Styles */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+    box-sizing: border-box;
 }
 
-/* Navbar */
+/* ------------------------ */
+/*         Home           */
+/* ------------------------ */
 .navbar {
-	position: fixed;
-	width: 100%;
-	top: 0;
-	left: 0;
-	z-index: 1000;
-	background-color: rgba(255, 255, 255, 0.95);
-	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-	padding: 8px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 8px 0;
 }
-
-/* Ukuran Logo Navbar */
 .logo-navbar {
-	height: 60px;
-	width: auto;
-	max-width: 150px;
-	object-fit: contain;
-	cursor: default;
+    height: 60px;
+    width: auto;
+    max-width: 150px;
+    object-fit: contain;
+    cursor: default;
 }
-
-/* Warna emas untuk judul H1 */
 .title-home,
-.title-umroh{
-	color: #a89c29;
+.title-umroh {
+    color: #a89c29;
 }
 
-/* Menu Navbar */
-.navbar-nav .nav-link {
-	font-size: 14px;
-	font-weight: 600;
-	transition: transform 0.3s ease, color 0.3s ease;
+/* ------------------------ */
+/*   Shared Backgrounds     */
+/* ------------------------ */
+.left-illustration {
+    /* Path relatif: naik satu level dari css folder ke assets/images */
+    background: url('../images/mekkah.jpg') no-repeat center center;
+    background-size: cover;
+}
+.right-area {
+    background: linear-gradient(135deg, #fffdf7 0%, #fef3d7 100%);
 }
 
-.navbar-nav .nav-link:hover {
-	color: #a89c29;
-	transform: scale(1.1);
+/* ------------------------ */
+/*         Login          */
+/* ------------------------ */
+.card-login {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border: none;
+    margin: 2rem;
 }
-
-
-
-/* Tombol */
-.btn-masuk,
-.btn-daftar {
-	border-radius: 20px;
-	padding: 6px 16px;
-	font-weight: 600;
-	font-size: 13px;
+.card-login .card-header {
+    background: transparent;
+    border: none;
 }
-
-.btn-primary:hover {
-	background-color: #2d336b;
+.card-login .card-body {
+    padding: 2rem;
 }
-
-
-
-.row {
+.form-control {
+    background-color: #f8f9fa;
+    border: none;
+    height: 45px;
+    border-radius: 10px;
+    color: #000;
+}
+.form-control:focus {
+    box-shadow: 0 0 0 1px #ccc;
+    border: none;
+}
+.input-group-text {
+    background-color: #f8f9fa;
+    border: none;
+    border-radius: 10px 0 0 10px;
     display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto; /* Agar bisa digeser jika banyak */
-    gap: 15px; /* Memberikan jarak antar kartu */
+    align-items: center;
+    justify-content: center;
 }
-
-.card {
-    flex: 0 0 auto;
-    width: 250px; /* Sesuaikan ukuran card */
+.btn-login {
+    background-color: #FFC107;
+    color: #fff;
+    height: 45px;
+    border-radius: 8px;
+    font-weight: 500;
+    border: none;
+    transition: background-color 0.2s ease;
 }
-
-#perusahaan {
-	color:#a89c29;
+.btn-login:hover {
+    background-color: #e0a800;
 }
-
-
-
-
-
-
-/* Mengatur ukuran gambar carousel agar responsif */
-.carousel-inner {
+.forgot-password {
+    font-size: 14px;
+    color: red;
+    text-decoration: none;
+}
+.forgot-password:hover {
+    text-decoration: underline;
+}
+.signup-link {
+    font-size: 14px;
+}
+.signup-link a {
+    color: #FFC107;
+    text-decoration: none;
+}
+.signup-link a:hover {
+    text-decoration: underline;
+}
+.password-toggle {
+    cursor: pointer;
+    border-radius: 0 10px 10px 0 !important;
     display: flex;
-    justify-content: center; /* Agar gambar berada di tengah secara horizontal */
+    align-items: center;
+    justify-content: center;
+}
+.icon-gold svg {
+    stroke: #200e32;
+    opacity: 0.8;
 }
 
-.carousel-item {
-    text-align: center; /* Menjadikan gambar berada di tengah */
+/* ------------------------ */
+/*        Register        */
+/* ------------------------ */
+.card-register {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border: none;
+    margin: 2rem;
 }
-
-.carousel-item img {
-    max-width: 80%; /* Menjaga gambar tidak terlalu besar */
-    height: auto;
-    margin: 0 auto; /* Untuk memastikan gambar berada di tengah jika ada padding */
+.card-register .card-header {
+    background: transparent;
+    border: none;
 }
-
-/* Button navigasi carousel */
-.carousel-control-prev, 
-.carousel-control-next {
-    z-index: 1; /* Agar tombol berada di atas gambar */
+.card-register .card-body {
+    padding: 2rem;
 }
-
-/* Menambahkan margin bawah pada judul dan deskripsi */
-.title-home {
-    margin-bottom: 15px;
+/* Styling khusus untuk input dengan ikon di dalam Register */
+.input_group {
+    position: relative;
+    display: flex;
+    align-items: center;
 }
-
-.lead {
-    margin-bottom: 20px;
+.input_group .form-control {
+    padding-left: 45px; /* Memberi ruang untuk ikon */
+    border-radius: 10px;
+    margin: 0;
+}
+.icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent !important;
+    border: none;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.icon svg {
+    stroke: #000;
+    opacity: 0.8;
+    width: 24px;
+    height: 24px;
+    stroke-width: 1.5;
+}
+.btn-register {
+    background-color: #FFC107;
+    color: #fff;
+    height: 45px;
+    border-radius: 8px;
+    font-weight: 500;
+    width: 100%;
+    border: none;
+    transition: background-color 0.2s ease;
+}
+.btn-register:hover {
+    background-color: #e0a800;
+}
+.terms-link {
+    color: #FFC107;
+    text-decoration: none;
+}
+.terms-link:hover {
+    text-decoration: underline;
+}
+.signin-link {
+    color: #000;
+    text-decoration: none;
+}
+.signin-link:hover {
+    text-decoration: underline;
+}
+.custom-control {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+.custom-control-input {
+    margin-right: 10px;
 }
