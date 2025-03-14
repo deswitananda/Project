@@ -18,57 +18,299 @@
                 <!-- SIDEBAR: Vertical Tabs -->
                 <div class="col-lg-3 col-md-4 col-sm-12 border-right">
                     <div class="nav flex-column nav-pills" id="payment-tabs" role="tablist" aria-orientation="vertical">
-                        <!-- 1. Daftar Pembayaran -->
+                        <!-- TAB 1: Pembayaran Jamaah -->
                         <a class="nav-link active mb-2 d-flex align-items-center"
-                           id="list-tab" data-toggle="pill" href="#list" role="tab">
-                            <i class="fa fa-list-alt mr-2 text-primary"></i>
-                            Daftar Pembayaran
+                           id="pembayaran-jamaah-tab" data-toggle="pill" href="#pembayaran-jamaah" role="tab"
+                           aria-controls="pembayaran-jamaah" aria-selected="true">
+                            <i class="fa fa-money-bill-wave mr-2 text-primary"></i>
+                            Pembayaran Jamaah
                         </a>
-                        <!-- 2. Tambah Pembayaran Manual -->
+                        <!-- TAB 2: Pembayaran Belum Tervalidasi -->
+                        <a class="nav-link mb-2 d-flex align-items-center"
+                           id="belum-tervalidasi-tab" data-toggle="pill" href="#belum-tervalidasi" role="tab"
+                           aria-controls="belum-tervalidasi" aria-selected="false">
+                            <i class="fa fa-exclamation-circle mr-2 text-warning"></i>
+                            Belum Tervalidasi
+                        </a>
+                        <!-- TAB 3: Riwayat Pembayaran -->
+                        <a class="nav-link mb-2 d-flex align-items-center"
+                           id="riwayat-tab" data-toggle="pill" href="#riwayat" role="tab"
+                           aria-controls="riwayat" aria-selected="false">
+                            <i class="fa fa-history mr-2 text-info"></i>
+                            Riwayat Pembayaran
+                        </a>
+                        <!-- TAB 4: Laporan Pembayaran -->
+                        <a class="nav-link mb-2 d-flex align-items-center"
+                           id="laporan-tab" data-toggle="pill" href="#laporan" role="tab"
+                           aria-controls="laporan" aria-selected="false">
+                            <i class="fa fa-chart-bar mr-2 text-success"></i>
+                            Laporan Pembayaran
+                        </a>
+                        <!-- TAB 5: Tambah Pembayaran Manual -->
                         <a class="nav-link d-flex align-items-center"
-                           id="manual-tab" data-toggle="pill" href="#manual" role="tab">
-                            <i class="fa fa-plus-square mr-2 text-success"></i>
-                            Tambah Pembayaran Manual
+                           id="manual-tab" data-toggle="pill" href="#manual" role="tab"
+                           aria-controls="manual" aria-selected="false">
+                            <i class="fa fa-plus-square mr-2 text-primary"></i>
+                            Pembayaran Manual
                         </a>
                     </div>
                 </div>
-                
+
                 <!-- KONTEN: Bagian Kanan -->
                 <div class="col-lg-9 col-md-8 col-sm-12">
                     <!-- Tab Content -->
                     <div class="tab-content" id="payment-tabs-content">
                         
-                        <!-- TAB 1: Daftar Pembayaran -->
-                        <div class="tab-pane fade show active" id="list" role="tabpanel" aria-labelledby="list-tab">
-                            <h5 class="font-weight-bold">Daftar Pembayaran</h5>
+                        <!-- TAB 1: Pembayaran Jamaah -->
+                        <div class="tab-pane fade show active" id="pembayaran-jamaah" role="tabpanel" aria-labelledby="pembayaran-jamaah-tab">
+                            <h5 class="font-weight-bold">Tabel Pembayaran Jamaah</h5>
                             <small class="text-muted d-block mb-3">
-                                Tampilkan semua pembayaran yang telah dilakukan jamaah.
+                                Menampilkan data pembayaran yang telah dilakukan oleh jamaah.
                             </small>
                             <hr>
-                            <!-- Contoh Kartu Pembayaran -->
-                            <div class="payment-list">
-                                <div class="card mb-3">
-                                    <div class="card-body">
-                                        <h6 class="card-title">#PAY001 - Paket Umroh Reguler</h6>
-                                        <p class="card-text mb-1"><strong>Nama Jamaah:</strong> Ahmad</p>
-                                        <p class="card-text mb-1"><strong>Jumlah Bayar:</strong> Rp 5.000.000</p>
-                                        <p class="card-text mb-1"><strong>Status:</strong> Belum Lunas</p>
-                                        <p class="card-text"><small class="text-muted">Tanggal Pembayaran: 2025-02-15</small></p>
-                                        <div>
-                                            <button class="btn btn-sm btn-warning">Edit</button>
-                                            <button class="btn btn-sm btn-danger">Hapus</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Tambahan kartu pembayaran lainnya dapat ditambahkan di sini -->
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover">
+                                    <thead class="thead-dark">
+                                        <tr class="text-center">
+                                            <th>No</th>
+                                            <th>Nama Jamaah</th>
+                                            <th>Paket</th>
+                                            <th>Jumlah Pembayaran</th>
+                                            <th>Tanggal Pembayaran</th>
+                                            <th>Metode Pembayaran</th>
+                                            <th>Status Pembayaran</th>
+                                            <th>Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Contoh data statis -->
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Ahmad Zain</td>
+                                            <td>Umroh Reguler</td>
+                                            <td>Rp 5.000.000</td>
+                                            <td>10-01-2025</td>
+                                            <td>Transfer Bank</td>
+                                            <td>Belum Tervalidasi</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-info">Detail</button>
+                                                <button class="btn btn-sm btn-warning">Ubah Status</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Siti Hana</td>
+                                            <td>Haji Plus VIP</td>
+                                            <td>Rp 10.000.000</td>
+                                            <td>12-01-2025</td>
+                                            <td>Kartu Kredit</td>
+                                            <td>Lunas</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-info">Detail</button>
+                                                <button class="btn btn-sm btn-warning">Ubah Status</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                         
-                        <!-- TAB 2: Tambah Pembayaran Manual -->
+                        <!-- TAB 2: Pembayaran Belum Tervalidasi -->
+                        <div class="tab-pane fade" id="belum-tervalidasi" role="tabpanel" aria-labelledby="belum-tervalidasi-tab">
+                            <h5 class="font-weight-bold">Tabel Pembayaran Belum Tervalidasi</h5>
+                            <small class="text-muted d-block mb-3">
+                                Menampilkan pembayaran yang perlu dikonfirmasi atau divalidasi oleh admin.
+                            </small>
+                            <hr>
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover">
+                                    <thead class="thead-dark">
+                                        <tr class="text-center">
+                                            <th>No</th>
+                                            <th>Nama Jamaah</th>
+                                            <th>Paket</th>
+                                            <th>Jumlah Pembayaran</th>
+                                            <th>Tanggal Pembayaran</th>
+                                            <th>Metode Pembayaran</th>
+                                            <th>Status Pembayaran</th>
+                                            <th>Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Siti Hana</td>
+                                            <td>Haji Plus VIP</td>
+                                            <td>Rp 5.000.000</td>
+                                            <td>10-01-2025</td>
+                                            <td>Transfer Bank</td>
+                                            <td>Belum Tervalidasi</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-success">Validasi Pembayaran</button>
+                                                <button class="btn btn-sm btn-danger">Tolak Pembayaran</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>John Doe</td>
+                                            <td>Wisata Domestik</td>
+                                            <td>Rp 2.000.000</td>
+                                            <td>11-01-2025</td>
+                                            <td>Kartu Kredit</td>
+                                            <td>Belum Tervalidasi</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-success">Validasi Pembayaran</button>
+                                                <button class="btn btn-sm btn-danger">Tolak Pembayaran</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- TAB 3: Riwayat Pembayaran -->
+                        <div class="tab-pane fade" id="riwayat" role="tabpanel" aria-labelledby="riwayat-tab">
+                            <h5 class="font-weight-bold">Riwayat Pembayaran Jamaah</h5>
+                            <small class="text-muted d-block mb-3">
+                                Menampilkan seluruh riwayat pembayaran yang telah selesai atau tercatat.
+                            </small>
+                            <hr>
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover">
+                                    <thead class="thead-dark">
+                                        <tr class="text-center">
+                                            <th>No</th>
+                                            <th>Nama Jamaah</th>
+                                            <th>Paket</th>
+                                            <th>Total Pembayaran</th>
+                                            <th>Status Pembayaran</th>
+                                            <th>Metode Pembayaran</th>
+                                            <th>Tanggal Pembayaran</th>
+                                            <th>Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Ahmad Zain</td>
+                                            <td>Umroh Reguler</td>
+                                            <td>Rp 5.000.000</td>
+                                            <td>Lunas</td>
+                                            <td>Transfer Bank</td>
+                                            <td>15-01-2025</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-info">Lihat Detail</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Siti Hana</td>
+                                            <td>Haji Plus VIP</td>
+                                            <td>Rp 10.000.000</td>
+                                            <td>Lunas</td>
+                                            <td>Kartu Kredit</td>
+                                            <td>20-01-2025</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-info">Lihat Detail</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- TAB 4: Laporan Pembayaran -->
+                        <div class="tab-pane fade" id="laporan" role="tabpanel" aria-labelledby="laporan-tab">
+                            <h5 class="font-weight-bold">Laporan Pembayaran</h5>
+                            <small class="text-muted d-block mb-3">
+                                Menampilkan laporan keseluruhan pembayaran, dapat difilter berdasarkan periode atau status.
+                            </small>
+                            <hr>
+                            <!-- Contoh filter sederhana (opsional) -->
+                            <div class="form-row mb-3">
+                                <div class="form-group col-md-3">
+                                    <label>Periode Awal</label>
+                                    <input type="date" class="form-control">
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label>Periode Akhir</label>
+                                    <input type="date" class="form-control">
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label>Status Pembayaran</label>
+                                    <select class="form-control">
+                                        <option value="">Semua</option>
+                                        <option>Belum Lunas</option>
+                                        <option>Lunas</option>
+                                        <option>Belum Tervalidasi</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-3 d-flex align-items-end">
+                                    <button class="btn btn-primary w-100">Filter</button>
+                                </div>
+                            </div>
+
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover">
+                                    <thead class="thead-dark">
+                                        <tr class="text-center">
+                                            <th>No</th>
+                                            <th>Nama Jamaah</th>
+                                            <th>Paket</th>
+                                            <th>Jumlah Pembayaran</th>
+                                            <th>Tanggal Pembayaran</th>
+                                            <th>Metode Pembayaran</th>
+                                            <th>Status Pembayaran</th>
+                                            <th>Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>John Doe</td>
+                                            <td>Umroh</td>
+                                            <td>Rp 15.000.000</td>
+                                            <td>10-01-2025</td>
+                                            <td>Transfer Bank</td>
+                                            <td>Belum Lunas</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-info">Lihat</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Jane Smith</td>
+                                            <td>Haji</td>
+                                            <td>Rp 30.000.000</td>
+                                            <td>11-01-2025</td>
+                                            <td>Kartu Kredit</td>
+                                            <td>Lunas</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-info">Lihat</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Bob Johnson</td>
+                                            <td>Wisata</td>
+                                            <td>Rp 5.000.000</td>
+                                            <td>12-01-2025</td>
+                                            <td>Tunai</td>
+                                            <td>Belum Tervalidasi</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-info">Lihat</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- TAB 5: Tambah Pembayaran Manual -->
                         <div class="tab-pane fade" id="manual" role="tabpanel" aria-labelledby="manual-tab">
                             <h5 class="font-weight-bold">Tambah Pembayaran Manual</h5>
                             <small class="text-muted d-block mb-3">
-                                Input data pembayaran secara manual untuk pembayaran melalui metode lain.
+                                Input data pembayaran secara manual (transfer bank, tunai, dsb) yang belum tercatat otomatis.
                             </small>
                             <hr>
                             <form>
@@ -109,7 +351,21 @@
                                     <input type="date" class="form-control" required>
                                 </div>
                                 <div class="form-group">
-                                    <label>Catatan (Opsional)</label>
+                                    <label>Metode Pembayaran</label>
+                                    <select class="form-control" required>
+                                        <option value="">Pilih Metode</option>
+                                        <option>Transfer Bank</option>
+                                        <option>Kartu Kredit</option>
+                                        <option>Tunai</option>
+                                        <option>Dll</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Bukti Pembayaran (Opsional)</label>
+                                    <input type="file" class="form-control-file">
+                                </div>
+                                <div class="form-group">
+                                    <label>Keterangan (Opsional)</label>
                                     <textarea class="form-control" rows="2" placeholder="Masukkan catatan jika ada"></textarea>
                                 </div>
                                 <div class="d-flex justify-content-end">
