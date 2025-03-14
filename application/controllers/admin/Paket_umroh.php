@@ -11,7 +11,7 @@ class Paket_umroh extends CI_Controller {
 			'content' => 'admin/paket_umroh',
 			'title' => 'Paket Umroh'
 		);
-		$this->load->view('template', $data);
+		$this->load->view('template_admin', $data);
         
     }
 

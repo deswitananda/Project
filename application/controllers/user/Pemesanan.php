@@ -12,7 +12,7 @@ class Pemesanan extends CI_Controller {
 			'content' => 'user/pemesanan',
 			'title' => 'Pemesanan'
 		);
-		$this->load->view('template', $data);
+		$this->load->view('template_user', $data);
         
     }
 

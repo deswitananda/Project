@@ -13,7 +13,7 @@ class Paket_haji extends CI_Controller {
 			'content' => 'admin/paket_haji',
 			'title' => 'Paket Haji'
 		);
-		$this->load->view('template', $data);
+		$this->load->view('template_admin', $data);
         
     }
 

@@ -12,7 +12,7 @@ class Pembayaran extends CI_Controller {
 			'content' => 'user/pembayaran',
 			'title' => 'Pembayaran'
 		);
-		$this->load->view('template', $data);
+		$this->load->view('template_user', $data);
         
     }
 

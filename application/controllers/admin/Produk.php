@@ -11,7 +11,7 @@ class Produk extends CI_Controller {
 			'content' => 'admin/produk',
 			'title' => 'Produk'
 		);
-		$this->load->view('template', $data);
+		$this->load->view('template_admin', $data);
         
     }
 

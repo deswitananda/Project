@@ -12,7 +12,7 @@ class Artikel extends CI_Controller {
 			'content' => 'user/artikel',
 			'title' => 'Artikel'
 		);
-		$this->load->view('template', $data);
+		$this->load->view('template_user', $data);
         
     }
 
