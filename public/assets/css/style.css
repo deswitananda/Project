@@ -1,0 +1,58 @@
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 8px 0;
+}
+
+/* Ukuran Logo Navbar */
+.logo-navbar {
+  height: 60px;
+  width: auto;
+  max-width: 150px;
+  object-fit: contain;
+  cursor: default;
+}
+
+/* Warna emas untuk judul H1 */
+.title-home,
+.title-umroh {
+  color: #a89c29;
+}
+
+/* Menu Navbar */
+.navbar-nav .nav-link {
+  font-size: 14px;
+  font-weight: 600;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #a89c29;
+  transform: scale(1.1);
+}
+
+/* Tombol */
+.btn-masuk,
+.btn-daftar {
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.btn-primary:hover {
+  background-color: #2d336b;
+}

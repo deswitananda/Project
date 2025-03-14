@@ -13,6 +13,7 @@ class Home extends CI_Controller {
         $this->load->view('layouts/perusahaan');
         $this->load->view('layouts/paket');
         $this->load->view('layouts/blog');
+        $this->load->view('layouts/footer');
     }
 
 }
