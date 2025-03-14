@@ -2,14 +2,6 @@
 <html lang="en">
 
 <head>
-<<<<<<< HEAD
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?= base_url('public/template/css/bootstrap.min.css'); ?>">
-    <link rel="stylesheet" href="<?= base_url('public/template/css/style.css'); ?>">
-    <!-- Untuk Font Awesome 6 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-=======
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Choose Your Package</title>
@@ -24,7 +16,6 @@
             margin: 0;
             padding: 0;
         }
->>>>>>> 4492dc7 (homepage)
 
         .pricing-section {
             padding: 60px 15px;
@@ -173,58 +164,14 @@
                 <a href="#">See More &raquo;</a>
             </div>
 
-<<<<<<< HEAD
-            </div>
-        </div>
-
-
-        <!-- Paket Cards -->
-        <div class="row mt-4">
-            <div class="col-md-6 col-lg-3">
-                <div class="card card-umrah">
-                    <img src="<?= base_url('public/template/images/mekkah.jpg'); ?>"
-                        class="card-img-top img-fluid rounded"
-                        alt="Paket Umroh" />
-
-                    <div class="card-body">
-                        <div class="info">
-                            <h5 class="name">
-                                <a href="#">Paket Umroh</a>
-                            </h5>
-
-                            <div class="text-icon">
-                                <div class="item">
-                                    <div style="display: flex; align-items: center; gap: 10px;">
-                                        <div><i class="fa-solid fa-calendar"></i> Tanggal</div>
-                                        <div class="text">04 March 2025</div>
-                                    </div>
-                                </div>
-
-                                <div class="item">
-                                    <div><i class="fa-solid fa-plane"></i> Maskapai</div>
-                                    <div class="text">Citilink</div>
-                                </div>
-                            </div>
-
-                            <div class="price">
-                                <div class="text">Mulai dari</div>
-                                <div class="promo">
-                                    <div class="normal">Rp 35.000.000</div>
-                                    <div class="discount">Rp 30.000.000</div>
-                                </div>
-                            </div>
-
-                            <a href="#" class="btn btn-primary w-100 mt-3">Detail Produk</a>
-=======
             <div class="row justify-content-center">
                 <!-- Card 1: Premium Hajj -->
                 <div class="col-md-4 mb-4">
                     <div class="pricing-card">
-                        <img src="public/assets/images/kabah 3.jpg" alt="Premium Hajj" class="card-img" />
+                        <img src="public/template/images/kabah 3.jpg" alt="Premium Hajj" class="card-img" />
                         <h3>Premium Hajj</h3>
                         <div class="price">
                             <span class="currency">$</span>450
->>>>>>> 4492dc7 (homepage)
                         </div>
                         <button class="btn-package mb-3">Get Started Now</button>
                         <ul>
@@ -237,24 +184,10 @@
                     </div>
                 </div>
 
-<<<<<<< HEAD
-
-            </div>
-
-            <div class="col-md-6 col-lg-3">
-                <div class="card">
-                    <img src="<?= base_url('public/template/images/mekkah.jpg'); ?>" class="card-img-top img-fluid rounded" alt="Paket Umroh">
-                    <div class="card-body">
-                        <h5 class="name"><a href="#">Paket Umroh</a></h5>
-                        <p><i class="ti ti-calendar-minus me-2"></i> 25 February 2025</p>
-                        <p><i class="ti ti-plane-departure me-2"></i> Lion Air</p>
-                        <p class="text">Mulai dari: <span class="text-danger">Rp 33.000.000</span></p>
-                        <a href="#" class="btn btn-primary w-100 mt-3">Detail Produk</a>
-=======
                 <!-- Card 2: Family Umrah (Highlight) -->
                 <div class="col-md-4 mb-4">
                     <div class="pricing-card highlight">
-                        <img src="public/assets/images/kabah 3.jpg" alt="Family Umrah" class="card-img" />
+                        <img src="public/template/images/kabah 3.jpg" alt="Family Umrah" class="card-img" />
                         <h3>Family Umrah</h3>
                         <div class="price">
                             <span class="currency">$</span>550
@@ -267,38 +200,13 @@
                             <li><i class="fa fa-check"></i> Local Meals</li>
                             <li><i class="fa fa-check"></i> Visa Included</li>
                         </ul>
->>>>>>> 4492dc7 (homepage)
                     </div>
                 </div>
 
-<<<<<<< HEAD
-            <div class="col-md-6 col-lg-3">
-                <div class="card">
-                    <img src="<?= base_url('public/template/images/mekkah.jpg'); ?>" class="card-img-top img-fluid rounded" alt="Paket Umroh">
-                    <div class="card-body">
-                        <h5 class="name"><a href="#">Paket Umroh</a></h5>
-                        <p><i class="ti ti-calendar-minus me-2"></i> 19 February 2025</p>
-                        <p><i class="ti ti-plane-departure me-2"></i> Lion Air</p>
-                        <p class="text">Mulai dari: <span class="text-danger">Rp 29.000.000</span></p>
-                        <a href="#" class="btn btn-primary w-100 mt-3">Detail Produk</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-3">
-                <div class="card">
-                    <img src="<?= base_url('public/template/images/mekkah.jpg'); ?>" class="card-img-top img-fluid rounded" alt="Paket Umroh">
-                    <div class="card-body">
-                        <h5 class="name"><a href="#">Paket Umroh</a></h5>
-                        <p><i class="ti ti-calendar-minus me-2"></i> 04 April 2025</p>
-                        <p><i class="ti ti-plane-departure me-2"></i> Lion Air</p>
-                        <p class="text">Mulai dari: <span class="text-danger">Rp 35.000.000</span></p>
-                        <a href="#" class="btn btn-primary w-100 mt-3">Detail Produk</a>
-=======
                 <!-- Card 3: Ramadan Umrah -->
                 <div class="col-md-4 mb-4">
                     <div class="pricing-card">
-                        <img src="public/assets/images/kabah 3.jpg" alt="Ramadan Umrah" class="card-img" />
+                        <img src="public/template/images/kabah 3.jpg" alt="Ramadan Umrah" class="card-img" />
                         <h3>Ramadan Umrah</h3>
                         <div class="price">
                             <span class="currency">$</span>260
@@ -311,7 +219,6 @@
                             <li><i class="fa fa-check"></i> Local Meals</li>
                             <li><i class="fa fa-check"></i> Visa Included</li>
                         </ul>
->>>>>>> 4492dc7 (homepage)
                     </div>
                 </div>
             </div>

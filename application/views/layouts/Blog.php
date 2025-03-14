@@ -2,13 +2,6 @@
 <html lang="en">
 
 <head>
-<<<<<<< HEAD
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?= base_url('template/assets/css/bootstrap.min.css'); ?>">
-    <link rel="stylesheet" href="<?= base_url('template/assets/css/style.css'); ?>">
-    <title>Paket Umroh</title>
-=======
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Haramain News</title>
@@ -89,7 +82,6 @@
             }
         }
     </style>
->>>>>>> 4492dc7 (homepage)
 </head>
 
 <body>
@@ -102,55 +94,12 @@
             <a href="#">See More &raquo;</a>
         </div>
 
-<<<<<<< HEAD
-        </div>
-    </div>
-
-
-    <!-- Paket Cards -->
-    <div class="row mt-4">
-        <div class="col-md-6 col-lg-3">
-            <div class="card">
-                <img src="<?= base_url('template/assets/images/mekkah.jpg'); ?>" class="card-img-top img-fluid rounded" alt="Paket Umroh">
-                <div class="card-body">
-                    <h5 class="name"><a href="#">Paket Umroh</a></h5>
-                    <p><i class="ti ti-calendar-minus me-2"></i> 01 March 2025</p>
-                    <p><i class="ti ti-plane-departure me-2"></i> Lion Air</p>
-                    <p class="text">Mulai dari: <span class="text-danger">Rp 31.500.000</span></p>
-                    <a href="#" class="btn btn-primary w-100 mt-3">Detail Produk</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3">
-            <div class="card">
-                <img src="<?= base_url('template/assets/images/mekkah.jpg'); ?>" class="card-img-top img-fluid rounded" alt="Paket Umroh">
-                <div class="card-body">
-                    <h5 class="name"><a href="#">Paket Umroh</a></h5>
-                    <p><i class="ti ti-calendar-minus me-2"></i> 25 February 2025</p>
-                    <p><i class="ti ti-plane-departure me-2"></i> Lion Air</p>
-                    <p class="text">Mulai dari: <span class="text-danger">Rp 33.000.000</span></p>
-                    <a href="#" class="btn btn-primary w-100 mt-3">Detail Produk</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3">
-            <div class="card">
-                <img src="<?= base_url('template/assets/images/mekkah.jpg'); ?>" class="card-img-top img-fluid rounded" alt="Paket Umroh">
-                <div class="card-body">
-                    <h5 class="name"><a href="#">Paket Umroh</a></h5>
-                    <p><i class="ti ti-calendar-minus me-2"></i> 19 February 2025</p>
-                    <p><i class="ti ti-plane-departure me-2"></i> Lion Air</p>
-                    <p class="text">Mulai dari: <span class="text-danger">Rp 29.000.000</span></p>
-                    <a href="#" class="btn btn-primary w-100 mt-3">Detail Produk</a>
-=======
         <div class="row g-4">
             <!-- Card 1 -->
             <div class="col-md-4">
                 <div class="card blog-card">
                     <img
-                        src="public/assets/images/kabah 1.jpg"
+                        src="public/template/images/kabah 1.jpg"
                         class="card-img-top"
                         alt="Essential Packing Tips" />
                     <div class="card-body text-center">
@@ -164,7 +113,7 @@
             <div class="col-md-4">
                 <div class="card blog-card">
                     <img
-                        src="public/assets/images/kabah 2.jpg"
+                        src="public/template/images/kabah 2.jpg"
                         class="card-img-top"
                         alt="Sacred Journey" />
                     <div class="card-body text-center">
@@ -178,7 +127,7 @@
             <div class="col-md-4">
                 <div class="card blog-card">
                     <img
-                        src="public/assets/images/kabah 3.jpg"
+                        src="public/template/images/kabah 3.jpg"
                         class="card-img-top"
                         alt="Ultimate Guide to Performing Umrah" />
                     <div class="card-body text-center">
@@ -186,26 +135,14 @@
                             The Ultimate Guide to Performing Umrah
                         </h5>
                     </div>
->>>>>>> 4492dc7 (homepage)
                 </div>
             </div>
 
-<<<<<<< HEAD
-        <div class="col-md-6 col-lg-3">
-            <div class="card">
-                <img src="<?= base_url('template/assets/images/mekkah.jpg'); ?>" class="card-img-top img-fluid rounded" alt="Paket Umroh">
-                <div class="card-body">
-                    <h5 class="name"><a href="#">Paket Umroh</a></h5>
-                    <p><i class="ti ti-calendar-minus me-2"></i> 04 April 2025</p>
-                    <p><i class="ti ti-plane-departure me-2"></i> Lion Air</p>
-                    <p class="text">Mulai dari: <span class="text-danger">Rp 35.000.000</span></p>
-                    <a href="#" class="btn btn-primary w-100 mt-3">Detail Produk</a>
-=======
             <!-- Card 4 -->
             <div class="col-md-4">
                 <div class="card blog-card">
                     <img
-                        src="public/assets/images/kabah 3.jpg"
+                        src="public/template/images/kabah 3.jpg"
                         class="card-img-top"
                         alt="Ultimate Guide to Performing Umrah" />
                     <div class="card-body text-center">
@@ -220,7 +157,7 @@
             <div class="col-md-4">
                 <div class="card blog-card">
                     <img
-                        src="public/assets/images/kabah 3.jpg"
+                        src="public/template/images/kabah 3.jpg"
                         class="card-img-top"
                         alt="Ultimate Guide to Performing Umrah" />
                     <div class="card-body text-center">
@@ -235,7 +172,7 @@
             <div class="col-md-4">
                 <div class="card blog-card">
                     <img
-                        src="public/assets/images/kabah 3.jpg"
+                        src="public/template/images/kabah 3.jpg"
                         class="card-img-top"
                         alt="Ultimate Guide to Performing Umrah" />
                     <div class="card-body text-center">
@@ -243,7 +180,6 @@
                             The Ultimate Guide to Performing Umrah
                         </h5>
                     </div>
->>>>>>> 4492dc7 (homepage)
                 </div>
             </div>
         </div>

@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<!-- Travel Section -->
-<div class="container d-flex align-items-center justify-content-center" style="min-height: 85vh; padding-top: 100px; padding-bottom: 60px;">
-    <div class="row align-items-center">
-        <!-- Gambar -->
-        <div class="col-md-6 d-flex justify-content-center">
-            <img src="<?= base_url('public/template/images/mekkah.jpg'); ?>" alt="Mekkah" class="img-fluid rounded" style="max-width: 90%; height: auto;">
-=======
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,7 +26,7 @@
         .hero-section {
             position: relative;
             min-height: 100vh;
-            background: url('public/assets/images/homepage.jpg') center/cover no-repeat;
+            background: url('public/template/images/homepage.jpg') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -220,7 +212,6 @@
                     <i class="bi bi-search"></i> Search
                 </button>
             </div>
->>>>>>> 4492dc7 (homepage)
         </div>
     </section>
 

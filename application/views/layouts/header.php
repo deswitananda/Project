@@ -1,19 +1,5 @@
 <!DOCTYPE html>
 <html lang="id">
-<<<<<<< HEAD
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel Umroh & Haji</title>
-    
-    <!-- Google Font: Poppins -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Bootstrap 4 CSS -->
-    <link rel="stylesheet" href="<?= base_url('public/template/css/bootstrap.min.css'); ?>">
-    <link rel="stylesheet" href="<?= base_url('public/template/css/style.css'); ?>">
-=======
->>>>>>> 4492dc7 (homepage)
 
 <head>
     <meta charset="UTF-8" />
@@ -124,15 +110,6 @@
 
 <body>
 
-<<<<<<< HEAD
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container d-flex justify-content-between">
-        <!-- Logo -->
-        <a class="navbar-brand d-flex align-items-center" href="<?= base_url(); ?>">
-            <img src="<?= base_url('public/template/images/logo.png'); ?>" alt="Travel Umroh & Haji" class="logo-navbar">
-        </a>
-=======
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg">
         <div class="container d-flex align-items-center">
@@ -140,19 +117,12 @@
             <a class="navbar-brand d-flex align-items-center" href="#">
                 <!-- Bungkus logo dalam div -->
                 <div class="logo-circle">
-                    <img src="public/assets/images/logo.png" alt="Berkah Travel Logo">
+                    <img src="public/template/images/logo.png" alt="Berkah Travel Logo">
                 </div>
->>>>>>> 4492dc7 (homepage)
 
                 <h1>Berkah Travel</h1>
             </a>
 
-<<<<<<< HEAD
-        <!-- Tombol Masuk & Daftar -->
-        <div class="d-flex align-items-center">
-            <!-- <a href="<?= base_url('login'); ?>" class="btn btn-outline-primary btn-sm mx-2">Masuk</a> -->
-            <a href="<?= base_url('register'); ?>" class="btn btn-primary btn-sm">Login</a>
-=======
             <!-- Toggler (mobile) -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -197,7 +167,6 @@
                     </div>
                 </div>
             </div>
->>>>>>> 4492dc7 (homepage)
         </div>
     </nav>
 

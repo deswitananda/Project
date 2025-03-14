@@ -2,35 +2,6 @@
 <html lang="en">
 
 <head>
-<<<<<<< HEAD
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?= base_url('public/template/css/bootstrap.min.css'); ?>">
-    <link rel="stylesheet" href="<?= base_url('public/template/css/style.css'); ?>">
-    <title>Document</title>
-</head>
-
-<body>
-    <!-- Tentang Perusahaan -->
-    <div class="container" style="padding-top: 10%;" id="perusahaan">
-        <div class="row align-items-center justify-content-center">
-            <div class="col-md-6 text-center">
-                <h1 class="title-home font-weight-bold mb-3">PT. Travel Haji dan Umroh</h1>
-                <p class="lead mb-4">Layanan terpercaya untuk perjalanan ibadah Anda.</p>
-            </div>
-        </div>
-
-        <div id="carouselExampleControlsNoTouching" class="carousel slide" data-touch="false" data-interval="false">
-            <div class="carousel-inner">
-                <div class="carousel-item active text-center">
-                    <img src="<?= base_url('public/template/images/kabah 2.jpg'); ?>" alt="kabah 2" class="img-fluid rounded" style="max-width: 50%; height: auto;">
-                </div>
-                <div class="carousel-item text-center">
-                    <img src="..." class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item text-center">
-                    <img src="..." class="d-block w-100" alt="...">
-=======
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Travel Service - Single Arch Image</title>
@@ -151,8 +122,7 @@
             <!-- Kolom kiri: gambar tunggal dengan arch -->
             <div class="col-md-6 d-flex justify-content-center mb-4 mb-md-0">
                 <div class="img-arch">
-                    <img src="public/assets/images/perusahaan.jpg" alt="Arch Shaped Mosque" />
->>>>>>> 4492dc7 (homepage)
+                    <img src="public/template/images/perusahaan.jpg" alt="Arch Shaped Mosque" />
                 </div>
             </div>
             <!-- Kolom kanan: teks -->

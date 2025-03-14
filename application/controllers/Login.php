@@ -2,13 +2,14 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Login extends CI_Controller {
+
     public function __construct(){
         parent::__construct();
         $this->load->model('User_model');
     }
 
     public function index(){
-        $this->load->view('login');
+        $this->load->view('login');  // Pastikan ada view login
     }
 
     public function proses_login()
@@ -27,27 +28,41 @@ class Login extends CI_Controller {
                 $ret['error'][$key] = form_error($key);
             }
         } else {
-            // Panggil fungsi login di model dengan username dan password
-            $q = $this->User_model->login($username, $password);
+            // Ambil data user berdasarkan username
+            $q = $this->User_model->login($username);
             if ($q && $q->num_rows() > 0) {
-                // Ambil data user dari query
                 $user = $q->row();
-                // Ambil nilai role dari kolom 'role'
-                $role = $user->role;
+                // Verifikasi password yang di-hash
+                if (password_verify($password, $user->password)) {
+                    $role = $user->role;
 
-                // Set session dengan data user (username dan role)
-                $sess = array(
-                    'is_login' => TRUE,
-                    'username' => $user->username,
-                    'role'     => $role
-                );
-                $this->session->set_userdata($sess);
+                    // Set session
+                    $sess = array(
+                        'is_login' => TRUE,
+                        'username' => $user->username,
+                        'role'     => $role
+                    );
+                    $this->session->set_userdata($sess);
 
-                $ret = array(
-                    'status'  => true,
-                    'message' => 'Login Berhasil',
-                    'role'    => $role
-                );
+                    // Redirect berdasarkan role
+                    if ($role == 'admin') {
+                        $redirect = base_url('admin/dashboard');
+                    } else {
+                        $redirect = base_url('user/dashboard');
+                    }
+
+                    $ret = array(
+                        'status'  => true,
+                        'message' => 'Login Berhasil',
+                        'role'    => $role,
+                        'redirect' => $redirect
+                    );
+                } else {
+                    $ret = array(
+                        'status'  => false,
+                        'message' => 'Username atau Password Salah'
+                    );
+                }
             } else {
                 $ret = array(
                     'status'  => false,
@@ -63,4 +78,3 @@ class Login extends CI_Controller {
         echo json_encode(['status' => true, 'message' => 'Logout berhasil.']);
     }
 }
-?>

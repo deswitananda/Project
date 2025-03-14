@@ -5,6 +5,7 @@ class Paket_haji extends CI_Controller {
     public function __construct(){
         parent::__construct();
         $this->load->model('Produk_model', 'pm');
+        $this->load->helper('actionbtn');
     }
 
     public function index(){
@@ -27,8 +28,16 @@ class Paket_haji extends CI_Controller {
             $row[] = '<input type="checkbox" class="data-check" value="' . $da->id . '">';
             $row[] = $no;
             $row[] = $da->nama_paket;
+            $row[] = $da->deskripsi;
             $row[] = $da->harga;
+            $row[] = $da->durasi;
+            $row[] = $da->tanggal_berangkat;
+            $row[] = $da->tanggal_pulang;
+            $row[] = $da->fasilitas;
             $row[] = $da->maskapai;
+            $row[] = $da->kuota;
+            $row[] = $da->status;
+            $row[] = actBtnnnn($da->id, 'paket_haji');
             $data[] = $row;
         }
     

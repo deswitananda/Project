@@ -25,6 +25,8 @@
 <!-- MAIN CSS -->
 <link rel="stylesheet" href="<?php echo base_url(); ?>public/assets/css/main.css">
 <link rel="stylesheet" href="<?php echo base_url(); ?>public/assets/css/color_skins.css">
+<link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/bootstrap-multiselect/bootstrap-multiselect.css">
+<link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/parsleyjs/css/parsley.css">
 
 <!-- jQuery  -->
 <script src="<?php echo base_url(); ?>assets/vendor/jquery/jquery.min.js"></script>
@@ -446,11 +448,22 @@
 <script src="<?php echo base_url(); ?>assets/vendor/jquery-datatable/buttons/buttons.colVis.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/vendor/jquery-datatable/buttons/buttons.html5.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/vendor/jquery-datatable/buttons/buttons.print.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/vendor/bootstrap-multiselect/bootstrap-multiselect.js"></script>
+<script src="<?php echo base_url(); ?>assets/vendor/parsleyjs/js/parsley.min.js"></script>
 
 <script src="<?php echo base_url(); ?>assets/vendor/sweetalert/sweetalert.min.js"></script> <!-- SweetAlert Plugin Js --> 
 
 <script src="<?php echo base_url(); ?>public/assets/bundles/morrisscripts.bundle.js"></script>
 <script src="<?php echo base_url(); ?>public/assets/js/pages/tables/jquery-datatable.js"></script>
+<script>
+$(function() {
+        // validation needs name of the element
+        $('#food').multiselect();
+
+        // initialize after multiselect
+        $('#basic-form').parsley();
+    });
+    </script>
 </body>
 </html>
 

@@ -13,12 +13,21 @@ $(document).ready(function() {
 
 });
 
-// $(document).on("click", ".btnRefresh", function() {
-//     let target = $(this).data('target');
-//     var table = $("#table_" + target);
-//     // var table = $("#table_" + currentClass);
-//     reloadTable(table);
-// });
+$(document).on("click", ".btnRefresh", function() {
+    let target = $(this).data('target');
+    var table = $("#table_" + target);
+    // var table = $("#table_" + currentClass);
+    reloadTable(table);
+});
+
+$(document).on('click', '.btnTambah', function(){
+	var targetController = $(this).data('target');
+	$('#id').val('');
+	
+	$('#form_' + targetController).trigger('reset');
+	$('#modal_' + targetController).modal('show');
+
+})
 
 function reloadTable(el) {
     return el.DataTable().ajax.reload(null, false);

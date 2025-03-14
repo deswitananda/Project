@@ -255,5 +255,49 @@
     </div>
   </div>
 
+  <script>
+  $(document).ready(function() {
+    $('#registerBtn').click(function() {
+      // Reset pesan error dan class validasi
+      $('.error-block').html('');
+      $('input').removeClass('is-invalid');
+
+      $.ajax({
+        url: '<?php echo base_url('register/proses_register'); ?>',
+        type: 'POST',
+        data: {
+          username: $('[name="username"]').val(),
+          email: $('[name="email"]').val(),
+          password: $('[name="password"]').val(),
+          terms: $('[name="terms"]').is(':checked') ? 1 : 0
+        },
+        dataType: 'json',
+        success: function(response) {
+          if (response.status) {
+            // Redirect setelah registrasi berhasil, misalnya ke halaman welcome
+            window.location.href = '<?php echo base_url('login'); ?>';
+          } else {
+            if (response.error) {
+              // Tampilkan error per input
+              for (var prop in response.error) {
+                if (response.error[prop] !== '') {
+                  $("#form_register [name=" + prop + "]")
+                    .addClass('is-invalid')
+                    .next('.error-block')
+                    .html(response.error[prop]);
+                }
+              }
+            } else {
+              // Tangani error umum jika diperlukan
+              alert('Terjadi kesalahan, silakan coba lagi.');
+            }
+          }
+        }
+      });
+    });
+  });
+</script>
+
+
 </body>
 </html>

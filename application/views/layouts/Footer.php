@@ -155,9 +155,9 @@
                 <div class="col-md-3 mb-4 footer-col">
                     <h5>Gallery</h5>
                     <div class="footer-gallery d-flex flex-wrap">
-                        <img src="public/assets/images/kabah 1.jpg" alt="gallery1" />
-                        <img src="public/assets/images/kabah 2.jpg" alt="gallery2" />
-                        <img src="public/assets/images/kabah 3.jpg" alt="gallery3" />
+                        <img src="public/template/images/kabah 1.jpg" alt="gallery1" />
+                        <img src="public/template/images/kabah 2.jpg" alt="gallery2" />
+                        <img src="public/template/images/kabah 3.jpg" alt="gallery3" />
                     </div>
                 </div>
             </div>
@@ -169,9 +169,9 @@
                 </div>
                 <div class="col-md-6 text-md-end payment-icons">
                     <span>We accept:</span>
-                    <img src="public/assets/images/visa.jpg" alt="Visa" />
-                    <img src="public/assets/images/mastercard.jpg" alt="Mastercard" />
-                    <img src="public/assets/images/paypal.jpg" alt="PayPal" />
+                    <img src="public/template/images/visa.jpg" alt="Visa" />
+                    <img src="public/template/images/mastercard.jpg" alt="Mastercard" />
+                    <img src="public/template/images/paypal.jpg" alt="PayPal" />
                 </div>
             </div>
         </div>
