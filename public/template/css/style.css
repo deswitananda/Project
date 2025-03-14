@@ -208,3 +208,89 @@ html, body {
 .custom-control-input {
     margin-right: 10px;
 }
+
+/* file: public/template/css/style.css */
+
+.custom-settings-nav .nav-link {
+    border-radius: 30px;
+    color: #495057;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    padding: 10px 15px;
+}
+.custom-settings-nav .nav-link:hover {
+    background-color: #f1f1f1;
+    color: #333;
+    text-decoration: none;
+}
+.custom-settings-nav .nav-link.active {
+    background-color: #007bff; /* Warna latar tab aktif */
+    color: #fff !important;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+.icon-settings {
+    font-size: 18px;
+}
+
+/* NAVBAR */
+.theme-umroh .navbar {
+    background-color: #000;           
+    border-bottom: 2px solid #FFD700; 
+}
+.theme-umroh .navbar .navbar-brand .name {
+    color: #FFD700; 
+}
+.theme-umroh .navbar .nav > li > a,
+.theme-umroh .navbar .navbar-right > ul > li > a {
+    color: #ffffff; 
+}
+.theme-umroh .navbar .nav > li > a:hover {
+    color: #FFD700; 
+}
+
+/* SIDEBAR */
+.theme-umroh #leftsidebar {
+    background-color: #1A1A1A; 
+}
+.theme-umroh #leftsidebar .sidebar-nav li a {
+    color: #ccc; 
+}
+.theme-umroh #leftsidebar .sidebar-nav li a:hover,
+.theme-umroh #leftsidebar .sidebar-nav li.active > a {
+    background-color: #FFD700; 
+    color: #000;             
+}
+
+/* BTN PRIMARY */
+.theme-umroh .btn-primary {
+    background-color: #FFD700; 
+    border-color: #FFD700;
+    color: #000;               
+}
+.theme-umroh .btn-primary:hover {
+    background-color: #FFC107; 
+    border-color: #FFC107;
+    color: #000;
+}
+
+/* LINK UMUM */
+.theme-umroh a {
+    color: #FFD700; 
+}
+.theme-umroh a:hover {
+    color: #FFC107; 
+}
+
+/* CARD / KOMPONEN LAINNYA */
+.theme-umroh .card {
+    border-color: #FFD700; 
+}
+.theme-umroh .card .card-header {
+    background-color: #FFD700; 
+    color: #000;
+}
+
+/* Sidebar shadow */
+.sidebar {
+    box-shadow: 6px 0 10px rgba(0, 0, 0, 0.3); 
+}
