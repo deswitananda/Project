@@ -7,8 +7,11 @@
     <title>Berkah Travel Home</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
-    <!-- Bootstrap Icons (opsional) -->
+    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         /* Reset dasar */
         * {
@@ -18,7 +21,7 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             overflow-x: hidden;
         }
 
@@ -35,7 +38,7 @@
             padding: 0 15px;
         }
 
-        /* Overlay gelap agar teks terbaca jelas */
+        /* Overlay agar teks terbaca jelas */
         .hero-section::before {
             content: "";
             position: absolute;
@@ -43,7 +46,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.4);
             z-index: 1;
         }
 
@@ -63,6 +66,7 @@
 
         .hero-subtitle {
             font-size: 1.2rem;
+            font-weight: 600;
             margin-bottom: 30px;
             line-height: 1.6;
         }
@@ -73,34 +77,29 @@
             padding: 12px 30px;
             border-radius: 30px;
             font-weight: 600;
-            text-decoration: none;
             border: none;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s;
             margin-bottom: 30px;
         }
 
         .btn-hero:hover {
             background-color: #ff9800;
-            color: #fff;
+            transform: translateY(-2px);
         }
 
         /* Search Box Container */
         .search-box {
             background-color: #fff;
             border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             padding: 20px;
             display: flex;
             flex-wrap: wrap;
             gap: 15px;
             justify-content: space-between;
             align-items: center;
-            margin-top: 40px;
-            color: #000;
             max-width: 600px;
-            /* Membatasi lebar search box */
             margin: 40px auto 0;
-            /* Terpusat dan beri jarak atas */
         }
 
         .search-box .form-group {
@@ -113,13 +112,14 @@
             font-weight: 600;
             margin-bottom: 5px;
             display: block;
+            color: #333;
         }
 
         .search-box input,
         .search-box select {
             width: 100%;
-            padding: 6px 10px;
-            border: 1px solid #ccc;
+            padding: 8px 10px;
+            border: 1px solid #ddd;
             border-radius: 5px;
         }
 
@@ -139,7 +139,7 @@
             background-color: #ffc107;
         }
 
-        /* Responsive: Untuk tampilan mobile */
+        /* Responsive untuk tampilan mobile */
         @media (max-width: 576px) {
             .hero-title {
                 font-size: 2rem;
@@ -156,13 +156,9 @@
             .search-box {
                 flex-direction: column;
                 align-items: stretch;
-                gap: 15px;
             }
 
-            .search-box .form-group {
-                width: 100%;
-            }
-
+            .search-box .form-group,
             .search-box button {
                 width: 100%;
             }
@@ -175,10 +171,9 @@
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="hero-content">
-            <h1 class="hero-title">Hajj Umrah</h1>
+            <h1 class="hero-title">BERKAH TRAVEL</h1>
             <p class="hero-subtitle">
-                Deluxe Umrah Packages <br />
-                Started from <span style="color: #ffc107; font-weight: 700;">USD 3235</span>
+                Selamat datang di Berkah Travel – mitra perjalanan ibadah dan wisata terpercaya! Kami hadir untuk membantu Anda mewujudkan perjalanan spiritual dan liburan yang berkesan.
             </p>
             <button class="btn-hero">Get Started</button>
 
@@ -186,12 +181,12 @@
             <div class="search-box">
                 <!-- Flight Date -->
                 <div class="form-group">
-                    <label for="flight-date">Flight Date</label>
+                    <label for="flight-date">Jadwal Penerbangan</label>
                     <input type="date" id="flight-date" />
                 </div>
                 <!-- Packages -->
                 <div class="form-group">
-                    <label for="packages">Packages</label>
+                    <label for="packages">Kategori</label>
                     <select id="packages">
                         <option value="">Umrah</option>
                         <option value="">Hajj</option>
@@ -200,7 +195,7 @@
                 </div>
                 <!-- Price -->
                 <div class="form-group">
-                    <label for="price">Price</label>
+                    <label for="price">Harga</label>
                     <select id="price">
                         <option value="">$2000 - $3000</option>
                         <option value="">$3001 - $4000</option>
