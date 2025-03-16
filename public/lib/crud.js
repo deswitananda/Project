@@ -1,9 +1,27 @@
 $(document).ready(function() {
+    $('.loadSelect').each(function () {
+        let targetController = $(this).data('target');
+        // $('#id_' + targetController)
+        let url = baseClass + '/option_' + targetController;
+        $(this).load(url);
+    });
 
     $('.table').each(function () {
         let target = $(this).data('target');
         var table = $("#table_" + target);
         loadDataTable(table);
+    });
+
+    $(document).on('hidden.bs.modal', '.modal', function () {
+        const modal = $(this);
+        const form = modal.find('form')[0];
+    
+        if (form) {
+            form.reset(); // Reset form
+        }
+        
+        modal.find('.text-danger').text(''); // Hapus pesan error
+        modal.find('.is-invalid, .is-valid').removeClass('is-invalid is-valid'); // Hapus kelas validasi
     });
 
     
@@ -69,6 +87,130 @@ function loadDataTable(el, filter = '') {
         ]
     });
 }
+
+$(document).on('click', '.editBtn', function() {
+	let targetController = $(this).data('target');
+	let id = $(this).data('value');
+	let url = baseClass +'/edit_' + targetController + '/' + id;
+	let form = '#form_' + targetController;
+	$.ajax({
+		url: url,
+		type: 'POST',
+		data: {
+			id: id
+		},
+		dataType: 'json',
+		success: function(response) {
+			if (response.status) {
+				$.each(response.data, function (i, item) {
+					$(form + ' [name="' + i + '"]').val(item);
+				});
+				$('#modal_' + targetController).modal('show');
+			} else {
+				alert(response.message);
+			}
+		}
+
+	})
+});
+
+$(document).on('click', '.btnSave', function() {
+    $('.text-danger').html('');
+    $('input').removeClass('is-invalid');
+
+    var targetController = $(this).data('target');
+    var formElement = $('#form_' + targetController)[0];
+    var table = $("#table_" + targetController);
+    var formData = new FormData(formElement);
+
+    $.ajax({
+        url: baseClass + '/save_' + targetController,
+        type: 'POST',
+        data: formData,
+        processData: false,
+        contentType: false,
+        dataType: 'json',
+        success: function(response) {
+            if (response.status) {
+                // Gantilah alert dengan SweetAlert
+                $('#modal_' + targetController).modal('hide'); // Tutup modal setelah OK ditekan
+                swal({
+                    title: "Sukses!",
+                    text: response.message,
+                    icon: "success",
+                    button: "OK"
+                }).then(() => {
+                    reloadTable(table);
+                });
+                reloadTable(table);
+
+            } else {
+                $('.text-danger').html('');
+                $('input').removeClass('is-invalid').removeClass('is-valid');
+
+                if (response.error) {
+                    for (var prop in response.error) {
+                        if (response.error[prop] !== '') {
+                            $('#form_' + targetController + " [name=" + prop + "] ").addClass('is-invalid')
+                                .next('.text-danger').html(response.error[prop]);
+                        }
+                    }
+                }
+            }
+        }
+    });
+});
+
+
+$(document).on('click', '.deleteBtn', function() {
+	var targetController = $(this).data('target');
+	var table = $("#table_" + targetController);
+	var id = $(this).data('value');
+	$.ajax({
+		url: baseClass +'/delete_' + targetController,
+		type: 'POST',
+		data: {
+			id: id
+		},
+		dataType: 'json',
+		success: function(response) {
+			if (response.status) {
+				alert(response.message);
+				reloadTable(table);
+			} else {
+				alert(response.message);
+			}
+		}
+
+	})
+})
+
+
+$(document).on('click', '.detailBtn', function() {
+    let targetController = $(this).data('target');
+    let id = $(this).data('value');
+    let url = baseClass + '/get_detail_' + targetController + '/' + id;
+
+    $.ajax({
+        url: url,
+        type: 'POST',
+        data: { id: id },
+        dataType: 'json',
+        success: function(response) {
+            if (response.status) {
+                // Mengisi data ke modal
+                $.each(response.data, function(i, item) {
+                    $('#detailModal [name="' + i + '"]').val(item);
+                });
+
+                // Menampilkan modal
+                $('#detailModal').modal('show');
+            } else {
+                alert(response.message);
+            }
+        }
+    });
+});
 
 
 

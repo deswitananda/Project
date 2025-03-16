@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/jquery-datatable/fixedeader/dataTables.fixedcolumns.bootstrap4.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/jquery-datatable/fixedeader/dataTables.fixedheader.bootstrap4.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/sweetalert/sweetalert.css"/>
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/sweetalert/sweetalert.css"/>
 
     <!-- Theme Umroh CSS (override) -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>public/template/css/style.css">
@@ -44,15 +45,17 @@
     <script src="<?php echo base_url(); ?>assets/vendor/jquery-datatable/buttons/buttons.html5.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/vendor/jquery-datatable/buttons/buttons.print.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/vendor/sweetalert/sweetalert.min.js"></script>
-
+    
     <!-- CRUD (Contoh) -->
     <script src="<?php echo base_url('public/lib/crud.js');?>"></script>
-    
+    <!-- <script src="<?php echo base_url('public/lib/chainedSelect.js');?>"></script> -->
     <script>
         var baseUrl = '<?php echo base_url(); ?>';
         var currentClass = '<?php echo $this->router->fetch_class(); ?>';
         var baseClass = baseUrl + 'admin' + '/' + currentClass;
     </script>
+
+    
 </head>
 
 <!-- Ganti class "theme-blue" menjadi "theme-umroh" -->
