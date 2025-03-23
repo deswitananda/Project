@@ -62,7 +62,7 @@ class Pemesanan extends CI_Controller {
 
         $id = $this->input->post('id');
         $data['deleted_at'] = time();
-        $q = $this->pm->updatePendaftaran($id, $data);
+        $q = $this->pm->updatePemesanan($id, $data);
 
         if ($q) {
             $ret['status'] = true;

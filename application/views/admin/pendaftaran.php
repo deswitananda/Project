@@ -16,10 +16,6 @@
     <div class="card-body">
         <div class="">
             <div class="body">
-                <button class="btn btn-primary m-b-15 btnTambah" type="button" data-target="pendaftaran_admin"
-                    data-toggle="modal">
-                    <i class="fa fa-plus-square" aria-hidden="true"></i> Tambah Pendaftaran
-                </button>
                 <button class="btn btn-secondary btnRefresh m-b-15" data-target="pendaftaran_admin">
                     <i class="fa fa-refresh"></i>
                 </button>
