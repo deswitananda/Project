@@ -124,90 +124,142 @@ class Pemesanan extends CI_Controller {
         echo json_encode($ret);
     }
 
+    // public function save_pemesanan_user()
+    // {
+    //     $id = $this->input->post('id');
+    //     $data['id_kategori'] = $this->input->post('id_kategori');
+    //     $data['id_pendaftaran'] = $this->input->post('id_pendaftaran');
+    //     $data['id_produk'] = $this->input->post('id_produk');
+    //     $data['tanggal_pemesanan'] = date('Y-m-d H:i:s');
+    //     $data['updated_at'] = date('Y-m-d H:i:s');
+    //     $data['deleted_at'] = 0;
+    
+    //     // Mendapatkan kategori yang dipilih
+    //     $kategori = $this->input->post('id_kategori');  // Misal kategori 1 = 'H' untuk Haji
+    //     // Anda bisa mengganti logika ini sesuai dengan data kategori yang ada di sistem Anda
+    //     switch ($kategori) {
+    //         case 1:
+    //             $kategori_huruf = 'H';  // Kategori Haji
+    //             break;
+    //         case 2:
+    //             $kategori_huruf = 'U';  // Kategori Umroh
+    //             break;
+    //         default:
+    //             $kategori_huruf = 'X';  // Kategori lain atau default
+    //     }
+    
+    //     // Mendapatkan angka urut untuk kode_pemesanan
+    //     $this->db->select('MAX(CAST(SUBSTRING(kode_pemesanan, 3, LENGTH(kode_pemesanan) - 5) AS UNSIGNED)) as max_kode');
+    //     $this->db->where('kode_pemesanan LIKE', 'A-%');
+    //     $query = $this->db->get('pemesanan');
+    //     $row = $query->row();
+    
+    //     // Set angka urut, jika tidak ada maka dimulai dari 1
+    //     $next_number = ($row->max_kode) ? $row->max_kode + 1 : 1;
+    
+    //     // Format kode_pemesanan, misalnya A-0001
+    //     $kode_pemesanan = 'A-' . str_pad($next_number, 4, '0', STR_PAD_LEFT);
+    
+    //     // Menambahkan kategori yang dipilih di belakang kode
+    //     $kode_pemesanan .= '-' . $kategori_huruf;
+    
+    //     // Masukkan kode_pemesanan ke data
+    //     $data['kode_pemesanan'] = $kode_pemesanan;
+    
+    //     $this->form_validation->set_rules('id_pendaftaran', 'Nama Lengkap', 'trim|required', array('required' => '%s harus diisi'));
+    
+    //     if ($this->form_validation->run() == FALSE) {
+    //         $ret['status'] = false;
+    //         foreach ($_POST as $key => $value) {
+    //             $ret['error'][$key] = form_error($key);
+    //         }
+    //     } else {
+    //         if ($id) {
+    //             $update = $this->pm->updatePemesanan($id, $data);
+    //             if ($update) {
+    //                 $ret = array(
+    //                     'status' => true,
+    //                     'message' => 'Data berhasil diupdate'
+    //                 );
+    //             } else {
+    //                 $ret = array(
+    //                     'status' => false,
+    //                     'message' => 'Data gagal diupdate'
+    //                 );
+    //             }
+    //         } else {
+    //             $data['created_at'] = date('Y-m-d H:i:s');
+    //             $insert = $this->pm->insertPemesanan($data);
+    
+    //             if ($insert) {
+    //                 $ret = array(
+    //                     'status' => true,
+    //                     'message' => 'Data berhasil disimpan',
+    //                     'kode_pemesanan' => $kode_pemesanan  // Kode pemesanan yang baru
+    //                 );
+    //             } else {
+    //                 $ret = array(
+    //                     'status' => false,
+    //                     'message' => 'Data gagal disimpan'
+    //                 );
+    //             }
+    //         }
+    //     }
+    //     echo json_encode($ret);
+    // }
+    
+
+
     public function save_pemesanan_user()
-    {
-        $id = $this->input->post('id');
-        $data['id_kategori'] = $this->input->post('id_kategori');
-        $data['id_pendaftaran'] = $this->input->post('id_pendaftaran');
-        $data['id_produk'] = $this->input->post('id_produk');
-        $data['tanggal_pemesanan'] = date('Y-m-d H:i:s');
-        $data['updated_at'] = date('Y-m-d H:i:s');
-        $data['deleted_at'] = 0;
-    
-        // Mendapatkan kategori yang dipilih
-        $kategori = $this->input->post('id_kategori');  // Misal kategori 1 = 'H' untuk Haji
-        // Anda bisa mengganti logika ini sesuai dengan data kategori yang ada di sistem Anda
-        switch ($kategori) {
-            case 1:
-                $kategori_huruf = 'H';  // Kategori Haji
-                break;
-            case 2:
-                $kategori_huruf = 'U';  // Kategori Umroh
-                break;
-            default:
-                $kategori_huruf = 'X';  // Kategori lain atau default
-        }
-    
-        // Mendapatkan angka urut untuk kode_pemesanan
-        $this->db->select('MAX(CAST(SUBSTRING(kode_pemesanan, 3, LENGTH(kode_pemesanan) - 5) AS UNSIGNED)) as max_kode');
-        $this->db->where('kode_pemesanan LIKE', 'A-%');
-        $query = $this->db->get('pemesanan');
-        $row = $query->row();
-    
-        // Set angka urut, jika tidak ada maka dimulai dari 1
-        $next_number = ($row->max_kode) ? $row->max_kode + 1 : 1;
-    
-        // Format kode_pemesanan, misalnya A-0001
-        $kode_pemesanan = 'A-' . str_pad($next_number, 4, '0', STR_PAD_LEFT);
-    
-        // Menambahkan kategori yang dipilih di belakang kode
-        $kode_pemesanan .= '-' . $kategori_huruf;
-    
-        // Masukkan kode_pemesanan ke data
-        $data['kode_pemesanan'] = $kode_pemesanan;
-    
-        $this->form_validation->set_rules('id_pendaftaran', 'Nama Lengkap', 'trim|required', array('required' => '%s harus diisi'));
-    
-        if ($this->form_validation->run() == FALSE) {
-            $ret['status'] = false;
-            foreach ($_POST as $key => $value) {
-                $ret['error'][$key] = form_error($key);
-            }
-        } else {
-            if ($id) {
-                $update = $this->pm->updatePemesanan($id, $data);
-                if ($update) {
-                    $ret = array(
-                        'status' => true,
-                        'message' => 'Data berhasil diupdate'
-                    );
-                } else {
-                    $ret = array(
-                        'status' => false,
-                        'message' => 'Data gagal diupdate'
-                    );
-                }
-            } else {
-                $data['created_at'] = date('Y-m-d H:i:s');
-                $insert = $this->pm->insertPemesanan($data);
-    
-                if ($insert) {
-                    $ret = array(
-                        'status' => true,
-                        'message' => 'Data berhasil disimpan',
-                        'kode_pemesanan' => $kode_pemesanan  // Kode pemesanan yang baru
-                    );
-                } else {
-                    $ret = array(
-                        'status' => false,
-                        'message' => 'Data gagal disimpan'
-                    );
-                }
-            }
-        }
-        echo json_encode($ret);
+{
+    $id = $this->input->post('id');
+    $data['id_kategori'] = $this->input->post('id_kategori');
+    $data['id_pendaftaran'] = $this->input->post('id_pendaftaran');
+    $data['id_produk'] = $this->input->post('id_produk');
+    $data['tanggal_pemesanan'] = date('Y-m-d H:i:s');
+    $data['updated_at'] = date('Y-m-d H:i:s');
+    $data['deleted_at'] = 0;
+
+    // Konversi id_kategori menjadi huruf kategori (misal: H = Haji, U = Umroh)
+    $kategori = $this->input->post('id_kategori');
+    switch ($kategori) {
+        case 1:
+            $kategori_huruf = 'H';
+            break;
+        case 2:
+            $kategori_huruf = 'U';
+            break;
+        default:
+            $kategori_huruf = 'X';
     }
-    
+
+    // Load model dan generate kode pemesanan
+    $this->load->model('Pemesanan_model');
+    $data['kode_pemesanan'] = $this->Pemesanan_model->generate_kode_pemesanan($kategori_huruf);
+
+    $this->form_validation->set_rules('id_pendaftaran', 'Nama Lengkap', 'trim|required', array('required' => '%s harus diisi'));
+
+    if ($this->form_validation->run() == FALSE) {
+        $ret['status'] = false;
+        foreach ($_POST as $key => $value) {
+            $ret['error'][$key] = form_error($key);
+        }
+    } else {
+        if ($id) {
+            $update = $this->Pemesanan_model->updatePemesanan($id, $data);
+            $ret = $update ? 
+                array('status' => true, 'message' => 'Data berhasil diupdate') : 
+                array('status' => false, 'message' => 'Data gagal diupdate');
+        } else {
+            $data['created_at'] = date('Y-m-d H:i:s');
+            $insert = $this->Pemesanan_model->insertPemesanan($data);
+            $ret = $insert ? 
+                array('status' => true, 'message' => 'Data berhasil disimpan', 'kode_pemesanan' => $data['kode_pemesanan']) : 
+                array('status' => false, 'message' => 'Data gagal disimpan');
+        }
+    }
+    echo json_encode($ret);
+}
 
     public function option_kategori(){
 		$q = $this->pm->getAllKategoriNotDeleted();

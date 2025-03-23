@@ -153,6 +153,29 @@ class Pemesanan_model extends MY_model{
         // Mengembalikan data sebagai array objek
         return $query->result();
     }
+
+    public function generate_kode_pemesanan($kategori_huruf) {
+        // Ambil kode terakhir dengan format A-XXXX-H
+        $this->db->select("kode_pemesanan");
+        $this->db->from("pemesanan");
+        $this->db->like("kode_pemesanan", "A-", "after");
+        $this->db->order_by("kode_pemesanan", "DESC");
+        $this->db->limit(1);
+        $query = $this->db->get();
+        $row = $query->row();
+
+        if ($row) {
+            // Ambil angka dari format A-XXXX-H
+            preg_match("/A-(\d+)-[A-Z]/", $row->kode_pemesanan, $matches);
+            $last_number = isset($matches[1]) ? (int)$matches[1] : 0;
+            $next_number = $last_number + 1;
+        } else {
+            $next_number = 1; // Jika belum ada data
+        }
+
+        // Format nomor urut menjadi 4 digit
+        return "A-" . str_pad($next_number, 4, "0", STR_PAD_LEFT) . "-" . $kategori_huruf;
+    }
     
     
     
