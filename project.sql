@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 23, 2025 at 12:45 PM
--- Server version: 8.0.30
--- PHP Version: 7.4.33
+-- Waktu pembuatan: 23 Mar 2025 pada 17.12
+-- Versi server: 8.0.30
+-- Versi PHP: 7.4.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `akun_user`
+-- Struktur dari tabel `akun_user`
 --
 
 CREATE TABLE `akun_user` (
@@ -39,7 +39,7 @@ CREATE TABLE `akun_user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `akun_user`
+-- Dumping data untuk tabel `akun_user`
 --
 
 INSERT INTO `akun_user` (`id`, `email`, `username`, `password`, `role`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -48,7 +48,7 @@ INSERT INTO `akun_user` (`id`, `email`, `username`, `password`, `role`, `created
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kategori`
+-- Struktur dari tabel `kategori`
 --
 
 CREATE TABLE `kategori` (
@@ -60,7 +60,7 @@ CREATE TABLE `kategori` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `kategori`
+-- Dumping data untuk tabel `kategori`
 --
 
 INSERT INTO `kategori` (`id`, `nama_kategori`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -71,7 +71,7 @@ INSERT INTO `kategori` (`id`, `nama_kategori`, `created_at`, `updated_at`, `dele
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kategori_paket_umroh`
+-- Struktur dari tabel `kategori_paket_umroh`
 --
 
 CREATE TABLE `kategori_paket_umroh` (
@@ -83,7 +83,7 @@ CREATE TABLE `kategori_paket_umroh` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `kategori_paket_umroh`
+-- Dumping data untuk tabel `kategori_paket_umroh`
 --
 
 INSERT INTO `kategori_paket_umroh` (`id`, `nama_kategori`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -93,7 +93,7 @@ INSERT INTO `kategori_paket_umroh` (`id`, `nama_kategori`, `created_at`, `update
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kategori_paket_wisata`
+-- Struktur dari tabel `kategori_paket_wisata`
 --
 
 CREATE TABLE `kategori_paket_wisata` (
@@ -105,7 +105,7 @@ CREATE TABLE `kategori_paket_wisata` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `kategori_paket_wisata`
+-- Dumping data untuk tabel `kategori_paket_wisata`
 --
 
 INSERT INTO `kategori_paket_wisata` (`id`, `nama_kategori`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -115,7 +115,7 @@ INSERT INTO `kategori_paket_wisata` (`id`, `nama_kategori`, `created_at`, `updat
 -- --------------------------------------------------------
 
 --
--- Table structure for table `paket_haji`
+-- Struktur dari tabel `paket_haji`
 --
 
 CREATE TABLE `paket_haji` (
@@ -137,7 +137,7 @@ CREATE TABLE `paket_haji` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `paket_haji`
+-- Dumping data untuk tabel `paket_haji`
 --
 
 INSERT INTO `paket_haji` (`id`, `id_kategori`, `nama_paket`, `deskripsi`, `harga`, `durasi`, `tanggal_berangkat`, `tanggal_pulang`, `fasilitas`, `maskapai`, `kuota`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -148,7 +148,7 @@ INSERT INTO `paket_haji` (`id`, `id_kategori`, `nama_paket`, `deskripsi`, `harga
 -- --------------------------------------------------------
 
 --
--- Table structure for table `paket_umroh`
+-- Struktur dari tabel `paket_umroh`
 --
 
 CREATE TABLE `paket_umroh` (
@@ -170,7 +170,7 @@ CREATE TABLE `paket_umroh` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `paket_umroh`
+-- Dumping data untuk tabel `paket_umroh`
 --
 
 INSERT INTO `paket_umroh` (`id`, `id_kategori`, `nama_paket`, `deskripsi`, `harga`, `durasi`, `tanggal_berangkat`, `tanggal_pulang`, `fasilitas`, `maskapai`, `kuota`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -181,7 +181,7 @@ INSERT INTO `paket_umroh` (`id`, `id_kategori`, `nama_paket`, `deskripsi`, `harg
 -- --------------------------------------------------------
 
 --
--- Table structure for table `paket_wisata`
+-- Struktur dari tabel `paket_wisata`
 --
 
 CREATE TABLE `paket_wisata` (
@@ -199,7 +199,7 @@ CREATE TABLE `paket_wisata` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `paket_wisata`
+-- Dumping data untuk tabel `paket_wisata`
 --
 
 INSERT INTO `paket_wisata` (`id`, `id_kategori`, `nama_paket`, `tujuan`, `fasilitas`, `harga`, `tanggal`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -208,7 +208,7 @@ INSERT INTO `paket_wisata` (`id`, `id_kategori`, `nama_paket`, `tujuan`, `fasili
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pemesanan`
+-- Struktur dari tabel `pemesanan`
 --
 
 CREATE TABLE `pemesanan` (
@@ -218,6 +218,7 @@ CREATE TABLE `pemesanan` (
   `id_produk` int NOT NULL,
   `kode_pemesanan` varchar(20) NOT NULL,
   `status` enum('Menunggu Verifikasi','Diterima','Ditolak','') NOT NULL DEFAULT 'Menunggu Verifikasi',
+  `tagihan` enum('Belum Lunas','Lunas') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT 'Belum Lunas',
   `tanggal_pemesanan` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -225,21 +226,23 @@ CREATE TABLE `pemesanan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `pemesanan`
+-- Dumping data untuk tabel `pemesanan`
 --
 
-INSERT INTO `pemesanan` (`id`, `id_kategori`, `id_pendaftaran`, `id_produk`, `kode_pemesanan`, `status`, `tanggal_pemesanan`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 1, 3, 1, '', 'Diterima', '2025-03-23 05:49:05', '2025-03-23 05:49:05', '2025-03-23 05:49:05', 1742728885),
-(2, 2, 0, 2, '', 'Menunggu Verifikasi', '2025-03-23 02:19:49', '2025-03-23 02:19:49', '2025-03-23 02:19:49', 0),
-(3, 3, 6, 3, '', 'Diterima', '2025-03-23 02:30:23', '2025-03-23 02:29:34', '2025-03-23 02:30:23', 0),
-(4, 2, 6, 2, 'A-0001-U', 'Diterima', '2025-03-23 02:48:37', '2025-03-23 02:48:37', '2025-03-23 02:48:37', 0),
-(5, 2, 6, 2, 'A-0001-U', 'Menunggu Verifikasi', '2025-03-23 12:22:41', '2025-03-23 12:22:41', '2025-03-23 12:22:41', 0),
-(6, 1, 6, 1, 'A-0002-H', 'Menunggu Verifikasi', '2025-03-23 12:29:10', '2025-03-23 12:29:10', '2025-03-23 12:29:10', 0);
+INSERT INTO `pemesanan` (`id`, `id_kategori`, `id_pendaftaran`, `id_produk`, `kode_pemesanan`, `status`, `tagihan`, `tanggal_pemesanan`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 1, 3, 1, '', 'Diterima', 'Belum Lunas', '2025-03-23 05:49:05', '2025-03-23 05:49:05', '2025-03-23 05:49:05', 1742728885),
+(2, 2, 0, 2, '', 'Menunggu Verifikasi', 'Belum Lunas', '2025-03-23 02:19:49', '2025-03-23 02:19:49', '2025-03-23 02:19:49', 0),
+(3, 3, 6, 3, '', 'Diterima', 'Lunas', '2025-03-23 02:30:23', '2025-03-23 02:29:34', '2025-03-23 02:30:23', 0),
+(4, 2, 6, 2, 'A-0001-U', 'Diterima', 'Lunas', '2025-03-23 02:48:37', '2025-03-23 02:48:37', '2025-03-23 02:48:37', 0),
+(5, 2, 6, 2, 'A-0001-U', 'Menunggu Verifikasi', 'Belum Lunas', '2025-03-23 12:22:41', '2025-03-23 12:22:41', '2025-03-23 12:22:41', 0),
+(6, 1, 6, 1, 'A-0002-H', 'Ditolak', 'Belum Lunas', '2025-03-23 12:29:10', '2025-03-23 12:29:10', '2025-03-23 12:29:10', 0),
+(7, 2, 7, 2, 'A-0003-U', 'Diterima', 'Lunas', '2025-03-23 14:20:56', '2025-03-23 14:20:56', '2025-03-23 14:20:56', 0),
+(8, 1, 7, 1, 'A-0004-H', 'Menunggu Verifikasi', 'Belum Lunas', '2025-03-23 16:58:12', '2025-03-23 16:58:12', '2025-03-23 16:58:12', 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pendaftaran`
+-- Struktur dari tabel `pendaftaran`
 --
 
 CREATE TABLE `pendaftaran` (
@@ -264,7 +267,7 @@ CREATE TABLE `pendaftaran` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `pendaftaran`
+-- Dumping data untuk tabel `pendaftaran`
 --
 
 INSERT INTO `pendaftaran` (`id`, `kode_pendaftaran`, `nama_lengkap`, `jenis_kelamin`, `nomor_ktp`, `nomor_paspor`, `email_pendaftar`, `no_hp_pendaftar`, `foto_ktp`, `tempat_lahir`, `tanggal_lahir`, `riwayat_kesehatan`, `catatan_tambahan`, `alamat`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -274,12 +277,13 @@ INSERT INTO `pendaftaran` (`id`, `kode_pendaftaran`, `nama_lengkap`, `jenis_kela
 (3, '001', 'Rizkah', 'perempuan', '1271099933330000', '099887', 'nur@gmail.com', '081234567812', NULL, '0', '2003-05-08', 'Tidak ada', NULL, 'Jl. Karya ', 'Diterima', '2025-03-22 20:04:55', '2025-03-22 20:04:55', 1742728814),
 (4, '0', 'Rizkah', 'perempuan', '1231', '098', 'rikzha@gmail.com', '082388347895', NULL, '0', '2025-03-28', '-', NULL, 'Jl. Karya', 'Menunggu Verifikasi', '2025-03-22 20:30:18', '2025-03-22 20:30:18', 1742676383),
 (5, '-0001', 'Nur Rizkah', 'perempuan', '12710978765', '0987678', 'nurrizkah@gmail.com', '081234092387', NULL, '0', '2003-03-08', 'a', NULL, 'Jl. Karya', 'Menunggu Verifikasi', '2025-03-23 02:09:52', '2025-03-23 02:09:52', 1742695998),
-(6, 'A-0002', 'Nur Rizkah', 'perempuan', '12710099009000', '09120987654', 'nurrizkah@gmail.com', '082388347895', NULL, 'Medan', '2003-05-08', '-', NULL, 'Jl. Karya', 'Menunggu Verifikasi', '2025-03-23 02:14:12', '2025-03-23 12:19:44', 0);
+(6, 'A-0002', 'Nur Rizkah', 'perempuan', '12710099009000', '09120987654', 'nurrizkah@gmail.com', '082388347895', NULL, 'Medan', '2003-05-08', '-', NULL, 'Jl. Karya', 'Menunggu Verifikasi', '2025-03-23 02:14:12', '2025-03-23 12:19:44', 0),
+(7, 'A-0003', 'Deswita Ananda', 'perempuan', '1234567890123456', '12345678', 'deswitaananda0322@gmail.com', '081267385674', NULL, 'Medan ', '2003-12-13', 'Tidak Ada', NULL, 'Jl. Suasa Tengah Mabar Hilir', 'Menunggu Verifikasi', '2025-03-23 14:20:37', '2025-03-23 14:20:37', 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pendaftaran_paket_haji`
+-- Struktur dari tabel `pendaftaran_paket_haji`
 --
 
 CREATE TABLE `pendaftaran_paket_haji` (
@@ -300,7 +304,7 @@ CREATE TABLE `pendaftaran_paket_haji` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `pendaftaran_paket_haji`
+-- Dumping data untuk tabel `pendaftaran_paket_haji`
 --
 
 INSERT INTO `pendaftaran_paket_haji` (`id`, `nama_lengkap_haji`, `nomor_nik_haji`, `nomor_paspor_haji`, `nomor_porsi_haji`, `tempat_lahir_haji`, `tanggal_lahir_haji`, `jenis_kelamin_haji`, `alamat_lengkap_haji`, `nomor_wa_haji`, `gambar_haji`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -309,7 +313,7 @@ INSERT INTO `pendaftaran_paket_haji` (`id`, `nama_lengkap_haji`, `nomor_nik_haji
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pendaftaran_paket_umroh`
+-- Struktur dari tabel `pendaftaran_paket_umroh`
 --
 
 CREATE TABLE `pendaftaran_paket_umroh` (
@@ -330,7 +334,7 @@ CREATE TABLE `pendaftaran_paket_umroh` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `pendaftaran_paket_umroh`
+-- Dumping data untuk tabel `pendaftaran_paket_umroh`
 --
 
 INSERT INTO `pendaftaran_paket_umroh` (`id`, `nama_lengkap_umroh`, `nomor_nik_umroh`, `nomor_paspor_umroh`, `tempat_lahir_umroh`, `tanggal_lahir_umroh`, `jenis_kelamin_umroh`, `alamat_lengkap_umroh`, `nomor_wa_umroh`, `email_umroh`, `gambar_umroh`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -339,7 +343,7 @@ INSERT INTO `pendaftaran_paket_umroh` (`id`, `nama_lengkap_umroh`, `nomor_nik_um
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pendaftaran_paket_wisata`
+-- Struktur dari tabel `pendaftaran_paket_wisata`
 --
 
 CREATE TABLE `pendaftaran_paket_wisata` (
@@ -357,7 +361,7 @@ CREATE TABLE `pendaftaran_paket_wisata` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `pendaftaran_paket_wisata`
+-- Dumping data untuk tabel `pendaftaran_paket_wisata`
 --
 
 INSERT INTO `pendaftaran_paket_wisata` (`id`, `nama_lengkap_wisata`, `nomor_nik_wisata`, `jenis_kelamin_wisata`, `alamat_lengkap_wisata`, `nomor_wa_wisata`, `email_wisata`, `gambar_wisata`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -366,7 +370,7 @@ INSERT INTO `pendaftaran_paket_wisata` (`id`, `nama_lengkap_wisata`, `nomor_nik_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `persyaratan`
+-- Struktur dari tabel `persyaratan`
 --
 
 CREATE TABLE `persyaratan` (
@@ -378,7 +382,7 @@ CREATE TABLE `persyaratan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `persyaratan`
+-- Dumping data untuk tabel `persyaratan`
 --
 
 INSERT INTO `persyaratan` (`id`, `nama_persyaratan_paket_haji`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -390,7 +394,7 @@ INSERT INTO `persyaratan` (`id`, `nama_persyaratan_paket_haji`, `created_at`, `u
 -- --------------------------------------------------------
 
 --
--- Table structure for table `produk`
+-- Struktur dari tabel `produk`
 --
 
 CREATE TABLE `produk` (
@@ -413,7 +417,7 @@ CREATE TABLE `produk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `produk`
+-- Dumping data untuk tabel `produk`
 --
 
 INSERT INTO `produk` (`id`, `id_kategori`, `nama_paket`, `deskripsi`, `harga`, `durasi`, `tanggal_berangkat`, `tanggal_pulang`, `fasilitas`, `tujuan`, `maskapai`, `kuota`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -424,7 +428,7 @@ INSERT INTO `produk` (`id`, `id_kategori`, `nama_paket`, `deskripsi`, `harga`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `syarat`
+-- Struktur dari tabel `syarat`
 --
 
 CREATE TABLE `syarat` (
@@ -436,7 +440,7 @@ CREATE TABLE `syarat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `syarat`
+-- Dumping data untuk tabel `syarat`
 --
 
 INSERT INTO `syarat` (`id`, `nama_syarat`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -449,176 +453,176 @@ INSERT INTO `syarat` (`id`, `nama_syarat`, `created_at`, `updated_at`, `deleted_
 --
 
 --
--- Indexes for table `akun_user`
+-- Indeks untuk tabel `akun_user`
 --
 ALTER TABLE `akun_user`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `kategori`
+-- Indeks untuk tabel `kategori`
 --
 ALTER TABLE `kategori`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `kategori_paket_umroh`
+-- Indeks untuk tabel `kategori_paket_umroh`
 --
 ALTER TABLE `kategori_paket_umroh`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `paket_haji`
+-- Indeks untuk tabel `paket_haji`
 --
 ALTER TABLE `paket_haji`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `paket_umroh`
+-- Indeks untuk tabel `paket_umroh`
 --
 ALTER TABLE `paket_umroh`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `paket_wisata`
+-- Indeks untuk tabel `paket_wisata`
 --
 ALTER TABLE `paket_wisata`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `pemesanan`
+-- Indeks untuk tabel `pemesanan`
 --
 ALTER TABLE `pemesanan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `pendaftaran`
+-- Indeks untuk tabel `pendaftaran`
 --
 ALTER TABLE `pendaftaran`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `pendaftaran_paket_haji`
+-- Indeks untuk tabel `pendaftaran_paket_haji`
 --
 ALTER TABLE `pendaftaran_paket_haji`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `pendaftaran_paket_umroh`
+-- Indeks untuk tabel `pendaftaran_paket_umroh`
 --
 ALTER TABLE `pendaftaran_paket_umroh`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `pendaftaran_paket_wisata`
+-- Indeks untuk tabel `pendaftaran_paket_wisata`
 --
 ALTER TABLE `pendaftaran_paket_wisata`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `persyaratan`
+-- Indeks untuk tabel `persyaratan`
 --
 ALTER TABLE `persyaratan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `produk`
+-- Indeks untuk tabel `produk`
 --
 ALTER TABLE `produk`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `syarat`
+-- Indeks untuk tabel `syarat`
 --
 ALTER TABLE `syarat`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `akun_user`
+-- AUTO_INCREMENT untuk tabel `akun_user`
 --
 ALTER TABLE `akun_user`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `kategori`
+-- AUTO_INCREMENT untuk tabel `kategori`
 --
 ALTER TABLE `kategori`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `kategori_paket_umroh`
+-- AUTO_INCREMENT untuk tabel `kategori_paket_umroh`
 --
 ALTER TABLE `kategori_paket_umroh`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `paket_haji`
+-- AUTO_INCREMENT untuk tabel `paket_haji`
 --
 ALTER TABLE `paket_haji`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `paket_umroh`
+-- AUTO_INCREMENT untuk tabel `paket_umroh`
 --
 ALTER TABLE `paket_umroh`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `paket_wisata`
+-- AUTO_INCREMENT untuk tabel `paket_wisata`
 --
 ALTER TABLE `paket_wisata`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `pemesanan`
+-- AUTO_INCREMENT untuk tabel `pemesanan`
 --
 ALTER TABLE `pemesanan`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `pendaftaran`
+-- AUTO_INCREMENT untuk tabel `pendaftaran`
 --
 ALTER TABLE `pendaftaran`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `pendaftaran_paket_haji`
+-- AUTO_INCREMENT untuk tabel `pendaftaran_paket_haji`
 --
 ALTER TABLE `pendaftaran_paket_haji`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `pendaftaran_paket_umroh`
+-- AUTO_INCREMENT untuk tabel `pendaftaran_paket_umroh`
 --
 ALTER TABLE `pendaftaran_paket_umroh`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `pendaftaran_paket_wisata`
+-- AUTO_INCREMENT untuk tabel `pendaftaran_paket_wisata`
 --
 ALTER TABLE `pendaftaran_paket_wisata`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `persyaratan`
+-- AUTO_INCREMENT untuk tabel `persyaratan`
 --
 ALTER TABLE `persyaratan`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `produk`
+-- AUTO_INCREMENT untuk tabel `produk`
 --
 ALTER TABLE `produk`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `syarat`
+-- AUTO_INCREMENT untuk tabel `syarat`
 --
 ALTER TABLE `syarat`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
