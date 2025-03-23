@@ -138,7 +138,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Tentang Kami</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="#">Paket Haji & Umroh</a>
                     </li>
                     <li class="nav-item">
@@ -146,13 +146,13 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Blog</a>
-                    </li>
+                    </li> -->
                 </ul>
 
                 <!-- Ikon di kanan -->
                 <div class="navbar-icons d-flex align-items-center">
                     <a href="#"><i class="fas fa-search"></i></a>
-                    <a href="#"><i class="far fa-heart"></i></a>
+                    <!-- <a href="#"><i class="far fa-heart"></i></a> -->
 
                     <!-- Dropdown User -->
                     <div class="dropdown">
@@ -161,9 +161,10 @@
                             <i class="fas fa-user-circle"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                            <li><a class="dropdown-item" href="#">Login</a></li>
-                            <li><a class="dropdown-item" href="#">Register</a></li>
+                          <li><a class="dropdown-item" href="<?php echo base_url('login'); ?>">Login</a></li>
+                          <li><a class="dropdown-item" href="<?php echo base_url('register'); ?>">Register</a></li>
                         </ul>
+
                     </div>
                 </div>
             </div>

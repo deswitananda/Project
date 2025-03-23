@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<!-- <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Choose Your Package</title>
-    <!-- Bootstrap CSS -->
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
-    <!-- Font Awesome (untuk ikon checklist) -->
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <style>
         body {
@@ -32,7 +32,7 @@
             margin-bottom: 40px;
         }
 
-        /* Pricing Cards */
+       
         .pricing-card {
             border: none;
             border-radius: 10px;
@@ -50,7 +50,7 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
-        /* Gambar di atas card */
+
         .pricing-card img.card-img {
             width: 100%;
             border-radius: 10px 10px 0 0;
@@ -147,10 +147,10 @@
             }
         }
     </style>
-</head>
+</head> -->
 
-<body>
-    <!-- Pricing Section -->
+<!-- <body>
+    
     <section class="pricing-section">
         <div class="container">
             <h2>Choose your Package</h2>
@@ -159,13 +159,13 @@
                 Comprehensive Hajj Packages Tailored to Your Needs.
                 Premium accommodation, individual transportation.
             </p>
-            <!-- Tautan "See More" ditempatkan di sisi kanan -->
+           
             <div class="text-end mb-4">
                 <a href="#">See More &raquo;</a>
             </div>
 
             <div class="row justify-content-center">
-                <!-- Card 1: Premium Hajj -->
+                
                 <div class="col-md-4 mb-4">
                     <div class="pricing-card">
                         <img src="public/template/images/kabah 3.jpg" alt="Premium Hajj" class="card-img" />
@@ -184,7 +184,7 @@
                     </div>
                 </div>
 
-                <!-- Card 2: Family Umrah (Highlight) -->
+                
                 <div class="col-md-4 mb-4">
                     <div class="pricing-card highlight">
                         <img src="public/template/images/kabah 3.jpg" alt="Family Umrah" class="card-img" />
@@ -203,7 +203,7 @@
                     </div>
                 </div>
 
-                <!-- Card 3: Ramadan Umrah -->
+                
                 <div class="col-md-4 mb-4">
                     <div class="pricing-card">
                         <img src="public/template/images/kabah 3.jpg" alt="Ramadan Umrah" class="card-img" />
@@ -225,8 +225,8 @@
         </div>
     </section>
 
-    <!-- Bootstrap JS -->
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+</body> -->
 
 </html>

@@ -6,13 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Footer Example</title>
     <!-- Bootstrap CSS -->
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
     <!-- Font Awesome (untuk ikon sosial media) -->
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <style>
         /* FOOTER */
         footer {
@@ -119,8 +115,7 @@
                 <div class="col-md-3 mb-4 footer-col">
                     <div class="footer-logo">Berkah Travel</div>
                     <p class="footer-description">
-                        Pioneering Advanced Medical Solutions to Elevate Healthcare Service
-                        and Improve Patient Outcomes.
+                        Memimpin solusi perjalanan untuk meningkatkan pengalaman perjalanan ibadah dan wisata Anda.
                     </p>
                     <div class="footer-social mt-3">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -130,30 +125,30 @@
                     </div>
                 </div>
 
-                <!-- Col 2: What We Offer -->
+                <!-- Col 2: Layanan Kami -->
                 <div class="col-md-3 mb-4 footer-col">
-                    <h5>What We Offer</h5>
+                    <h5>Layanan Kami</h5>
                     <ul>
-                        <li><a href="#">Hajj offer</a></li>
-                        <li><a href="#">Umrah offer</a></li>
-                        <li><a href="#">Zamzam Offer</a></li>
-                        <li><a href="#">Madinah to Makkah</a></li>
+                        <li><a href="#">Paket Haji</a></li>
+                        <li><a href="#">Paket Umrah</a></li>
+                        <li><a href="#">Paket Wisata</a></li>
+                        <!-- <li><a href="#">Madinah ke Makkah</a></li> -->
                     </ul>
                 </div>
 
-                <!-- Col 3: Contact Us -->
+                <!-- Col 3: Hubungi Kami -->
                 <div class="col-md-3 mb-4 footer-col">
-                    <h5>Contact Us</h5>
+                    <h5>Hubungi Kami</h5>
                     <ul class="footer-contact">
                         <li>Indonesia, Medan</li>
-                        <li>Phone: +831 96898266</li>
+                        <li>Telepon: +831 96898266</li>
                         <li>Email: info@berkahtravel.com</li>
                     </ul>
                 </div>
 
-                <!-- Col 4: Gallery -->
+                <!-- Col 4: Galeri -->
                 <div class="col-md-3 mb-4 footer-col">
-                    <h5>Gallery</h5>
+                    <h5>Galeri</h5>
                     <div class="footer-gallery d-flex flex-wrap">
                         <img src="public/template/images/kabah 1.jpg" alt="gallery1" />
                         <img src="public/template/images/kabah 2.jpg" alt="gallery2" />
@@ -165,13 +160,13 @@
             <!-- Footer Bottom -->
             <div class="row footer-bottom align-items-center">
                 <div class="col-md-6 mb-2 mb-md-0">
-                    <p class="mb-0">&copy; 2023 Berkah Travel. All rights reserved.</p>
+                    <p class="mb-0">&copy; 2025 Berkah Travel. Hak cipta dilindungi undang-undang.</p>
                 </div>
                 <div class="col-md-6 text-md-end payment-icons">
-                    <span>We accept:</span>
+                    <!-- <span>Kami menerima:</span>
                     <img src="public/template/images/visa.jpg" alt="Visa" />
                     <img src="public/template/images/mastercard.jpg" alt="Mastercard" />
-                    <img src="public/template/images/paypal.jpg" alt="PayPal" />
+                    <img src="public/template/images/paypal.jpg" alt="PayPal" /> -->
                 </div>
             </div>
         </div>

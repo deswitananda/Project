@@ -178,13 +178,13 @@
             <button class="btn-hero">Get Started</button>
 
             <!-- Search Box -->
-            <div class="search-box">
-                <!-- Flight Date -->
+            <!-- <div class="search-box">
+                
                 <div class="form-group">
                     <label for="flight-date">Jadwal Penerbangan</label>
                     <input type="date" id="flight-date" />
                 </div>
-                <!-- Packages -->
+               
                 <div class="form-group">
                     <label for="packages">Kategori</label>
                     <select id="packages">
@@ -193,7 +193,7 @@
                         <option value="">Ramadan Umrah</option>
                     </select>
                 </div>
-                <!-- Price -->
+                
                 <div class="form-group">
                     <label for="price">Harga</label>
                     <select id="price">
@@ -202,11 +202,11 @@
                         <option value="">$4001 - $5000</option>
                     </select>
                 </div>
-                <!-- Search Button -->
+                
                 <button>
                     <i class="bi bi-search"></i> Search
                 </button>
-            </div>
+            </div> -->
         </div>
     </section>
 

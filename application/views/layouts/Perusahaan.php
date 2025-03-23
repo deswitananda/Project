@@ -7,9 +7,7 @@
     <title>Travel Service - Single Arch Image</title>
 
     <!-- Bootstrap CSS -->
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
 
     <style>
         /* RESET DASAR */
@@ -122,25 +120,23 @@
             <!-- Kolom kiri: gambar tunggal dengan arch -->
             <div class="col-md-6 d-flex justify-content-center mb-4 mb-md-0">
                 <div class="img-arch">
-                    <img src="public/template/images/perusahaan.jpg" alt="Arch Shaped Mosque" />
+                    <img src="public/template/images/perusahaan.jpg" alt="Masjid dengan Bentuk Kubah" />
                 </div>
             </div>
             <!-- Kolom kanan: teks -->
             <div class="col-md-6">
-                <h1 class="orange-text">ABOUT US</h1>
-                <h2>We Provide The Best Service</h2>
+                <h1 class="orange-text">TENTANG KAMI</h1>
+                <h2>Kami Menyediakan Layanan Terbaik</h2>
                 <p>
-                    We are a leading travel company in Canada specializing in flight
-                    bookings, worldwide tours, and Umrah services. <strong>Berkah Travel</strong> is
-                    licensed by Consumer Protection and IATA.
+                    Kami adalah perusahaan perjalanan terkemuka di Indonesia yang berspesialisasi dalam pemesanan penerbangan, tur di seluruh dunia, dan layanan Umrah. 
                 </p>
                 <ul>
-                    <li>Experience Team</li>
-                    <li>Fast Response</li>
-                    <li>Professional</li>
-                    <li>Guarantee Cash Back</li>
+                    <li>Tim Berpengalaman</li>
+                    <li>Respon Cepat</li>
+                    <li>Profesional</li>
+                    <!-- <li>Garansi Cashback</li> -->
                 </ul>
-                <a href="#" class="btn-custom">Contact Us</a>
+                <a href="#" class="btn-custom">Hubungi Kami</a>
             </div>
         </div>
     </div>
