@@ -195,6 +195,18 @@
 
   <script>
     $(document).ready(function() {
+      $('#togglePassword').click(function() {
+          var passwordField = $('#password');
+          var passwordFieldType = passwordField.attr('type');
+
+          if (passwordFieldType === 'password') {
+              passwordField.attr('type', 'text');
+              $(this).removeClass('bi-eye-slash').addClass('bi-eye'); // Ubah ikon
+          } else {
+              passwordField.attr('type', 'password');
+              $(this).removeClass('bi-eye').addClass('bi-eye-slash'); // Kembalikan ikon
+          }
+      });
         $('#loginBtn').click(function() {
             $('.error-block').html('');
             $('input').removeClass('is-invalid');

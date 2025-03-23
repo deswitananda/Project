@@ -32,25 +32,25 @@ class Login extends CI_Controller {
             $q = $this->User_model->login($username);
             if ($q && $q->num_rows() > 0) {
                 $user = $q->row();
-                // Verifikasi password yang di-hash
                 if (password_verify($password, $user->password)) {
                     $role = $user->role;
-
-                    // Set session
+            
+                    // Set session dengan user_id
                     $sess = array(
                         'is_login' => TRUE,
+                        'id_user'  => $user->id,  // Tambahkan user_id
                         'username' => $user->username,
                         'role'     => $role
                     );
-                    $this->session->set_userdata($sess);
-
+                    $this->session->set_userdata($sess); // Simpan session
+            
                     // Redirect berdasarkan role
                     if ($role == 'admin') {
                         $redirect = base_url('admin/dashboard');
                     } else {
                         $redirect = base_url('user/dashboard');
                     }
-
+            
                     $ret = array(
                         'status'  => true,
                         'message' => 'Login Berhasil',
@@ -73,8 +73,10 @@ class Login extends CI_Controller {
         echo json_encode($ret);
     }
 
+
     public function logout() {
         $this->session->sess_destroy();
-        echo json_encode(['status' => true, 'message' => 'Logout berhasil.']);
+        redirect('login'); // Redirect ke halaman login setelah logout
     }
+    
 }

@@ -287,7 +287,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url(); ?>login">
+                        <a href="<?php echo base_url('login/logout'); ?>">
                             <i class="fa fa-power-off"></i>
                             <span>Logout</span>
                         </a>

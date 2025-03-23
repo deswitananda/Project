@@ -151,71 +151,74 @@
               </div>
 
               <!-- Password Field -->
-              <div class="form-group with_icon mb-3" id="show_hide_password">
-                <label style="color:#000;">Password</label>
-                <div class="input_group">
-                  <input 
-                    type="password" 
-                    name="password" 
-                    id="password" 
-                    class="form-control" 
-                    placeholder="Enter your password" 
-                    required
-                  >
-                  <div class="icon">
-                    <!-- Iconly Two-tone Password (warna hitam) -->
-                    <svg 
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24" 
-                      height="24" 
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <g transform="translate(2 2)">
-                        <path 
-                          d="M13.584,0H4.915C1.894,0,0,2.139,0,5.166v8.168C0,16.361,1.885,18.5,4.915,18.5h8.668c3.031,0,4.917-2.139,4.917-5.166V5.166C18.5,2.139,16.614,0,13.584,0Z"
-                          transform="translate(0.75 0.75)"
-                          fill="none"
-                          stroke="#000"
-                          stroke-width="1.5"
-                          opacity="0.4"
-                        />
-                        <path 
-                          d="M3.7,1.852A1.852,1.852,0,1,1,1.851,0,1.852,1.852,0,0,1,3.7,1.852Z"
-                          transform="translate(4.989 8.148)"
-                          fill="none"
-                          stroke="#000"
-                          stroke-width="1.5"
-                        />
-                        <path 
-                          d="M0,0H6.318V1.852"
-                          transform="translate(8.692 10)"
-                          fill="none"
-                          stroke="#000"
-                          stroke-width="1.5"
-                        />
-                        <path 
-                          d="M.5,1.852V0"
-                          transform="translate(11.682 10)"
-                          fill="none"
-                          stroke="#000"
-                          stroke-width="1.5"
-                        />
-                      </g>
-                    </svg>
-                  </div>
-                  <button 
-                    type="button" 
-                    id="togglePassword" 
-                    class="btn hide_show icon_password"
-                  >
-                    <i class="bi bi-eye-slash"></i>
-                  </button>
-                </div>
-              </div>
+                <!-- Password Field -->
+<div class="form-group with_icon mb-3" id="show_hide_password">
+    <label style="color:#000;">Password</label>
+    <div class="input_group position-relative">
+        <input 
+            type="password" 
+            name="password" 
+            id="password" 
+            class="form-control" 
+            placeholder="Enter your password" 
+            required
+        >
+        <div class="icon">
+            <!-- Iconly Two-tone Password (warna hitam) -->
+            <svg 
+                xmlns="http://www.w3.org/2000/svg"
+                width="24" 
+                height="24" 
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <g transform="translate(2 2)">
+                    <path 
+                        d="M13.584,0H4.915C1.894,0,0,2.139,0,5.166v8.168C0,16.361,1.885,18.5,4.915,18.5h8.668c3.031,0,4.917-2.139,4.917-5.166V5.166C18.5,2.139,16.614,0,13.584,0Z"
+                        transform="translate(0.75 0.75)"
+                        fill="none"
+                        stroke="#000"
+                        stroke-width="1.5"
+                        opacity="0.4"
+                    />
+                    <path 
+                        d="M3.7,1.852A1.852,1.852,0,1,1,1.851,0,1.852,1.852,0,0,1,3.7,1.852Z"
+                        transform="translate(4.989 8.148)"
+                        fill="none"
+                        stroke="#000"
+                        stroke-width="1.5"
+                    />
+                    <path 
+                        d="M0,0H6.318V1.852"
+                        transform="translate(8.692 10)"
+                        fill="none"
+                        stroke="#000"
+                        stroke-width="1.5"
+                    />
+                    <path 
+                        d="M.5,1.852V0"
+                        transform="translate(11.682 10)"
+                        fill="none"
+                        stroke="#000"
+                        stroke-width="1.5"
+                    />
+                </g>
+            </svg>
+        </div>
+        <button 
+            type="button" 
+            id="togglePassword" 
+            class="btn position-absolute end-0 top-50 translate-middle-y pe-3"
+            style="border: none; background: transparent;"
+        >
+            <i class="bi bi-eye-slash"></i>
+        </button>
+    </div>
+</div>
+
 
               <!-- Terms and Conditions -->
               <div class="custom-control custom-checkbox mr-sm-2 mb-3">
@@ -257,6 +260,19 @@
 
   <script>
   $(document).ready(function() {
+
+    $('#togglePassword').click(function() {
+            let passwordField = $('#password');
+            let icon = $(this).find('i');
+
+            if (passwordField.attr('type') === 'password') {
+                passwordField.attr('type', 'text');
+                icon.removeClass('bi-eye-slash').addClass('bi-eye');
+            } else {
+                passwordField.attr('type', 'password');
+                icon.removeClass('bi-eye').addClass('bi-eye-slash');
+            }
+        });
     $('#registerBtn').click(function() {
       // Reset pesan error dan class validasi
       $('.error-block').html('');
