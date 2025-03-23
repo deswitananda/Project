@@ -100,10 +100,10 @@
                         </a>
                     </li>
                     <li>
-                        <form id="navbar-search" class="navbar-form search-form">
+                        <!-- <form id="navbar-search" class="navbar-form search-form">
                             <input value="" class="form-control" placeholder="Search here..." type="text">
                             <button type="button" class="btn btn-default"><i class="icon-magnifier"></i></button>
-                        </form>
+                        </form> -->
                     </li>
                     <li>
                         <div id="navbar-menu">
