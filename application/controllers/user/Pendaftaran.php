@@ -12,6 +12,8 @@ class Pendaftaran extends CI_Controller
 
     public function index()
     {
+        check_login();
+        check_role('user');
         $data['content'] = 'user/pendaftaran';
         $this->load->view('template_user', $data);
     }

@@ -7,6 +7,8 @@ class Produk extends CI_Controller {
     }
 
     public function index(){
+        check_login();
+        check_role('admin');
         $data = array(
 			'content' => 'admin/produk',
 			'title' => 'Produk'

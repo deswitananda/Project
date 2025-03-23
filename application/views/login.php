@@ -222,9 +222,9 @@
                 success: function(response) {
                     if (response.status) {
                         if (response.role === 'admin') {
-                            window.location.href = '<?php echo base_url('admin/dashboard'); ?>'; // Redirect ke dashboard admin
+                            window.location.href = '<?php echo base_url('admin/pendaftaran'); ?>'; // Redirect ke dashboard admin
                         } else if (response.role === 'user') {
-                            window.location.href = '<?php echo base_url('user/dashboard'); ?>'; // Redirect ke dashboard user
+                            window.location.href = '<?php echo base_url('user/pendaftaran'); ?>'; // Redirect ke dashboard user
                         }
                     } else {
                         if (response.error) {

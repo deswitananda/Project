@@ -7,6 +7,8 @@ class Testimoni extends CI_Controller {
     }
 
     public function index() {
+        check_login();
+        check_role('admin');
         $data['content'] = 'admin/testimoni';
         $this->load->view('template_admin', $data);
     }

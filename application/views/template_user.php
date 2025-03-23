@@ -63,8 +63,8 @@
 <div class="page-loader-wrapper">
     <div class="loader">
         <div class="m-t-30">
-            <img src="<?php echo base_url(); ?>assets/images/thumbnail.png"
-                 width="48" height="48" alt="Mplify">
+            <img src="<?php echo base_url(); ?>public\template\images\logo.png"
+                 width="48" height="48" alt="Travel Umroh dan Haji">
         </div>
         <p>Please wait...</p>
     </div>
@@ -222,32 +222,14 @@
         <div class="sidebar-scroll">
             <nav id="leftsidebar-nav" class="sidebar-nav">
                 <ul id="main-menu" class="metismenu">
-                    <li class="heading">Main</li>
+                    <li class="heading"></li>
                     <li class="<?= ($this->uri->segment(2)=='dashboard') ? 'active' : '' ?>">
                         <a href="dashboard">
-                            <i class="icon-home"></i>
-                            <span>Dashboard</span>
+                            
                         </a>
                     </li>
 
                     <li class="heading">App</li>
-                    <li class="<?= in_array($this->uri->segment(2), ['paket_haji', 'paket_umroh', 'paket_wisata']) ? 'active' : '' ?>">
-                        <a href="#" class="has-arrow">
-                            <i class="fa fa-cubes"></i>
-                            <span>Produk</span>
-                        </a>
-                        <ul>
-                            <li class="<?= ($this->uri->segment(2)=='paket_haji') ? 'active' : '' ?>">
-                                <a href="paket_haji">Paket Haji</a>
-                            </li>
-                            <li class="<?= ($this->uri->segment(2)=='paket_umroh') ? 'active' : '' ?>">
-                                <a href="paket_umroh">Paket Umroh</a>
-                            </li>
-                            <li class="<?= ($this->uri->segment(2)=='paket_wisata') ? 'active' : '' ?>">
-                                <a href="paket_wisata">Paket Wisata</a>
-                            </li>
-                        </ul>
-                    </li>
                     <li class="<?= ($this->uri->segment(2)=='pendaftaran') ? 'active' : '' ?>">
                         <a href="pendaftaran">
                             <i class="fa fa-shopping-cart"></i>
@@ -264,18 +246,6 @@
                         <a href="tagihan">
                             <i class="fa fa-credit-card"></i>
                             <span>Tagihan</span>
-                        </a>
-                    </li>
-                    <li class="<?= ($this->uri->segment(2)=='artikel') ? 'active' : '' ?>">
-                        <a href="artikel">
-                            <i class="fa fa-file-text"></i>
-                            <span>Artikel/Panduan</span>
-                        </a>
-                    </li>
-                    <li class="<?= ($this->uri->segment(2)=='testimoni') ? 'active' : '' ?>">
-                        <a href="testimoni">
-                            <i class="fa fa-comments"></i>
-                            <span>Testimoni</span>
                         </a>
                     </li>
                     <li class="<?= ($this->uri->segment(2)=='profil') ? 'active' : '' ?>">

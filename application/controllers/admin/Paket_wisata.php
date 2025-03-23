@@ -9,6 +9,8 @@ class Paket_wisata extends CI_Controller {
     }
 
     public function index(){
+        check_login();
+        check_role('admin');
         $data = array(
 			'content' => 'admin/paket_wisata',
 			'title' => 'Paket Wisata'

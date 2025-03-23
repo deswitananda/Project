@@ -5,6 +5,8 @@ class Tagihan extends CI_Controller {
 
     public function __construct(){
         parent::__construct();
+        check_login();
+        check_role('user');
         // Menggunakan model Pemesanan_model untuk mengambil data pemesanan (termasuk tagihan)
         $this->load->model('Pemesanan_model', 'pm');
     }

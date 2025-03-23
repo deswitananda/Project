@@ -11,6 +11,8 @@ class Pembayaran extends CI_Controller {
 
     // Method untuk menampilkan halaman edit pembayaran berdasarkan order_id
     public function index($order_id) {
+        check_login();
+        check_role('admin');
         $order = $this->Pemesanan_model->get_order_by_id($order_id);
         if(!$order){
             show_404();

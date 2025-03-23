@@ -11,6 +11,8 @@ class Pemesanan extends CI_Controller {
 
     // Tampilan utama halaman admin (tabel pemesanan dan tagihan)
     public function index() {
+        check_login();
+        check_role('admin');
         $data['content'] = 'admin/pemesanan';
         $this->load->view('template_admin', $data);
     }

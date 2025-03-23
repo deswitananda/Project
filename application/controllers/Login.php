@@ -1,14 +1,17 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Login extends CI_Controller {
+class Login extends CI_Controller
+{
 
-    public function __construct(){
+    public function __construct()
+    {
         parent::__construct();
         $this->load->model('User_model');
     }
 
-    public function index(){
+    public function index()
+    {
         $this->load->view('login');  // Pastikan ada view login
     }
 
@@ -34,38 +37,40 @@ class Login extends CI_Controller {
                 $user = $q->row();
                 if (password_verify($password, $user->password)) {
                     $role = $user->role;
-            
+
                     // Set session dengan user_id
+                    // Set session setelah login sukses
                     $sess = array(
                         'is_login' => TRUE,
-                        'id_user'  => $user->id,  // Tambahkan user_id
+                        'id_user' => $user->id,   // Simpan ID user ke session
                         'username' => $user->username,
-                        'role'     => $role
+                        'role' => $role
                     );
-                    $this->session->set_userdata($sess); // Simpan session
-            
+                    $this->session->set_userdata($sess);
+
+
                     // Redirect berdasarkan role
                     if ($role == 'admin') {
-                        $redirect = base_url('admin/dashboard');
+                        $redirect = base_url('admin/pendaftaran');
                     } else {
-                        $redirect = base_url('user/dashboard');
+                        $redirect = base_url('user/pendaftaran');
                     }
-            
+
                     $ret = array(
-                        'status'  => true,
+                        'status' => true,
                         'message' => 'Login Berhasil',
-                        'role'    => $role,
+                        'role' => $role,
                         'redirect' => $redirect
                     );
                 } else {
                     $ret = array(
-                        'status'  => false,
+                        'status' => false,
                         'message' => 'Username atau Password Salah'
                     );
                 }
             } else {
                 $ret = array(
-                    'status'  => false,
+                    'status' => false,
                     'message' => 'Username atau Password Salah'
                 );
             }
@@ -74,9 +79,10 @@ class Login extends CI_Controller {
     }
 
 
-    public function logout() {
+    public function logout()
+    {
         $this->session->sess_destroy();
         redirect('login'); // Redirect ke halaman login setelah logout
     }
-    
+
 }

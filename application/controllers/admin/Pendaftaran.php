@@ -9,6 +9,8 @@ class Pendaftaran extends CI_Controller {
     }
 
     public function index() {
+        check_login();
+        check_role('admin');
         $data['content'] = 'admin/pendaftaran';
         $this->load->view('template_admin', $data);
     }

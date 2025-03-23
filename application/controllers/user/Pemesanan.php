@@ -9,6 +9,12 @@ class Pemesanan extends CI_Controller {
     }
 
     public function index(){
+        check_login();
+        check_role('user');
+
+        $id_user = $this->session->userdata('id_user'); // Ambil ID user dari session
+
+        $data['pemesanan'] = $this->pm->getPemesananByUser($id_user);
         $data = array(
             'content' => 'user/pemesanan',
             'title'   => 'Pemesanan'
@@ -114,6 +120,7 @@ class Pemesanan extends CI_Controller {
 
     public function save_pemesanan_user(){
         $id = $this->input->post('id');
+        $data['id_user']     = $this->session->userdata('id_user');
         $data['id_kategori']     = $this->input->post('id_kategori');
         $data['id_pendaftaran']  = $this->input->post('id_pendaftaran');
         $data['id_produk']       = $this->input->post('id_produk');
@@ -218,4 +225,7 @@ class Pemesanan extends CI_Controller {
         $data['pemesanan'] = $this->pm->getPemesanan();
         echo json_encode($data['pemesanan']);
     }
+
+
+    
 }

@@ -16,6 +16,8 @@ class Dashboard extends CI_Controller
 
     public function index()
     {
+        check_login();
+        check_role('user');
 
         $data = array(
             'content' => 'user/dashboard',

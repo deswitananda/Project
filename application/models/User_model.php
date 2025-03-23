@@ -30,5 +30,16 @@ class User_model extends CI_Model
     
         return $this->db->insert($this->table, $data);
     }
+
+
+    public function getUserById($id) {
+        return $this->db->get_where('akun_user', ['id' => $id])->row();
+    }
+    
+    public function updateUser($user_id, $data) {
+        $this->db->where('id', $user_id);
+        return $this->db->update('akun_user', $data);
+    }
+    
     
 }

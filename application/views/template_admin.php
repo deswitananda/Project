@@ -65,7 +65,7 @@
 <div class="page-loader-wrapper">
     <div class="loader">
         <div class="m-t-30">
-            <img src="<?php echo base_url(); ?>assets/images/thumbnail.png"
+            <img src="<?php echo base_url(); ?>public\template\images\logo.png"
                  width="48" height="48" alt="Mplify">
         </div>
         <p>Please wait...</p>
@@ -227,8 +227,8 @@
                     <li class="heading">Main</li>
                     <li class="<?= ($this->uri->segment(2)=='dashboard') ? 'active' : '' ?>">
                         <a href="dashboard">
-                            <i class="icon-home"></i>
-                            <span>Dashboard</span>
+                            
+                            
                         </a>
                     </li>
 
@@ -260,24 +260,6 @@
                         <a href="pemesanan">
                             <i class="fa fa-shopping-cart"></i>
                             <span>Pemesanan</span>
-                        </a>
-                    </li>
-                    <li class="<?= ($this->uri->segment(2)=='pembayaran') ? 'active' : '' ?>">
-                        <a href="pembayaran">
-                            <i class="fa fa-credit-card"></i>
-                            <span>Pembayaran</span>
-                        </a>
-                    </li>
-                    <li class="<?= ($this->uri->segment(2)=='artikel') ? 'active' : '' ?>">
-                        <a href="artikel">
-                            <i class="fa fa-file-text"></i>
-                            <span>Artikel/Panduan</span>
-                        </a>
-                    </li>
-                    <li class="<?= ($this->uri->segment(2)=='testimoni') ? 'active' : '' ?>">
-                        <a href="testimoni">
-                            <i class="fa fa-comments"></i>
-                            <span>Testimoni</span>
                         </a>
                     </li>
                     <li class="<?= ($this->uri->segment(2)=='pengaturan') ? 'active' : '' ?>">

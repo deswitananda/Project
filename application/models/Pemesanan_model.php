@@ -6,6 +6,7 @@ class Pemesanan_model extends MY_model {
     protected $tablePemesanan   = 'pemesanan';
     protected $tablePendaftaran = 'pendaftaran';
     protected $tableKategori    = 'kategori';
+    protected $tableAkunUser   = 'akun_user';
     protected $tablePaketHaji   = 'paket_haji';
     protected $tablePaketUmroh  = 'paket_umroh';
     protected $tablePaketWisata = 'paket_wisata';
@@ -145,4 +146,13 @@ class Pemesanan_model extends MY_model {
         $this->db->where($this->tablePemesanan . '.deleted_at', 0);
         return $this->db->get()->result();
     }
+
+    public function getPemesananByUser($id_user) {
+        $this->db->select('*');
+        $this->db->from($this->tablePemesanan);
+        $this->db->where('id_user', $id_user); // Hanya ambil data milik user yang login
+        return $this->db->get()->result();
+    }
 }
+
+
