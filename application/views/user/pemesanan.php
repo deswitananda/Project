@@ -14,7 +14,7 @@
 <div class="card shadow-lg mb-4" id="container_table">
     <div class="card-body">
         <div class="">
-            <!-- <div class="body" >
+            <div class="body" >
                 <button class="btn btn-primary m-b-15 btnTambah" type="button" data-target="pemesanan_user"
                     data-toggle="modal">
                     <i class="fa fa-plus-square" aria-hidden="true"></i> Tambah Pemesanan
@@ -42,19 +42,6 @@
                         <tbody>
                         </tbody>
                     </table>
-                </div>
-            </div> -->
-            <div class="body">
-                <button class="btn btn-primary m-b-15 btnTambah" type="button" data-target="pemesanan_admin"
-                    data-toggle="modal">
-                    <i class="fa fa-plus-square" aria-hidden="true"></i> Tambah Pemesanan
-                </button>
-                <button class="btn btn-secondary btnRefresh m-b-15" data-target="pemesanan_admin">
-                    <i class="fa fa-refresh"></i>
-                </button>
-
-                <div class="row" id="card-pemesanan-admin">
-                    <!-- Cards akan dimuat di sini menggunakan JavaScript -->
                 </div>
             </div>
         </div>
@@ -204,53 +191,6 @@
     
 });
 
-$(document).ready(function() {
-    // Fungsi untuk mengambil data pemesanan dari server
-    function loadPemesanan() {
-        $.ajax({
-            url: baseClass+'/get_pemesanan',  // Ganti dengan URL yang benar
-            method: 'GET',
-            dataType: 'json',
-            success: function(response) {
-                var pemesananData = response; // Data pemesanan dari server
-                var cardsHtml = '';
-                
-                pemesananData.forEach(function(pemesanan) {
-                    cardsHtml += `
-                        <div class="col-md-4 mb-4">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h5 class="card-title">${pemesanan.kode_pemesanan}</h5>
-                                    <span class="badge badge-${pemesanan.status == 'Diterima' ? 'success' : 'warning'}">${pemesanan.status}</span>
-                                </div>
-                                <div class="card-body">
-                                    <h6 class="card-subtitle mb-2 text-muted">${pemesanan.nama_kategori}</h6>
-                                    <p class="card-text"><strong>Nama Paket:</strong> ${pemesanan.nama_paket}</p>
-                                    <p class="card-text"><strong>Nama Lengkap:</strong> ${pemesanan.nama_lengkap}</p>
-                                    <p class="card-text"><strong>Harga:</strong> ${pemesanan.harga}</p>
-                                    <p class="card-text"><strong>Tanggal Pemesanan:</strong> ${pemesanan.tanggal_pemesanan}</p>
-                                </div>
-                                <div class="card-footer">
-                                    <button type="button" class="btn btn-success btn-sm detailBtn" data-value="1" data-toggle="modal" data-target="pemesanan_admin"><i class="fa fa-eye"></i> Detail </button>
-                                    <button class="btn btn-danger btn-sm">Hapus</button>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                });
-
-                // Menambahkan cards ke dalam container
-                $('#card-pemesanan-admin').html(cardsHtml);
-            },
-            error: function() {
-                alert('Gagal mengambil data pemesanan.');
-            }
-        });
-    }
-
-    // Panggil fungsi untuk memuat cards saat halaman ready
-    loadPemesanan();
-});
 
 
 </script>
