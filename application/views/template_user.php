@@ -260,10 +260,10 @@
                             <span>Pemesanan</span>
                         </a>
                     </li>
-                    <li class="<?= ($this->uri->segment(2)=='pembayaran') ? 'active' : '' ?>">
-                        <a href="pembayaran">
+                    <li class="<?= ($this->uri->segment(2)=='tagihan') ? 'active' : '' ?>">
+                        <a href="tagihan">
                             <i class="fa fa-credit-card"></i>
-                            <span>Pembayaran</span>
+                            <span>Tagihan</span>
                         </a>
                     </li>
                     <li class="<?= ($this->uri->segment(2)=='artikel') ? 'active' : '' ?>">
