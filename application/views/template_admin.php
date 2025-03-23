@@ -224,7 +224,7 @@
         <div class="sidebar-scroll">
             <nav id="leftsidebar-nav" class="sidebar-nav">
                 <ul id="main-menu" class="metismenu">
-                    <li class="heading">Main</li>
+                    <!-- <li class="heading">Main</li> -->
                     <li class="<?= ($this->uri->segment(2)=='dashboard') ? 'active' : '' ?>">
                         <a href="dashboard">
                             
