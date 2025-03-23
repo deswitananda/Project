@@ -51,7 +51,7 @@ class Paket_haji extends CI_Controller {
     }
 
     public function option_kategori(){
-		$q = $this->pm->getAllKategoriNotDeleted();
+		$q = $this->pm->getAllKategoriHajiNotDeleted();
 		$ret = '<option value="">Pilih</option>';
 		if ($q->num_rows() > 0) {
 			foreach ($q->result() as $row) {
@@ -194,119 +194,119 @@ class Paket_haji extends CI_Controller {
 
 
     //KATEGORI Paket Umroh
-    // public function table_kategori(){
-    //     $q = $this->pm->dataTablesKategoriPaketHaji();
+    public function table_kategori(){
+        $q = $this->pm->dataTablesKategoriPaketHaji();
     
-    //     $data  = array();
-    //     $no    = isset($_POST['start']) ? $_POST['start'] : 0;
-    //     foreach ($q['data'] as $da) {
-    //         $no++;
-    //         $row   = array();
-    //         $row[] = $no;
-    //         $row[] = $da->nama_kategori;
-    //         $row[] = actBtn($da->id, 'kategori');
-    //         $data[] = $row;
-    //     }
+        $data  = array();
+        $no    = isset($_POST['start']) ? $_POST['start'] : 0;
+        foreach ($q['data'] as $da) {
+            $no++;
+            $row   = array();
+            $row[] = $no;
+            $row[] = $da->nama_kategori;
+            $row[] = actBtn($da->id, 'kategori');
+            $data[] = $row;
+        }
     
-    //     $output = array(
-    //         "draw" => isset($_POST['draw']) ? $_POST['draw'] : 1,
-    //         "recordsTotal" => $q['recordTotal'],
-    //         "recordsFiltered" => $q['recordFiltered'],
-    //         "data" => $data,
-    //     );
+        $output = array(
+            "draw" => isset($_POST['draw']) ? $_POST['draw'] : 1,
+            "recordsTotal" => $q['recordTotal'],
+            "recordsFiltered" => $q['recordFiltered'],
+            "data" => $data,
+        );
     
-    //     echo json_encode($output);
-    // }
+        echo json_encode($output);
+    }
 
-    // public function edit_kategori()
-	// {
+    public function edit_kategori()
+	{
 
-	// 	$id = $this->input->post('id');
-	// 	$q = $this->pm->getKategoriHajiByID($id);
+		$id = $this->input->post('id');
+		$q = $this->pm->getKategoriHajiByID($id);
 
-	// 	if ($q->num_rows() > 0) {
-	// 		$ret = array(
-	// 			'status' => true,
-	// 			'data' => $q->row(),
-	// 			'message' => '',
-	// 		);
-	// 	} else {
-	// 		$ret = array(
-	// 			'status' => false,
-	// 			'data' => [],
-	// 			'message' => 'Data tidak ditemukan',
-	// 			'query' => $this->db->last_query()
-	// 		);
-	// 	}
+		if ($q->num_rows() > 0) {
+			$ret = array(
+				'status' => true,
+				'data' => $q->row(),
+				'message' => '',
+			);
+		} else {
+			$ret = array(
+				'status' => false,
+				'data' => [],
+				'message' => 'Data tidak ditemukan',
+				'query' => $this->db->last_query()
+			);
+		}
 
-	// 	echo json_encode($ret);
-	// }
+		echo json_encode($ret);
+	}
 
-    // public function save_kategori(){
+    public function save_kategori(){
 
-	// 	$id = $this->input->post('id');
-	// 	$data['nama_kategori'] = $this->input->post('nama_kategori');
-	// 	$data['updated_at'] = date('Y-m-d H:i:s');
-	// 	$data['deleted_at'] = 0;
+		$id = $this->input->post('id');
+		$data['nama_kategori'] = $this->input->post('nama_kategori');
+		$data['updated_at'] = date('Y-m-d H:i:s');
+		$data['deleted_at'] = 0;
 
-	// 	$this->form_validation->set_rules('nama_kategori', 'Nama Kategori', 'trim|required', array('required' => '%s harus diisi'));
+		$this->form_validation->set_rules('nama_kategori', 'Nama Kategori', 'trim|required', array('required' => '%s harus diisi'));
 
 
-	// 	if ($this->form_validation->run() == FALSE) {
-	// 		$ret['status'] = false;
-	// 		foreach ($_POST as $key => $value) {
-	// 			$ret['error'][$key] = form_error($key);
-	// 		}
-	// 	} else {
-    //         if ($id) {
-    //             $update = $this->pm->updateKategoriHaji($id, $data);
-    //             if ($update) {
-    //                 $ret = array(
-    //                     'status' => true,
-    //                     'message' => 'Data berhasil diupdate'
-    //                 );
-    //             } else {
-    //                 $ret = array(
-    //                     'status' => false,
-    //                     'message' => 'Data gagal diupdate'
-    //                 );
-    //             }
-    //         } else {
-    //             $data['created_at'] = date('Y-m-d H:i:s');
-    //             $insert = $this->pm->insertKategoriHaji($data);
+		if ($this->form_validation->run() == FALSE) {
+			$ret['status'] = false;
+			foreach ($_POST as $key => $value) {
+				$ret['error'][$key] = form_error($key);
+			}
+		} else {
+            if ($id) {
+                $update = $this->pm->updateKategoriHaji($id, $data);
+                if ($update) {
+                    $ret = array(
+                        'status' => true,
+                        'message' => 'Data berhasil diupdate'
+                    );
+                } else {
+                    $ret = array(
+                        'status' => false,
+                        'message' => 'Data gagal diupdate'
+                    );
+                }
+            } else {
+                $data['created_at'] = date('Y-m-d H:i:s');
+                $insert = $this->pm->insertKategoriHaji($data);
 
-    //             if ($insert) {
-    //                 $ret = array(
-    //                     'status' => true,
-    //                     'message' => 'Data berhasil disimpan'
-    //                 );
-    //             } else {
-    //                 $ret = array(
-    //                     'status' => false,
-    //                     'message' => 'Data gagal disimpan'
-    //                 );
-    //             }
-	// 	    }
-	//     }
-    //     echo json_encode($ret);
-    // }
+                if ($insert) {
+                    $ret = array(
+                        'status' => true,
+                        'message' => 'Data berhasil disimpan'
+                    );
+                } else {
+                    $ret = array(
+                        'status' => false,
+                        'message' => 'Data gagal disimpan'
+                    );
+                }
+		    }
+	    }
+        echo json_encode($ret);
+    }
 
-    // public function delete_kategori(){
+    public function delete_kategori(){
 
-	// 	$id = $this->input->post('id');
-	// 	$data['deleted_at'] = time();
-	// 	$q = $this->pm->updateKategoriHaji($id, $data);
+		$id = $this->input->post('id');
+		$data['deleted_at'] = time();
+		$q = $this->pm->updateKategoriHaji($id, $data);
 
-	// 	if ($q) {
-	// 		$ret['status'] = true;
-	// 		$ret['message'] = 'Data berhasil dihapus';
-	// 	} else {
-	// 		$ret['status'] = false;
-	// 		$ret['message'] = 'Data gagal dihapus';
-	// 	}
+		if ($q) {
+			$ret['status'] = true;
+			$ret['message'] = 'Data berhasil dihapus';
+		} else {
+			$ret['status'] = false;
+			$ret['message'] = 'Data gagal dihapus';
+		}
 
-	// 	echo json_encode($ret);
-	// }
+		echo json_encode($ret);
+	}
 
 
 
