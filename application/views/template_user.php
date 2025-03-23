@@ -242,12 +242,12 @@
                             <span>Pemesanan</span>
                         </a>
                     </li>
-                    <li class="<?= ($this->uri->segment(2)=='tagihan') ? 'active' : '' ?>">
+                    <!-- <li class="<?= ($this->uri->segment(2)=='tagihan') ? 'active' : '' ?>">
                         <a href="tagihan">
                             <i class="fa fa-credit-card"></i>
                             <span>Tagihan</span>
                         </a>
-                    </li>
+                    </li> -->
                     <li class="<?= ($this->uri->segment(2)=='profil') ? 'active' : '' ?>">
                         <a href="profil">
                             <i class="fa fa-cog"></i>
