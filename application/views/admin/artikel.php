@@ -1,287 +1,300 @@
 <div class="container py-4">
-    <!-- Nav Tabs -->
-    <ul class="nav nav-tabs" role="tablist">
-        <li class="nav-item">
-            <a class="nav-link active" data-toggle="tab" href="#tab-artikel">Artikel</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#tab-kategori">Kategori</a>
-        </li>
-    </ul>
-
-    <div class="tab-content">
-        <!-- Tab Artikel -->
-        <div id="tab-artikel" class="tab-pane fade show active">
-            <!-- Header Artikel -->
-            <div class="d-flex justify-content-between align-items-center my-3">
-                <h4 class="font-weight-bold mb-0">Artikel</h4>
-                <button id="btn-buat-artikel" class="btn btn-success">Buat Artikel Baru</button>
-            </div>
-
-            <!-- Daftar Artikel -->
-            <div id="daftar-artikel">
-                <div class="card shadow-lg mb-4">
-                    <div class="card-body">
-                        <h5 class="font-weight-bold">Daftar Artikel</h5>
-                        <div class="table-responsive">
-                            <table class="table table-bordered table-hover">
-                                <thead class="thead-dark">
-                                    <tr class="text-center">
-                                        <th style="width: 50px;">No</th>
-                                        <th>Kategori</th>
-                                        <th>Judul</th>
-                                        <th>Tanggal</th>
-                                        <th style="width: 180px;">Aksi</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <!-- Contoh data statis; nantinya data diambil dari database -->
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Teknologi</td>
-                                        <td>Inovasi AI Terbaru</td>
-                                        <td>2025-03-15</td>
-                                        <td class="text-center">
-                                            <button class="btn btn-sm btn-primary">Ubah</button>
-                                            <button class="btn btn-sm btn-info">Lihat Detail</button>
-                                            <button class="btn btn-sm btn-danger">Hapus</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Bisnis</td>
-                                        <td>Strategi Pasar Global</td>
-                                        <td>2025-03-14</td>
-                                        <td class="text-center">
-                                            <button class="btn btn-sm btn-primary">Ubah</button>
-                                            <button class="btn btn-sm btn-info">Lihat Detail</button>
-                                            <button class="btn btn-sm btn-danger">Hapus</button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+    <!-- Card dengan border kuning -->
+    <div class="card-custom-border mb-4">
+        <div class="card-header bg-white">
+            <h4 class="font-weight-bold mb-0">ARTIKEL</h4>
+        </div>
+        <!-- Nav Tabs -->
+        <div class="card-header p-0 pt-1">
+            <ul class="nav nav-tabs" id="custom-tabs-one-tab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="custom-tabs-one-home-tab" data-toggle="pill" href="#tab-artikel" role="tab" aria-controls="tab-artikel" aria-selected="true">Artikel</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="custom-tabs-one-profile-tab" data-toggle="pill" href="#tab-kategori" role="tab" aria-controls="tab-kategori" aria-selected="false">Kategori Artikel</a>
+                </li>
+            </ul>
+        </div>
+        <!-- Tab Content -->
+        <div class="tab-content">
+            <!-- Tab Artikel -->
+            <div id="tab-artikel" class="tab-pane fade show active" role="tabpanel">
+                <!-- Tombol di atas tabel -->
+                <div class="d-flex justify-content-start mb-2">
+                    <button id="btnTambahArtikel" class="btn btn-success" data-target="artikel">Buat Artikel Baru</button>
+                    <button id="btnRefreshArtikel" class="btn btn-refresh ml-2" data-target="artikel">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                </div>
+                <!-- Tabel Artikel -->
+                <div class="table-responsive mb-3">
+                    <table id="table_artikel" class="table table-bordered table-hover" data-target="artikel">
+                        <thead class="thead-dark">
+                            <tr class="text-center">
+                                <th data-key="no">No</th>
+                                <th data-key="nama_kategori">Kategori</th>
+                                <th data-key="judul">Judul</th>
+                                <th data-key="tanggal">Tanggal</th>
+                                <th data-key="aksi">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data dimuat secara otomatis melalui AJAX -->
+                        </tbody>
+                    </table>
                 </div>
             </div>
+            <!-- Tab Kategori -->
+            <div id="tab-kategori" class="tab-pane fade" role="tabpanel">
+                <!-- Tombol di atas tabel -->
+                <div class="d-flex justify-content-start mb-2">
+                    <button id="btnTambahKategori" class="btn btn-success" data-target="kategori">Buat Kategori Baru</button>
+                    <button id="btnRefreshKategori" class="btn btn-refresh ml-2" data-target="kategori">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                </div>
+                <!-- Tabel Kategori -->
+                <div class="table-responsive mb-3">
+                    <table id="table_kategori_artikel" class="table table-bordered table-hover" data-target="kategori">
+                        <thead class="thead-dark">
+                            <tr class="text-center">
+                                <th data-key="no">No</th>
+                                <th data-key="nama_kategori">Nama Kategori</th>
+                                <th data-key="aksi">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data dimuat secara otomatis melalui AJAX -->
+                        </tbody>
+                    </table>
+                </div>
+            </div> <!-- End Tab Kategori -->
+        </div> <!-- End Tab Content -->
+    </div> <!-- End Card -->
+</div> <!-- End Container -->
 
-            <!-- Form Tambah Artikel (default disembunyikan) -->
-            <div id="form-artikel" class="card shadow-lg mb-4" style="display: none;">
-                <div class="card-body">
-                    <h5 class="font-weight-bold">Form Tambah Artikel</h5>
-                    <small class="text-muted">Lengkapi data artikel baru.</small>
-                    <hr>
-                    <form id="artikelForm">
+<!-- Modal Form Artikel -->
+<div class="modal fade" id="modal_artikel" tabindex="-1" role="dialog" aria-labelledby="modalArtikelLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form id="artikelForm">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalArtikelLabel">Buat Artikel Baru</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Tutup">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="card-body">
+                        <h5 class="font-weight-bold">Form Tambah Artikel</h5>
+                        <small class="text-muted">Lengkapi data artikel baru.</small>
+                        <hr>
                         <!-- Baris 1: Kategori & Judul Artikel -->
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label>Kategori</label>
-                                <select class="form-control" required>
+                                <label for="kategoriArtikel">Kategori</label>
+                                <select class="form-control" id="kategoriArtikel" required>
                                     <option value="">Pilih Kategori</option>
-                                    <option>Teknologi</option>
-                                    <option>Olahraga</option>
-                                    <option>Bisnis</option>
+                                    <!-- Opsi kategori akan dimuat via AJAX (lihat method option_kategori_Artikel) -->
                                 </select>
                             </div>
                             <div class="form-group col-md-6">
-                                <label>Judul Artikel</label>
-                                <input type="text" class="form-control" placeholder="Masukkan judul artikel" required>
+                                <label for="judulArtikel">Judul Artikel</label>
+                                <input type="text" class="form-control" id="judulArtikel" placeholder="Masukkan judul artikel" required>
                             </div>
                         </div>
                         <!-- Baris 2: Konten Artikel -->
                         <div class="form-group">
-                            <label>Konten</label>
-                            <textarea class="form-control" rows="5" placeholder="Tulis konten artikel di sini..." required></textarea>
+                            <label for="kontenArtikel">Konten</label>
+                            <textarea class="form-control" id="kontenArtikel" rows="5" placeholder="Tulis konten artikel di sini..." required></textarea>
                         </div>
                         <!-- Baris 3: Keyword & Gambar -->
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label>Keyword</label>
-                                <input type="text" class="form-control" placeholder="Contoh: teknologi, inovasi, AI" required>
+                                <label for="keywordArtikel">Keyword</label>
+                                <input type="text" class="form-control" id="keywordArtikel" placeholder="Contoh: teknologi, inovasi, AI" required>
                             </div>
                             <div class="form-group col-md-6">
-                                <label>Gambar</label>
-                                <input type="file" class="form-control-file">
+                                <label for="gambarArtikel">Gambar</label>
+                                <input type="file" class="form-control-file" id="gambarArtikel">
                             </div>
                         </div>
-                        <!-- Tombol Aksi -->
-                        <div class="d-flex justify-content-end">
-                            <button type="button" class="btn btn-secondary mr-2" id="btn-batal-artikel">Batal</button>
-                            <button type="submit" class="btn btn-primary">Simpan Artikel</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-            <!-- Konfirmasi Artikel Berhasil (default disembunyikan) -->
-            <div id="confirmation-artikel" class="card shadow-lg" style="display: none;">
-                <div class="card-body">
-                    <h5 class="font-weight-bold text-success">Artikel berhasil disimpan!</h5>
-                    <hr>
-                    <p><strong>Judul Artikel:</strong> <span id="conf-judul"></span></p>
-                    <p><strong>Kategori:</strong> <span id="conf-kategori"></span></p>
-                    <div class="mt-3">
-                        <button class="btn btn-info" id="btn-lihat-artikel">Lihat Daftar Artikel</button>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- Tab Kategori -->
-        <div id="tab-kategori" class="tab-pane fade">
-            <!-- Header Kategori -->
-            <div class="d-flex justify-content-between align-items-center my-3">
-                <h4 class="font-weight-bold mb-0">Kategori</h4>
-                <button id="btn-buat-kategori" class="btn btn-success">Buat Kategori Baru</button>
-            </div>
-
-            <!-- Daftar Kategori -->
-            <div id="daftar-kategori">
-                <div class="card shadow-lg mb-4">
-                    <div class="card-body">
-                        <h5 class="font-weight-bold">Daftar Kategori</h5>
-                        <div class="table-responsive">
-                            <table class="table table-bordered table-hover">
-                                <thead class="thead-dark">
-                                    <tr class="text-center">
-                                        <th style="width: 50px;">No</th>
-                                        <th>Nama Kategori</th>
-                                        <th>Deskripsi</th>
-                                        <th style="width: 180px;">Aksi</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <!-- Contoh data statis -->
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Teknologi</td>
-                                        <td>Berita dan artikel seputar teknologi</td>
-                                        <td class="text-center">
-                                            <button class="btn btn-sm btn-primary">Ubah</button>
-                                            <button class="btn btn-sm btn-danger">Hapus</button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                    <button type="submit" class="btn btn-primary">Simpan Artikel</button>
                 </div>
-            </div>
-
-            <!-- Form Tambah Kategori (default disembunyikan) -->
-            <div id="form-kategori" class="card shadow-lg mb-4" style="display: none;">
-                <div class="card-body">
-                    <h5 class="font-weight-bold">Form Tambah Kategori</h5>
-                    <small class="text-muted">Lengkapi data kategori baru.</small>
-                    <hr>
-                    <form id="kategoriForm">
-                        <div class="form-group">
-                            <label>Nama Kategori</label>
-                            <input type="text" class="form-control" placeholder="Masukkan nama kategori" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Deskripsi</label>
-                            <textarea class="form-control" rows="3" placeholder="Deskripsi kategori" required></textarea>
-                        </div>
-                        <div class="d-flex justify-content-end">
-                            <button type="button" class="btn btn-secondary mr-2" id="btn-batal-kategori">Batal</button>
-                            <button type="submit" class="btn btn-primary">Simpan Kategori</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-            <!-- Konfirmasi Kategori Berhasil (default disembunyikan) -->
-            <div id="confirmation-kategori" class="card shadow-lg" style="display: none;">
-                <div class="card-body">
-                    <h5 class="font-weight-bold text-success">Kategori berhasil disimpan!</h5>
-                    <hr>
-                    <p><strong>Nama Kategori:</strong> <span id="conf-nama-kategori"></span></p>
-                    <p><strong>Deskripsi:</strong> <span id="conf-deskripsi"></span></p>
-                    <div class="mt-3">
-                        <button class="btn btn-info" id="btn-lihat-kategori">Lihat Daftar Kategori</button>
-                    </div>
-                </div>
-            </div>
+            </form>
         </div>
     </div>
 </div>
 
-<!-- JavaScript Toggle Tampilan -->
+<!-- Modal Form Kategori -->
+<div class="modal fade" id="modal_kategori" tabindex="-1" role="dialog" aria-labelledby="modalKategoriLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form id="form_kategori">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalKategoriLabel">Buat Kategori Baru</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Tutup">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="nama_kategori">Nama Kategori</label>
+                        <input type="text" class="form-control" id="nama_kategori" placeholder="Masukkan nama kategori" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                    <button type="submit" class="btn btn-primary" data-target="kategori">Simpan Kategori</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 <script>
-    // --- Artikel Section ---
-    const btnBuatArtikel = document.getElementById('btn-buat-artikel');
-    const formArtikel = document.getElementById('form-artikel');
-    const daftarArtikel = document.getElementById('daftar-artikel');
-    const confirmationArtikel = document.getElementById('confirmation-artikel');
-    const btnBatalArtikel = document.getElementById('btn-batal-artikel');
-    const artikelForm = document.getElementById('artikelForm');
-    const btnLihatArtikel = document.getElementById('btn-lihat-artikel');
+    $(document).ready(function() {
+        // Inisialisasi DataTables untuk Artikel dengan AJAX
+        var tableArtikel = $('#table_artikel').DataTable({
+            "ajax": {
+                "url": "<?= base_url('artikel/table_artikel') ?>",
+                "type": "POST"
+            },
+            "columnDefs": [{
+                "targets": 0,
+                "orderable": false,
+                "searchable": false
+            }],
+            "drawCallback": function(settings) {
+                var api = this.api();
+                api.column(0, {
+                    search: 'applied',
+                    order: 'applied'
+                }).nodes().each(function(cell, i) {
+                    cell.innerHTML = i + 1;
+                });
+            }
+        });
 
-    btnBuatArtikel.addEventListener('click', () => {
-        daftarArtikel.style.display = 'none';
-        confirmationArtikel.style.display = 'none';
-        formArtikel.style.display = 'block';
-    });
+        // Inisialisasi DataTables untuk Kategori dengan AJAX
+        var tableKategori = $('#table_kategori_artikel').DataTable({
+            "ajax": {
+                "url": "<?= base_url('artikel/table_kategori_artikel') ?>",
+                "type": "POST"
+            },
+            "columnDefs": [{
+                "targets": -1,
+                "orderable": false,
+                "searchable": false,
+                "render": function(data, type, row, meta) {
+                    return data;
+                }
+            }],
+            "drawCallback": function(settings) {
+                var api = this.api();
+                api.column(0, {
+                    search: 'applied',
+                    order: 'applied'
+                }).nodes().each(function(cell, i) {
+                    cell.innerHTML = i + 1;
+                });
+            }
+        });
 
-    btnBatalArtikel.addEventListener('click', () => {
-        formArtikel.style.display = 'none';
-        confirmationArtikel.style.display = 'none';
-        daftarArtikel.style.display = 'block';
-    });
+        // // Muat opsi kategori untuk form artikel via AJAX
+        // $.ajax({
+        //     url: "<?= base_url('artikel/option_kategori_artikel') ?>",
+        //     method: "GET",
+        //     success: function(response) {
+        //         $('#kategoriArtikel').html(response);
+        //     },
+        //     error: function(xhr, status, error) {
+        //         console.error("Gagal memuat opsi kategori:", error);
+        //     }
+        // });
 
-    artikelForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const judul = artikelForm.querySelector('input[placeholder="Masukkan judul artikel"]').value;
-        const kategori = artikelForm.querySelector('select[required]').value;
-        formArtikel.style.display = 'none';
-        confirmationArtikel.style.display = 'block';
-        daftarArtikel.style.display = 'none';
-        document.getElementById('conf-judul').innerText = judul || '[Judul Artikel]';
-        document.getElementById('conf-kategori').innerText = kategori || '[Kategori]';
-    });
 
-    btnLihatArtikel.addEventListener('click', () => {
-        confirmationArtikel.style.display = 'none';
-        formArtikel.style.display = 'none';
-        daftarArtikel.style.display = 'block';
-    });
+        // Tampilkan modal untuk membuat artikel baru
+        $('#btnTambahArtikel').on('click', function() {
+            $('#modal_artikel').modal('show');
+        });
+        // Tampilkan modal untuk membuat kategori baru
+        $('#btnTambahKategori').on('click', function() {
+            $('#modal_kategori').modal('show');
+        });
 
-    // --- Kategori Section ---
-    const btnBuatKategori = document.getElementById('btn-buat-kategori');
-    const formKategori = document.getElementById('form-kategori');
-    const daftarKategori = document.getElementById('daftar-kategori');
-    const confirmationKategori = document.getElementById('confirmation-kategori');
-    const btnBatalKategori = document.getElementById('btn-batal-kategori');
-    const kategoriForm = document.getElementById('kategoriForm');
-    const btnLihatKategori = document.getElementById('btn-lihat-kategori');
+        // Tombol refresh
+        $('#btnRefreshArtikel').on('click', function() {
+            tableArtikel.ajax.reload(null, false);
+        });
+        $('#btnRefreshKategori').on('click', function() {
+            tableKategori.ajax.reload(null, false);
+        });
 
-    btnBuatKategori.addEventListener('click', () => {
-        daftarKategori.style.display = 'none';
-        confirmationKategori.style.display = 'none';
-        formKategori.style.display = 'block';
-    });
+        // Submit form Artikel
+        $('#artikelForm').on('submit', function(e) {
+            e.preventDefault();
+            const judul = $('#judulArtikel').val();
+            const kategori = $('#kategoriArtikel').val();
+            const konten = $('#kontenArtikel').val();
+            const keyword = $('#keywordArtikel').val();
 
-    btnBatalKategori.addEventListener('click', () => {
-        formKategori.style.display = 'none';
-        confirmationKategori.style.display = 'none';
-        daftarKategori.style.display = 'block';
-    });
+            $.ajax({
+                url: '<?= base_url("artikel/save_artikel") ?>',
+                method: 'POST',
+                data: {
+                    judul,
+                    id_kategori: kategori,
+                    konten,
+                    keyword
+                },
+                dataType: 'json',
+                success: function(response) {
+                    if (response.status) {
+                        $('#modal_artikel').modal('hide');
+                        alert(response.message);
+                        tableArtikel.ajax.reload(null, false);
+                    } else {
+                        alert(response.message);
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error(xhr.responseText);
+                    alert('Terjadi kesalahan saat menyimpan data.');
+                }
+            });
+        });
 
-    kategoriForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const namaKategori = kategoriForm.querySelector('input[placeholder="Masukkan nama kategori"]').value;
-        const deskripsi = kategoriForm.querySelector('textarea[placeholder="Deskripsi kategori"]').value;
-        formKategori.style.display = 'none';
-        confirmationKategori.style.display = 'block';
-        daftarKategori.style.display = 'none';
-        document.getElementById('conf-nama-kategori').innerText = namaKategori || '[Nama Kategori]';
-        document.getElementById('conf-deskripsi').innerText = deskripsi || '[Deskripsi]';
-    });
+        // Submit form Kategori
+        $('#form_kategori').on('submit', function(e) {
+            e.preventDefault();
+            const namaKategori = $('#nama_kategori').val();
 
-    btnLihatKategori.addEventListener('click', () => {
-        confirmationKategori.style.display = 'none';
-        formKategori.style.display = 'none';
-        daftarKategori.style.display = 'block';
+            $.ajax({
+                url: '<?= base_url("artikel/save_kategori_artikel") ?>',
+                method: 'POST',
+                data: {
+                    nama_kategori: namaKategori
+                },
+                dataType: 'json',
+                success: function(response) {
+                    if (response.status) {
+                        $('#modal_kategori').modal('hide');
+                        alert(response.message);
+                        tableKategori.ajax.reload(null, false);
+                    } else {
+                        alert(response.message);
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error(xhr.responseText);
+                    alert('Terjadi kesalahan saat menyimpan kategori.');
+                }
+            });
+        });
     });
 </script>
