@@ -16,12 +16,12 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/animate-css/animate.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/chartist/css/chartist.min.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.css">
+    <!-- <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/chartist/css/chartist.min.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.css"> -->
 
-<!-- MAIN CSS -->
-<link rel="stylesheet" href="<?php echo base_url(); ?>public/assets/css/main.css">
-<link rel="stylesheet" href="<?php echo base_url(); ?>public/assets/css/color_skins.css">
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>public/assets/css/main.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>public/assets/css/color_skins.css">
 
     <!-- DATATABLE & SWEETALERT -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/jquery-datatable/dataTables.bootstrap4.min.css">
@@ -47,11 +47,12 @@
 
     <!-- CRUD (Contoh) -->
     <script src="<?php echo base_url('public/lib/crud.js');?>"></script>
+    <script src="<?php echo base_url('public/lib/chainedSelect.js');?>"></script>
     
     <script>
         var baseUrl = '<?php echo base_url(); ?>';
         var currentClass = '<?php echo $this->router->fetch_class(); ?>';
-        var baseClass = baseUrl + 'admin' + '/' + currentClass;
+        var baseClass = baseUrl + 'user' + '/' + currentClass;
     </script>
 </head>
 
@@ -247,6 +248,12 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="<?= ($this->uri->segment(2)=='pendaftaran') ? 'active' : '' ?>">
+                        <a href="pendaftaran">
+                            <i class="fa fa-shopping-cart"></i>
+                            <span>Pendaftaran</span>
+                        </a>
+                    </li>
                     <li class="<?= ($this->uri->segment(2)=='pemesanan') ? 'active' : '' ?>">
                         <a href="pemesanan">
                             <i class="fa fa-shopping-cart"></i>
@@ -304,16 +311,17 @@
 </div>
 
 <!-- Bundle JS Mplify -->
-<script src="<?php echo base_url(); ?>public/assets/bundles/libscripts.bundle.js"></script>
+<script src="<?php echo base_url(); ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="<?php echo base_url(); ?>public/assets/bundles/libscripts.bundle.js"></script> -->
 <script src="<?php echo base_url(); ?>public/assets/bundles/vendorscripts.bundle.js"></script>
 
-<script src="<?php echo base_url(); ?>public/assets/bundles/chartist.bundle.js"></script>
+<!-- <script src="<?php echo base_url(); ?>public/assets/bundles/chartist.bundle.js"></script> -->
 <script src="<?php echo base_url(); ?>public/assets/bundles/knob.bundle.js"></script> <!-- Jquery Knob-->
-<script src="<?php echo base_url(); ?>public/assets/bundles/flotscripts.bundle.js"></script> <!-- flot charts Plugin Js --> 
-<script src="<?php echo base_url(); ?>assets/vendor/flot-charts/jquery.flot.selection.js"></script>
+<!-- <script src="<?php echo base_url(); ?>public/assets/bundles/flotscripts.bundle.js"></script> flot charts Plugin Js  -->
+<!-- <script src="<?php echo base_url(); ?>assets/vendor/flot-charts/jquery.flot.selection.js"></script> -->
 
 <script src="<?php echo base_url(); ?>public/assets/bundles/mainscripts.bundle.js"></script>
-<script src="<?php echo base_url(); ?>public/assets/js/index.js"></script>
+<!-- <script src="<?php echo base_url(); ?>public/assets/js/index.js"></script> -->
 
 <script src="<?php echo base_url(); ?>public/assets/bundles/datatablescripts.bundle.js"></script>
 <script src="<?php echo base_url(); ?>assets/vendor/jquery-datatable/buttons/dataTables.buttons.min.js"></script>

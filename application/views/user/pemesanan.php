@@ -1,119 +1,256 @@
-<div class="container py-4">
-    <!-- Judul Halaman -->
-    <div class="d-flex justify-content-between align-items-center mb-3">
-        <div>
-            <h4 class="font-weight-bold mb-0">Halaman Pemesanan</h4>
-            <small class="text-muted">Kelola semua pemesanan Anda di sini.</small>
+<div class="block-header">
+    <div class="row">
+        <div class="col-lg-5 col-md-8 col-sm-12">
+            <h2>PEMESANAN</h2>
         </div>
-        <div>
-            <!-- Tombol Opsional, misalnya untuk kembali ke Dashboard -->
-            <button class="btn btn-light">Kembali ke Dashboard</button>
+        <div class="col-lg-7 col-md-4 col-sm-12 text-right">
+            <ul class="breadcrumb justify-content-end">
+                <li class="breadcrumb-item"><a href="dashboard"><i class="icon-home"></i></a></li>
+                <li class="breadcrumb-item active">Pemesanan</li>
+            </ul>
         </div>
     </div>
+</div>
+<div class="card shadow-lg mb-4" id="container_table">
+    <div class="card-body">
+        <div class="">
+            <!-- <div class="body" >
+                <button class="btn btn-primary m-b-15 btnTambah" type="button" data-target="pemesanan_user"
+                    data-toggle="modal">
+                    <i class="fa fa-plus-square" aria-hidden="true"></i> Tambah Pemesanan
+                </button>
+                <button class="btn btn-secondary btnRefresh m-b-15" data-target="pemesanan_user">
+                    <i class="fa fa-refresh"></i>
+                </button>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover table-striped" data-target="pemesanan_user"
+                        id="table_pemesanan_user">
+                        <thead>
+                            <tr>
+                                <th data-key="no">No</th>
+                                <th data-key="kode_pemesanan">Kode Pemesanan</th>
+                                <th data-key="nama_kategori">Kategori</th>
+                                <th data-key="nama_paket">Nama Paket</th>
+                                <th data-key="nama_lengkap">Nama Lengkap</th>
+                                <th data-key="harga">Harga</th>
+                                <th data-key="tanggal_pemesanan">Tanggal Pemesanan</th>
+                                <th data-key="status">Status</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <br>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div> -->
+            <div class="body">
+                <button class="btn btn-primary m-b-15 btnTambah" type="button" data-target="pemesanan_admin"
+                    data-toggle="modal">
+                    <i class="fa fa-plus-square" aria-hidden="true"></i> Tambah Pemesanan
+                </button>
+                <button class="btn btn-secondary btnRefresh m-b-15" data-target="pemesanan_admin">
+                    <i class="fa fa-refresh"></i>
+                </button>
 
-    <!-- Card Utama -->
-    <div class="card shadow-lg">
-        <div class="card-body">
-            <div class="row">
-                <!-- SIDEBAR: Vertical Tabs (Opsional) -->
-                <div class="col-md-3 border-right">
-                    <div class="nav flex-column nav-pills" id="user-order-tabs" role="tablist" aria-orientation="vertical">
-                        <!-- Daftar Pemesanan -->
-                        <a class="nav-link active mb-2 d-flex align-items-center"
-                           id="daftar-tab" data-toggle="pill" href="#daftar" role="tab">
-                            <i class="fa fa-list-alt mr-2 text-primary"></i> 
-                            Daftar Pemesanan
-                        </a>
-                        <!-- Buat Pesanan Baru -->
-                        <a class="nav-link d-flex align-items-center"
-                           id="pesan-tab" data-toggle="pill" href="#pesan" role="tab">
-                            <i class="fa fa-plus-square mr-2 text-success"></i> 
-                            Buat Pesanan Baru
-                        </a>
+                <div class="row" id="card-pemesanan-admin">
+                    <!-- Cards akan dimuat di sini menggunakan JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal_pemesanan_user" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="card">
+                    <div class="card-body" >
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <div class="">
+                            <h3 style="color: black; font-weight: bold;">Form Pemesanan</h3>
+                        </div>
+                        <br>
+                        <form id="form_pemesanan_user" method="POST" enctype="multipart/form-data">
+                            <br>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <input type="hidden" class="form-control" id="id" name="id" value="">
+                                    <div class="form-group">
+                                        <label for="kode_pendaftaran" class="form-label">Kode Pendaftaran</label>
+                                        <select class="form-control loadSelect chainedSelect" data-target="pendaftaran" id="id_pendaftaran" name="id_pendaftaran" value="">
+                                            <option value="">Pilih</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="nama_kategori" class="form-label">Kategori</label>
+                                        <select class="form-control loadSelect chainedSelect" data-target="kategori" id="id_kategori" name="id_kategori" value="">
+                                            <option value="">Pilih</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="nama_paket" class="form-label">Nama Paket</label>
+                                        <select class="form-control loadSelect chainedSelect" data-target="produk" id="id_produk" name="id_produk" value="">
+                                            <option value="">Pilih</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary btnSave" data-type="with-title"
+                                    data-target="pemesanan_user">Simpan</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
+            </div>
 
-                <!-- Konten Tab -->
-                <div class="col-md-9">
-                    <div class="tab-content" id="user-order-tabsContent">
-                        
-                        <!-- TAB 1: Daftar Pemesanan -->
-                        <div class="tab-pane fade show active" id="daftar" role="tabpanel" aria-labelledby="daftar-tab">
-                            <h5 class="font-weight-bold">Daftar Pemesanan</h5>
-                            <small class="text-muted d-block mb-3">Tampilkan semua pemesanan yang telah Anda buat.</small>
-                            <hr>
-                            <!-- Filter & Pencarian (Opsional) -->
-                            <div class="mb-3">
-                                <div class="form-inline">
-                                    <label class="mr-2">Filter Status:</label>
-                                    <select class="form-control mr-2">
-                                        <option>Semua</option>
-                                        <option>Menunggu Pembayaran</option>
-                                        <option>Sudah Dibayar</option>
-                                        <option>Selesai</option>
-                                        <option>Dibatalkan</option>
-                                    </select>
-                                    <input type="text" class="form-control" placeholder="Cari pemesanan...">
-                                    <button class="btn btn-primary ml-2">Cari</button>
-                                </div>
-                            </div>
-                            <!-- Contoh Daftar Pemesanan (Kartu atau Tabel) -->
-                            <div class="order-list">
-                                <!-- Contoh Card Pemesanan -->
-                                <div class="card mb-3">
-                                    <div class="card-body">
-                                        <h6 class="card-title">#UMR001 - Paket Umroh Reguler</h6>
-                                        <p class="card-text mb-1"><strong>Tanggal Keberangkatan:</strong> 2025-03-15</p>
-                                        <p class="card-text mb-1"><strong>Status:</strong> Menunggu Pembayaran</p>
-                                        <p class="card-text"><small class="text-muted">Dipesan pada: 2025-02-01</small></p>
-                                        <div>
-                                            <button class="btn btn-sm btn-info">Detail</button>
-                                            <button class="btn btn-sm btn-success">Bayar</button>
-                                            <button class="btn btn-sm btn-danger">Batalkan</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Tambahkan kartu pemesanan lain di sini -->
-                            </div>
-                        </div>
-                        
-                        <!-- TAB 2: Buat Pesanan Baru -->
-                        <div class="tab-pane fade" id="pesan" role="tabpanel" aria-labelledby="pesan-tab">
-                            <h5 class="font-weight-bold">Buat Pesanan Baru</h5>
-                            <small class="text-muted d-block mb-3">Lengkapi formulir berikut untuk melakukan pemesanan paket.</small>
-                            <hr>
-                            <!-- Form Pesanan Baru -->
-                            <form>
-                                <div class="form-group">
-                                    <label>Pilih Paket</label>
-                                    <select class="form-control">
-                                        <option>Paket Umroh Reguler</option>
-                                        <option>Paket Umroh Plus</option>
-                                        <option>Paket Haji Plus</option>
-                                    </select>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <label>Tanggal Keberangkatan</label>
-                                        <input type="date" class="form-control">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label>Jumlah Jamaah</label>
-                                        <input type="number" class="form-control" placeholder="Misal: 2 orang">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label>Keterangan Tambahan</label>
-                                    <textarea class="form-control" rows="2" placeholder="Misal: Permintaan khusus, preferensi hotel, dsb."></textarea>
-                                </div>
-                                <!-- Tombol Submit -->
-                                <button type="submit" class="btn btn-primary">Pesan Sekarang</button>
-                            </form>
-                        </div>
-                        
-                    </div> <!-- /tab-content -->
-                </div> <!-- /col -->
-            </div> <!-- /row -->
-        </div> <!-- /card-body -->
-    </div> <!-- /card -->
+        </div>
+    </div>
 </div>
+
+<div class="modal fade" id="detailModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="card">
+                    <div class="card-body">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <div class="">
+                            <h3 style="color: black; font-weight: bold;">Detail Pemesanan</h3>
+                        </div>
+                        <br>
+                        <form id="form_pemesanan_user" method="POST" enctype="multipart/form-data">
+                            <br>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <input type="hidden" class="form-control" id="id" name="id" value="">
+                                    <div class="form-group">
+                                        <label for="kode_pemesanan" class="form-label">Kode Pemesanan</label>
+                                        <input type="text" class="form-control" id="kode_pemesanan" name="kode_pemesanan" value="" style="width: 100%;" disabled>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="id_kategori" class="form-label">Kategori</label>
+                                        <select class="form-control loadSelect chainedSelect" data-target="kategori" id="id_kategori" name="id_kategori" value="" disabled>
+                                            <option value="">Pilih</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="id_produk" class="form-label">Nama Paket</label>
+                                        <select class="form-control loadSelect chainedSelect" data-target="produk" id="id_produk" name="id_produk" value="" disabled>
+                                            <option value="">Pilih</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="tanggal_pemesanan" class="form-label">Tangal Pemesanan</label>
+                                        <input type="text" class="form-control" id="tanggal_pemesanan" name="tanggal_pemesanan" value="" style="width: 100%;" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary btnSave" data-type="with-title"
+                                    data-target="pemesanan_user">Simpan</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function() {
+    // Memuat kategori saat halaman dimuat
+    $.ajax({
+        url: baseClass+'/option_kategori',  // Gantilah dengan URL yang sesuai untuk memuat kategori
+        method: 'GET',
+        success: function(data) {
+            $('#id_kategori').html(data);
+        }
+    });
+
+    // Ketika kategori dipilih
+    $('#id_kategori').change(function() {
+        var kategoriId = $(this).val();
+
+        // Cek apakah kategori dipilih
+        if (kategoriId) {
+            // Mengaktifkan dropdown produk dan memuat produk berdasarkan kategori
+            $('#id_produk').prop('disabled', false);
+
+            $.ajax({
+                url: baseClass+'/option_produk/' + kategoriId,  // Gantilah dengan URL yang sesuai untuk memuat produk
+                method: 'GET',
+                success: function(data) {
+                    $('#id_produk').html(data);
+                }
+            });
+        } else {
+            // Jika kategori tidak dipilih, disable dropdown produk dan reset
+            $('#id_produk').prop('disabled', true).html('<option value="">Pilih</option>');
+        }
+    });
+
+    
+});
+
+$(document).ready(function() {
+    // Fungsi untuk mengambil data pemesanan dari server
+    function loadPemesanan() {
+        $.ajax({
+            url: baseClass+'/get_pemesanan',  // Ganti dengan URL yang benar
+            method: 'GET',
+            dataType: 'json',
+            success: function(response) {
+                var pemesananData = response; // Data pemesanan dari server
+                var cardsHtml = '';
+                
+                pemesananData.forEach(function(pemesanan) {
+                    cardsHtml += `
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title">${pemesanan.kode_pemesanan}</h5>
+                                    <span class="badge badge-${pemesanan.status == 'Diterima' ? 'success' : 'warning'}">${pemesanan.status}</span>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-subtitle mb-2 text-muted">${pemesanan.nama_kategori}</h6>
+                                    <p class="card-text"><strong>Nama Paket:</strong> ${pemesanan.nama_paket}</p>
+                                    <p class="card-text"><strong>Nama Lengkap:</strong> ${pemesanan.nama_lengkap}</p>
+                                    <p class="card-text"><strong>Harga:</strong> ${pemesanan.harga}</p>
+                                    <p class="card-text"><strong>Tanggal Pemesanan:</strong> ${pemesanan.tanggal_pemesanan}</p>
+                                </div>
+                                <div class="card-footer">
+                                    <button type="button" class="btn btn-success btn-sm detailBtn" data-value="1" data-toggle="modal" data-target="pemesanan_admin"><i class="fa fa-eye"></i> Detail </button>
+                                    <button class="btn btn-danger btn-sm">Hapus</button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                // Menambahkan cards ke dalam container
+                $('#card-pemesanan-admin').html(cardsHtml);
+            },
+            error: function() {
+                alert('Gagal mengambil data pemesanan.');
+            }
+        });
+    }
+
+    // Panggil fungsi untuk memuat cards saat halaman ready
+    loadPemesanan();
+});
+
+
+</script>

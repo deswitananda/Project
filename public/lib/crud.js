@@ -1,3 +1,4 @@
+
 $(document).ready(function() {
     $('.loadSelect').each(function () {
         let targetController = $(this).data('target');
@@ -5,6 +6,23 @@ $(document).ready(function() {
         let url = baseClass + '/option_' + targetController;
         $(this).load(url);
     });
+
+    // $("#kategori").change(function(){
+    //     var id_kategori = $(this).val();
+
+    //     if (id_kategori === "") {
+    //         $("#produk").html('<option value="">Pilih Produk</option>');
+    //         return;
+    //     }
+
+    //     $.ajax({
+    //         url: "<?= base_url('user/Pemesanan/option_produk/') ?>" + id_kategori,
+    //         type: "GET",
+    //         success: function(data) {
+    //             $("#produk").html(data);
+    //         }
+    //     });
+    // });
 
     $('.table').each(function () {
         let target = $(this).data('target');
@@ -22,7 +40,7 @@ $(document).ready(function() {
         
         modal.find('.text-danger').text(''); // Hapus pesan error
         modal.find('.is-invalid, .is-valid').removeClass('is-invalid is-valid'); // Hapus kelas validasi
-    });
+    });    
 
     
     $("#check-all").click(function() {
@@ -30,6 +48,8 @@ $(document).ready(function() {
     });
 
 });
+
+
 
 $(document).on("click", ".btnRefresh", function() {
     let target = $(this).data('target');
@@ -88,6 +108,7 @@ function loadDataTable(el, filter = '') {
     });
 }
 
+
 $(document).on('click', '.editBtn', function() {
 	let targetController = $(this).data('target');
 	let id = $(this).data('value');
@@ -96,15 +117,14 @@ $(document).on('click', '.editBtn', function() {
 	$.ajax({
 		url: url,
 		type: 'POST',
-		data: {
-			id: id
-		},
-		dataType: 'json',
+        data: { id: id }, // Pastikan dikirim sebagai objek biasa
+        dataType: 'json',
 		success: function(response) {
 			if (response.status) {
 				$.each(response.data, function (i, item) {
 					$(form + ' [name="' + i + '"]').val(item);
 				});
+                console.log("Modal yang dipanggil:", '#modal_' + targetController);
 				$('#modal_' + targetController).modal('show');
 			} else {
 				alert(response.message);
@@ -113,6 +133,8 @@ $(document).on('click', '.editBtn', function() {
 
 	})
 });
+
+
 
 $(document).on('click', '.btnSave', function() {
     $('.text-danger').html('');

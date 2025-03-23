@@ -19,7 +19,7 @@
         <div class="body">
             <ul class="nav nav-tabs-new2">
                 <li class="nav-item"><a class="nav-link show active" data-toggle="tab" href="#haji">Haji</a></li>
-                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#kategori">Kategori</a></li>
+                <!-- <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#kategori">Kategori</a></li> -->
                 <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#persyaratan">Persyaratan Peserta</a>
                 </li>
                 <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#syarat">Syarat & Ketentuan</a></li>
@@ -58,7 +58,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane" id="kategori">
+                <!-- <div class="tab-pane" id="kategori">
                     <div class="body">
                         <button class="btn btn-primary m-b-15 btnTambah" type="button" data-target="kategori"
                             data-toggle="modal">
@@ -82,7 +82,7 @@
                             </table>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <div class="tab-pane" id="persyaratan">
                     <div class="body">
                         <button class="btn btn-primary m-b-15 btnTambah" type="button" data-target="persyaratan"
@@ -337,7 +337,7 @@
 
 
 <!-- MODAL TAMBAH KATEGORI PAKET haji -->
-<div class="modal fade" id="modal_kategori" tabindex="-1" role="dialog">
+<!-- <div class="modal fade" id="modal_kategori" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header align-center">
@@ -369,7 +369,7 @@
 
         </div>
     </div>
-</div>
+</div> -->
 
 <!-- MODAL TAMBAH PERSYARATAN PAKET haji -->
 <div class="modal fade" id="modal_persyaratan" tabindex="-1" role="dialog">

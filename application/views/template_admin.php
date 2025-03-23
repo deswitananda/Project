@@ -250,10 +250,10 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="<?= ($this->uri->segment(2)=='pendaftar') ? 'active' : '' ?>">
-                        <a href="pendaftar">
+                    <li class="<?= ($this->uri->segment(2)=='pendaftaran') ? 'active' : '' ?>">
+                        <a href="pendaftaran">
                             <i class="fa fa-users"></i>
-                            <span>Pendaftar</span>
+                            <span>Pendaftaran</span>
                         </a>
                     </li>
                     <li class="<?= ($this->uri->segment(2)=='pemesanan') ? 'active' : '' ?>">

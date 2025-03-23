@@ -5,7 +5,7 @@ class Produk_model extends MY_model
 {
 
 	protected $tablePaketHaji = 'paket_haji';
-	protected $tableKategoriPaketHaji = 'kategori';
+	protected $tableKategori = 'kategori';
 	protected $tablePersyaratanPaketHaji = 'persyaratan';
 	protected $tableSyaratPaketHaji = 'syarat';
 	protected $tablePaketUmroh = 'paket_umroh';
@@ -23,14 +23,14 @@ class Produk_model extends MY_model
 	//TABLE PAKET HAJI--------------------------------------------------------------------
     public function dataTablesPaketHaji(){
 		$col_order 	= array($this->tablePaketHaji . '.id', $this->tablePaketHaji . '.nama_paket');
-		$col_search = array($this->tablePaketHaji . '.id', $this->tablePaketHaji . '.nama_paket' , $this->tableKategoriPaketHaji . '.nama_kategori');
+		$col_search = array($this->tablePaketHaji . '.id', $this->tablePaketHaji . '.nama_paket' , $this->tableKategori . '.nama_kategori');
 		$order 		= array($this->tablePaketHaji . '.id' => 'desc');
 		$filter 	= array($this->tablePaketHaji . '.deleted_at' => 0);
 		$group_by 	= null;
 		//$query = $this->tablePaketHaji;
 		$this->db->from($this->tablePaketHaji);
-		$this->db->select($this->tablePaketHaji . '.*,'. $this->tableKategoriPaketHaji . '.nama_kategori');
-		$this->db->join($this->tableKategoriPaketHaji, $this->tableKategoriPaketHaji . '.id = ' . $this->tablePaketHaji . '.id_kategori');
+		$this->db->select($this->tablePaketHaji . '.*,'. $this->tableKategori . '.nama_kategori');
+		$this->db->join($this->tableKategori, $this->tableKategori . '.id = ' . $this->tablePaketHaji . '.id_kategori');
 		$query = substr($this->db->get_compiled_select(), 6);
 		$data = $this->get_datatables($query, $col_order, $col_search, $order,  $filter, $group_by);
 
@@ -57,43 +57,49 @@ class Produk_model extends MY_model
 
 
 	//KATEGORI PAKET Haji------------------------------------------------------
-	public function dataTablesKategoriPaketHaji(){
-		$col_order 	= array($this->tableKategoriPaketHaji . '.id', $this->tableKategoriPaketHaji . '.nama_kategori');
-		$col_search = array($this->tableKategoriPaketHaji . '.id', $this->tableKategoriPaketHaji . '.nama_kategori');
-		$order 		= array($this->tableKategoriPaketHaji . '.id' => 'desc');
-		$filter 	= array($this->tableKategoriPaketHaji . '.deleted_at' => 0);
-		$group_by 	= null;
-		//$query = $this->tableKategoriPaketHaji;
-		$this->db->from($this->tableKategoriPaketHaji);
-		$this->db->select($this->tableKategoriPaketHaji . '.*');
-		$query = substr($this->db->get_compiled_select(), 6);
-		$data = $this->get_datatables($query, $col_order, $col_search, $order,  $filter, $group_by);
+	// public function dataTablesKategoriPaketHaji(){
+	// 	$col_order 	= array($this->tableKategoriPaketHaji . '.id', $this->tableKategoriPaketHaji . '.nama_kategori');
+	// 	$col_search = array($this->tableKategoriPaketHaji . '.id', $this->tableKategoriPaketHaji . '.nama_kategori');
+	// 	$order 		= array($this->tableKategoriPaketHaji . '.id' => 'desc');
+	// 	$filter 	= array($this->tableKategoriPaketHaji . '.deleted_at' => 0);
+	// 	$group_by 	= null;
+	// 	//$query = $this->tableKategoriPaketHaji;
+	// 	$this->db->from($this->tableKategoriPaketHaji);
+	// 	$this->db->select($this->tableKategoriPaketHaji . '.*');
+	// 	$query = substr($this->db->get_compiled_select(), 6);
+	// 	$data = $this->get_datatables($query, $col_order, $col_search, $order,  $filter, $group_by);
 
-		$recordTotal =  $this->countAllQueryFiltered($query, $filter);
-		$recordFiltered =  $this->count_filtered($query, $filter);
-		return array('data' => $data, 'recordTotal' => $recordTotal, 'recordFiltered' => $recordFiltered);
-	}
+	// 	$recordTotal =  $this->countAllQueryFiltered($query, $filter);
+	// 	$recordFiltered =  $this->count_filtered($query, $filter);
+	// 	return array('data' => $data, 'recordTotal' => $recordTotal, 'recordFiltered' => $recordFiltered);
+	// }
 
-	public function getAllKategoriHajiNotDeleted(){
+	// public function getAllKategoriHajiNotDeleted(){
+
+	// 	$this->db->where('deleted_at', 0);
+	// 	return  $this->db->get($this->tableKategoriPaketHaji);
+	// }
+
+	// public function getKategoriHajiByID($id){
+	// 	$this->db->where($this->tableKategoriPaketHaji . '.id', $id);
+	// 	return $this->db->get($this->tableKategoriPaketHaji);
+	// }
+
+	// public function updateKategoriHaji($id, $data){
+	// 	$this->db->where('id', $id);
+	// 	$this->db->update($this->tableKategoriPaketHaji, $data);
+	// 	return $this->db->affected_rows();
+	// }
+
+	// public function insertKategoriHaji($data){
+	// 	$this->db->insert($this->tableKategoriPaketHaji, $data);
+	// 	return $this->db->insert_id();
+	// }
+
+	public function getAllKategoriNotDeleted(){
 
 		$this->db->where('deleted_at', 0);
-		return  $this->db->get($this->tableKategoriPaketHaji);
-	}
-
-	public function getKategoriHajiByID($id){
-		$this->db->where($this->tableKategoriPaketHaji . '.id', $id);
-		return $this->db->get($this->tableKategoriPaketHaji);
-	}
-
-	public function updateKategoriHaji($id, $data){
-		$this->db->where('id', $id);
-		$this->db->update($this->tableKategoriPaketHaji, $data);
-		return $this->db->affected_rows();
-	}
-
-	public function insertKategoriHaji($data){
-		$this->db->insert($this->tableKategoriPaketHaji, $data);
-		return $this->db->insert_id();
+		return  $this->db->get($this->tableKategori);
 	}
 
 
@@ -174,14 +180,14 @@ class Produk_model extends MY_model
 	//TABLE PAKET UMROH--------------------------------------------------------------------
     public function dataTablesPaketUmroh(){
 		$col_order 	= array($this->tablePaketUmroh . '.id', $this->tablePaketUmroh . '.nama_paket');
-		$col_search = array($this->tablePaketUmroh . '.id', $this->tablePaketUmroh . '.nama_paket' , $this->tableKategoriPaketUmroh . '.nama_kategori');
+		$col_search = array($this->tablePaketUmroh . '.id', $this->tablePaketUmroh . '.nama_paket' , $this->tableKategori . '.nama_kategori');
 		$order 		= array($this->tablePaketUmroh . '.id' => 'desc');
 		$filter 	= array($this->tablePaketUmroh . '.deleted_at' => 0);
 		$group_by 	= null;
 		//$query = $this->tablePaketUmroh;
 		$this->db->from($this->tablePaketUmroh);
-		$this->db->select($this->tablePaketUmroh . '.*,'. $this->tableKategoriPaketUmroh . '.nama_kategori');
-		$this->db->join($this->tableKategoriPaketUmroh, $this->tableKategoriPaketUmroh . '.id = ' . $this->tablePaketUmroh . '.id_kategori');
+		$this->db->select($this->tablePaketUmroh . '.*,'. $this->tableKategori . '.nama_kategori');
+		$this->db->join($this->tableKategori, $this->tableKategori . '.id = ' . $this->tablePaketUmroh . '.id_kategori');
 		$query = substr($this->db->get_compiled_select(), 6);
 		$data = $this->get_datatables($query, $col_order, $col_search, $order,  $filter, $group_by);
 
@@ -208,56 +214,56 @@ class Produk_model extends MY_model
 
 
 	//KATEGORI PAKET UMROH------------------------------------------------------
-	public function dataTablesKategoriPaketUmroh(){
-		$col_order 	= array($this->tableKategoriPaketUmroh . '.id', $this->tableKategoriPaketUmroh . '.nama_kategori');
-		$col_search = array($this->tableKategoriPaketUmroh . '.id', $this->tableKategoriPaketUmroh . '.nama_kategori');
-		$order 		= array($this->tableKategoriPaketUmroh . '.id' => 'desc');
-		$filter 	= array($this->tableKategoriPaketUmroh . '.deleted_at' => 0);
-		$group_by 	= null;
-		//$query = $this->tableKategoriPaketUmroh;
-		$this->db->from($this->tableKategoriPaketUmroh);
-		$this->db->select($this->tableKategoriPaketUmroh . '.*');
-		$query = substr($this->db->get_compiled_select(), 6);
-		$data = $this->get_datatables($query, $col_order, $col_search, $order,  $filter, $group_by);
+	// public function dataTablesKategoriPaketUmroh(){
+	// 	$col_order 	= array($this->tableKategoriPaketUmroh . '.id', $this->tableKategoriPaketUmroh . '.nama_kategori');
+	// 	$col_search = array($this->tableKategoriPaketUmroh . '.id', $this->tableKategoriPaketUmroh . '.nama_kategori');
+	// 	$order 		= array($this->tableKategoriPaketUmroh . '.id' => 'desc');
+	// 	$filter 	= array($this->tableKategoriPaketUmroh . '.deleted_at' => 0);
+	// 	$group_by 	= null;
+	// 	//$query = $this->tableKategoriPaketUmroh;
+	// 	$this->db->from($this->tableKategoriPaketUmroh);
+	// 	$this->db->select($this->tableKategoriPaketUmroh . '.*');
+	// 	$query = substr($this->db->get_compiled_select(), 6);
+	// 	$data = $this->get_datatables($query, $col_order, $col_search, $order,  $filter, $group_by);
 
-		$recordTotal =  $this->countAllQueryFiltered($query, $filter);
-		$recordFiltered =  $this->count_filtered($query, $filter);
-		return array('data' => $data, 'recordTotal' => $recordTotal, 'recordFiltered' => $recordFiltered);
-	}
+	// 	$recordTotal =  $this->countAllQueryFiltered($query, $filter);
+	// 	$recordFiltered =  $this->count_filtered($query, $filter);
+	// 	return array('data' => $data, 'recordTotal' => $recordTotal, 'recordFiltered' => $recordFiltered);
+	// }
 
-	public function getAllKategoriUmrohNotDeleted(){
+	// public function getAllKategoriUmrohNotDeleted(){
 
-		$this->db->where('deleted_at', 0);
-		return  $this->db->get($this->tableKategoriPaketUmroh);
-	}
+	// 	$this->db->where('deleted_at', 0);
+	// 	return  $this->db->get($this->tableKategoriPaketUmroh);
+	// }
 
-	public function getKategoriUmrohByID($id){
-		$this->db->where($this->tableKategoriPaketUmroh . '.id', $id);
-		return $this->db->get($this->tableKategoriPaketUmroh);
-	}
+	// public function getKategoriUmrohByID($id){
+	// 	$this->db->where($this->tableKategoriPaketUmroh . '.id', $id);
+	// 	return $this->db->get($this->tableKategoriPaketUmroh);
+	// }
 
-	public function updateKategoriUmroh($id, $data){
-		$this->db->where('id', $id);
-		$this->db->update($this->tableKategoriPaketUmroh, $data);
-		return $this->db->affected_rows();
-	}
+	// public function updateKategoriUmroh($id, $data){
+	// 	$this->db->where('id', $id);
+	// 	$this->db->update($this->tableKategoriPaketUmroh, $data);
+	// 	return $this->db->affected_rows();
+	// }
 
-	public function insertKategoriUmroh($data){
-		$this->db->insert($this->tableKategoriPaketUmroh, $data);
-		return $this->db->insert_id();
-	}
+	// public function insertKategoriUmroh($data){
+	// 	$this->db->insert($this->tableKategoriPaketUmroh, $data);
+	// 	return $this->db->insert_id();
+	// }
 
 	//TABLE PAKET Wisata--------------------------------------------------------------------
     public function dataTablesPaketWisata(){
 		$col_order 	= array($this->tablePaketWisata . '.id', $this->tablePaketWisata . '.nama_paket');
-		$col_search = array($this->tablePaketWisata . '.id', $this->tablePaketWisata . '.nama_paket' , $this->tableKategoriPaketWisata . '.nama_kategori');
+		$col_search = array($this->tablePaketWisata . '.id', $this->tablePaketWisata . '.nama_paket' , $this->tableKategori . '.nama_kategori');
 		$order 		= array($this->tablePaketWisata . '.id' => 'desc');
 		$filter 	= array($this->tablePaketWisata . '.deleted_at' => 0);
 		$group_by 	= null;
 		//$query = $this->tablePaketWisata;
 		$this->db->from($this->tablePaketWisata);
-		$this->db->select($this->tablePaketWisata . '.*,'. $this->tableKategoriPaketWisata . '.nama_kategori');
-		$this->db->join($this->tableKategoriPaketWisata, $this->tableKategoriPaketWisata . '.id = ' . $this->tablePaketWisata . '.id_kategori');
+		$this->db->select($this->tablePaketWisata . '.*,'. $this->tableKategori . '.nama_kategori');
+		$this->db->join($this->tableKategori, $this->tableKategori . '.id = ' . $this->tablePaketWisata . '.id_kategori');
 		$query = substr($this->db->get_compiled_select(), 6);
 		$data = $this->get_datatables($query, $col_order, $col_search, $order,  $filter, $group_by);
 
@@ -284,44 +290,44 @@ class Produk_model extends MY_model
 
 
 	//KATEGORI PAKET Wisata------------------------------------------------------
-	public function dataTablesKategoriPaketWisata(){
-		$col_order 	= array($this->tableKategoriPaketWisata . '.id', $this->tableKategoriPaketWisata . '.nama_kategori');
-		$col_search = array($this->tableKategoriPaketWisata . '.id', $this->tableKategoriPaketWisata . '.nama_kategori');
-		$order 		= array($this->tableKategoriPaketWisata . '.id' => 'desc');
-		$filter 	= array($this->tableKategoriPaketWisata . '.deleted_at' => 0);
-		$group_by 	= null;
-		//$query = $this->tableKategoriPaketWisata;
-		$this->db->from($this->tableKategoriPaketWisata);
-		$this->db->select($this->tableKategoriPaketWisata . '.*');
-		$query = substr($this->db->get_compiled_select(), 6);
-		$data = $this->get_datatables($query, $col_order, $col_search, $order,  $filter, $group_by);
+	// public function dataTablesKategoriPaketWisata(){
+	// 	$col_order 	= array($this->tableKategoriPaketWisata . '.id', $this->tableKategoriPaketWisata . '.nama_kategori');
+	// 	$col_search = array($this->tableKategoriPaketWisata . '.id', $this->tableKategoriPaketWisata . '.nama_kategori');
+	// 	$order 		= array($this->tableKategoriPaketWisata . '.id' => 'desc');
+	// 	$filter 	= array($this->tableKategoriPaketWisata . '.deleted_at' => 0);
+	// 	$group_by 	= null;
+	// 	//$query = $this->tableKategoriPaketWisata;
+	// 	$this->db->from($this->tableKategoriPaketWisata);
+	// 	$this->db->select($this->tableKategoriPaketWisata . '.*');
+	// 	$query = substr($this->db->get_compiled_select(), 6);
+	// 	$data = $this->get_datatables($query, $col_order, $col_search, $order,  $filter, $group_by);
 
-		$recordTotal =  $this->countAllQueryFiltered($query, $filter);
-		$recordFiltered =  $this->count_filtered($query, $filter);
-		return array('data' => $data, 'recordTotal' => $recordTotal, 'recordFiltered' => $recordFiltered);
-	}
+	// 	$recordTotal =  $this->countAllQueryFiltered($query, $filter);
+	// 	$recordFiltered =  $this->count_filtered($query, $filter);
+	// 	return array('data' => $data, 'recordTotal' => $recordTotal, 'recordFiltered' => $recordFiltered);
+	// }
 
-	public function getAllKategoriWisataNotDeleted(){
+	// public function getAllKategoriWisataNotDeleted(){
 
-		$this->db->where('deleted_at', 0);
-		return  $this->db->get($this->tableKategoriPaketWisata);
-	}
+	// 	$this->db->where('deleted_at', 0);
+	// 	return  $this->db->get($this->tableKategoriPaketWisata);
+	// }
 
-	public function getKategoriWisataByID($id){
-		$this->db->where($this->tableKategoriPaketWisata . '.id', $id);
-		return $this->db->get($this->tableKategoriPaketWisata);
-	}
+	// public function getKategoriWisataByID($id){
+	// 	$this->db->where($this->tableKategoriPaketWisata . '.id', $id);
+	// 	return $this->db->get($this->tableKategoriPaketWisata);
+	// }
 
-	public function updateKategoriWisata($id, $data){
-		$this->db->where('id', $id);
-		$this->db->update($this->tableKategoriPaketWisata, $data);
-		return $this->db->affected_rows();
-	}
+	// public function updateKategoriWisata($id, $data){
+	// 	$this->db->where('id', $id);
+	// 	$this->db->update($this->tableKategoriPaketWisata, $data);
+	// 	return $this->db->affected_rows();
+	// }
 
-	public function insertKategoriWisata($data){
-		$this->db->insert($this->tableKategoriPaketWisata, $data);
-		return $this->db->insert_id();
-	}	
+	// public function insertKategoriWisata($data){
+	// 	$this->db->insert($this->tableKategoriPaketWisata, $data);
+	// 	return $this->db->insert_id();
+	// }	
 
 }
 

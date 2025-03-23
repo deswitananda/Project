@@ -1,22 +1,22 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Pemesanan extends CI_Controller {
+class Pendaftaran extends CI_Controller {
     public function __construct() {
         parent::__construct();
-        $this->load->model('Pemesanan_model', 'pm');
+        $this->load->model('Pendaftaran_model', 'pm');
         $this->load->helper('actionbtn');
     }
 
     public function index() {
-        $data['content'] = 'admin/pemesanan';
+        $data['content'] = 'admin/pendaftaran';
         $this->load->view('template_admin', $data);
     }
 
 
-    public function table_pemesanan_admin()
+    public function table_pendaftaran_admin()
     {
-        $q = $this->pm->dataTablesPemesanan();
+        $q = $this->pm->dataTablesPendaftaran();
 
         $data = array();
         $no = isset($_POST['start']) ? $_POST['start'] : 0;
@@ -24,12 +24,12 @@ class Pemesanan extends CI_Controller {
             $no++;
             $row = array();
             $row[] = $no;
-            $row[] = $da->kode_pemesanan;
-            $row[] = $da->nama_kategori;
-            $row[] = $da->nama_paket;
+            $row[] = $da->kode_pendaftaran;
             $row[] = $da->nama_lengkap;
-            $row[] = $da->harga;
-            $row[] = $da->tanggal_pemesanan;
+            $row[] = $da->jenis_kelamin;
+            $row[] = $da->no_hp_pendaftar;
+            $row[] = $da->alamat;
+            $row[] = $da->email_pendaftar;
             // Tentukan warna badge berdasarkan status
             $status_badge = ($da->status == 'Diterima') ? 'success'
                 : (($da->status == 'Ditolak') ? 'danger' : 'warning');
@@ -37,7 +37,7 @@ class Pemesanan extends CI_Controller {
             // Tambahkan badge status
             $row[] = '<span class="badge badge-' . $status_badge . '">' . $da->status . '</span>';
 
-            $row[] = actBtnn($da->id, 'pemesanan_admin', $da->status);
+            $row[] = actBtnn($da->id, 'pendaftaran_admin', $da->status);
 
             $data[] = $row;
         }
@@ -57,7 +57,7 @@ class Pemesanan extends CI_Controller {
         echo json_encode($output);
     }
 
-    public function delete_pemesanan_admin()
+    public function delete_pendaftaran_admin()
     {
 
         $id = $this->input->post('id');
@@ -75,9 +75,9 @@ class Pemesanan extends CI_Controller {
         echo json_encode($ret);
     }
 
-    public function get_detail_pemesanan_admin($id){
+    public function get_detail_pendaftaran_admin($id){
         // Mengambil data dari database berdasarkan ID
-        $q = $this->pm->getPemesananByID($id);
+        $q = $this->pm->getPendaftaranByID($id);
         
         if ($q->num_rows() > 0) {
             $ret = array(
@@ -97,13 +97,13 @@ class Pemesanan extends CI_Controller {
         echo json_encode($ret);
     }
 
-    public function update_status_pemesanan()
+    public function update_status_pendaftaran()
     {
         $id = $this->input->post('id');
         $status = $this->input->post('status');
     
         if ($id && $status) {
-            $update = $this->pm->updatePemesanan($id, ['status' => $status]);
+            $update = $this->pm->updatePendaftaran($id, ['status' => $status]);
     
             if ($update) {
                 $ret = array(
@@ -125,32 +125,8 @@ class Pemesanan extends CI_Controller {
     
         echo json_encode($ret);
     }
-
-    public function option_kategori(){
-		$q = $this->pm->getAllKategoriNotDeleted();
-		$ret = '<option value="">Pilih Kategori</option>';
-		if ($q->num_rows() > 0) {
-			foreach ($q->result() as $row) {
-				$ret .= '<option value="' . $row->id . '">' . $row->nama_kategori . '</option>';
-			}
-		}
-		echo $ret;
-	}
-
-	public function option_produk($id=null){
-
-		$q = $this->pm->getProdukByKategoriID($id);
-		$ret = '<option value="">Pilih Paket</option>';
-		if ($q->num_rows() > 0) {
-			foreach ($q->result() as $row) {
-				$ret .= '<option value="' . $row->id . '">' . $row->nama_paket . '</option>';
-			}
-		}
-		echo $ret;
-	}
     
     
-
     
 
 }
