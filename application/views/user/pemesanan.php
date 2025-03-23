@@ -194,3 +194,44 @@
 
 
 </script>
+
+
+<script>
+    $(document).ready(function() {
+    // Memuat kategori saat halaman dimuat
+    $.ajax({
+        url: baseClass+'/option_kategori',  // Gantilah dengan URL yang sesuai untuk memuat kategori
+        method: 'GET',
+        success: function(data) {
+            $('#id_kategori').html(data);
+        }
+    });
+
+    // Ketika kategori dipilih
+    $('#id_kategori').change(function() {
+        var kategoriId = $(this).val();
+
+        // Cek apakah kategori dipilih
+        if (kategoriId) {
+            // Mengaktifkan dropdown produk dan memuat produk berdasarkan kategori
+            $('#id_produk').prop('disabled', false);
+
+            $.ajax({
+                url: baseClass+'/option_produk/' + kategoriId,  // Gantilah dengan URL yang sesuai untuk memuat produk
+                method: 'GET',
+                success: function(data) {
+                    $('#id_produk').html(data);
+                }
+            });
+        } else {
+            // Jika kategori tidak dipilih, disable dropdown produk dan reset
+            $('#id_produk').prop('disabled', true).html('<option value="">Pilih</option>');
+        }
+    });
+
+    
+});
+
+
+
+</script>
