@@ -108,9 +108,9 @@
                     <li>
                         <div id="navbar-menu">
                             <ul class="nav navbar-nav">
-                                <li>
+                                <!-- <li>
                                     <a href="javascript:void(0);" class="create_new icon-menu" title="Create New">Create New</a>
-                                </li>
+                                </li> -->
                                 <li class="dropdown">
                                     <a href="javascript:void(0);" class="dropdown-toggle icon-menu" data-toggle="dropdown">
                                         <i class="icon-bell"></i>
@@ -173,7 +173,7 @@
                                         <li class="footer"><a href="javascript:void(0);" class="more">See all notifications</a></li>
                                     </ul>
                                 </li>
-                                <li class="dropdown">
+                                <!-- <li class="dropdown">
                                     <a href="javascript:void(0);" class="dropdown-toggle icon-menu" data-toggle="dropdown">
                                         <i class="fa fa-language"></i>
                                     </a>
@@ -183,7 +183,7 @@
                                         <li><a href="javascript:void(0);">Spanish</a></li>
                                         <li><a href="javascript:void(0);">Portuguese</a></li>
                                     </ul>
-                                </li>
+                                </li> -->
                                 <li class="dropdown">
                                     <a href="javascript:void(0);" class="dropdown-toggle icon-menu" data-toggle="dropdown">
                                         <img class="rounded-circle" src="<?php echo base_url(); ?>assets/images/user-small.png" width="30" alt="">
